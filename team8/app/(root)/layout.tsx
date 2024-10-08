@@ -2,7 +2,7 @@ import React from 'react';
 
 function Layout({children} : { children : React.ReactNode}) {
     return (
-        <main>
+        <main className={'relative'}>
             {children}
         </main>
     );
