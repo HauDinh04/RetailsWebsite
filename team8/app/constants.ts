@@ -132,3 +132,11 @@ export const leftNavLinks = [
     label: "Camera & Photo ",
   },
 ];
+export const NavLinks=[
+  {url:"/",label:"home"},
+  {url:"/",label:"features"},
+  {url:"/",label:"pages"},
+  {url:"/",label:"categories"},
+  {url:"/",label:"accessories"},
+  {url:"/",label:"blog"},
+]
