@@ -3,7 +3,7 @@
  'use client'
 import React from "react";
 
-const PopupGallery = ({image, label} :{image: string, label: string}) => {
+const BoxBlogHorizonta = ({image, label} :{image: string, label: string}) => {
   
   return (
        <div  className="relative group">
@@ -28,5 +28,5 @@ const PopupGallery = ({image, label} :{image: string, label: string}) => {
   
   );
 };
-export default PopupGallery;
+export default BoxBlogHorizonta;
 
