@@ -33,7 +33,7 @@ function SmallBoxProduct({id, title, image, content, postTime, countComments, cl
                     </div>
                 </div>
             </div>
-
+ 
             <div className="flex flex-col pt-[11px] pl-[23px] w-[458px] h-[242px]">
                 <div className="relative  text-[rgba(0,0,0,0.7)] text-[18px] mt-[10px] mb-[10px] group-hover:text-[#0083c1] whitespace-nowrap overflow-hidden text-ellipsis"> {title} </div>
                 <div className="w-[435px] text-[rgba(0,0,0,0.7)] text-[14px] pb-[10px]">
