@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,8 +13,8 @@ const images = [
   "/slideshow/slider-2.jpg",
   "/slideshow/slider-2.jpg",
   "/slideshow/slider-2.jpg",
+  "/slideshow/slider-2.jpg",
 ];
-
 export default function Slideshow() {
   return (
     <div className="container w-[847px] h-[414px] py-[15px] relative">
