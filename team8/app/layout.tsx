@@ -3,6 +3,8 @@ import "./globals.css";
 import React from "react";
 import StoreProvider from "@/app/StoreProvider";
 import { Poppins } from "next/font/google";
+import Footer from "@/components/layouts/Footer";
+import NavBar from "@/components/layouts/NavBar";
 export const metadata: Metadata = {
     title: "Retails Website",
     description: "",
@@ -21,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+            <NavBar/>
+            {children}
+            <Footer />
+        </StoreProvider>
       </body>
     </html>
   );
