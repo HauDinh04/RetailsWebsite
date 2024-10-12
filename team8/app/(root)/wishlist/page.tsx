@@ -29,8 +29,8 @@ const products = [
 
 export default function page() {
     return (
-        <div className="flex flex-row  justify-between">
-            <div className="basis-9/12 mb-[23px] pr-[15px]">
+        <div className="flex flex-row justify-between">
+            <div className="md:basis-9/12 mb-[23px] pr-[15px] basis-full">
                 <h2 className="text-[30px] mt-[20px] mb-[10px] text-[#222222]">
                     My Wish List
                 </h2>
