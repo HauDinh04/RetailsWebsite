@@ -52,11 +52,11 @@ const menuItems = [
 ];
 export default function Aside() {
     return (
-        <aside className="basis-3/12 pl-[15px]">
+        <aside className="basis-3/12 pl-[15px] hidden md:block">
             <h2 className="mt-[20px] mb-[10px] text-heading2-bold font-medium text-black-2">
                 Account
             </h2>
-            <div>
+            <div className="mb-[20px]">
                 <ul>
                     {menuItems.map((item) => {
                         return (
