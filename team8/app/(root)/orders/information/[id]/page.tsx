@@ -26,6 +26,34 @@ const links = [
     {
         href: '/',
         label: 'Wish List',
+    },
+    {
+        href: '/',
+        label: 'Order History',
+    },
+    {
+        href: '/',
+        label: 'Downloads',
+    },
+    {
+        href: '/',
+        label: 'Reward Points',
+    },
+    {
+        href: '/',
+        label: 'Returns',
+    },
+    {
+        href: '/',
+        label: 'Transactions',
+    },
+    {
+        href: '/',
+        label: 'Newsletter',
+    },
+    {
+        href: '/',
+        label: 'Recurring payments',
     }
 ]
 
@@ -41,9 +69,9 @@ function Page() {
                 <div className="w-[75%]">
                     <h1 className="text-[30px] text-[#222222] font-light">Order Information</h1>
                     <table className="w-full table-auto text-left border-collapse border border-solid border-[#ddd]">
-                        <thead className={'bg-[rgba(51,51,51,0.1)]'}>
+                        <thead className={'bg-[rgba(51,51,51,0.1)] border-b-[2px] border-solid border-[#ddd]'}>
                         <tr>
-                            <th className={'p-2 '} colSpan={2}>Order Details</th>
+                            <th className={'p-2 text-[#555555] text-[12px] font-bold'} colSpan={2}>Order Details</th>
                         </tr>
                         </thead>
                         <tbody className={''}>
