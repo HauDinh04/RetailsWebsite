@@ -98,14 +98,14 @@ function Page() {
 
     return (
         <section className={'container mb-[20px]'}>
-            <div className="flex items-center my-[20px] gap-[10px]">
+            <div className="flex items-center my-[20px] text-[#555555] gap-[10px] text-[14px]">
                 <Link href={'/'} className={'hover:text-[#0083c1]'}>Home</Link>
                 <FaAngleRight className={'block'}/>
                 <div className="">Order Information</div>
             </div>
             <div className="w-full flex">
-                <div className="w-full md:w-full lg:w-[75%]">
-                    <h1 className="text-[30px] text-[#222222] font-light">Order Information</h1>
+                <div className="w-full xl:w-[75%]">
+                    <h1 className="text-[30px] mt-[20px] mb-[10px] text-[#222222] font-light">Order Information</h1>
                     <table
                         className="w-full mb-[20px] table-auto text-left border-collapse border border-solid border-[#ddd]">
                         <thead className={'bg-[rgba(51,51,51,0.1)] border-b-[2px] border-solid border-[#ddd]'}>
