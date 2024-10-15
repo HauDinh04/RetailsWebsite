@@ -94,9 +94,15 @@ const products = [
     },
 ];
 
-export default function FeatureProduct() {
+export default function FeatureProduct({
+    breakpoints = {
+        640: { slidesPerView: 3, spaceBetween: 10 },
+        1024: { slidesPerView: 5, spaceBetween: 10 },
+    },
+    className = "",
+}) {
     return (
-        <div className="container pt-[43px] relative">
+        <div className="pt-[43px] relative">
             <div className="flex flex-row items-center justify-between mb-[5px]">
                 <h3 className="text-[#222222] text-heading1">
                     Smartphone & Tablet
@@ -114,10 +120,10 @@ export default function FeatureProduct() {
             <hr className="border-dashed border border-[#f2f2f2]" />
             <hr className="border-dashed border border-[#f2f2f2]" />
             <hr className="border-dashed border border-[#f2f2f2]" />
-            <div className="py-[20px] relative">
+            <div className="py-[20px]">
                 <Swiper
                     spaceBetween={10}
-                    slidesPerView={5}
+                    slidesPerView={1}
                     navigation={{
                         nextEl: ".button-next-slide",
                         prevEl: ".button-prev-slide",
@@ -125,10 +131,12 @@ export default function FeatureProduct() {
                     modules={[Navigation, Scrollbar, Autoplay]}
                     scrollbar={{ hide: true }}
                     autoplay={{ delay: 6000, disableOnInteraction: false }}
+                    breakpoints={breakpoints}
+                    className=""
                 >
                     {products.map((product) => (
-                        <SwiperSlide key={product.id}>
-                            <Product product={product} />
+                        <SwiperSlide className="shrink" key={product.id}>
+                            <Product product={product} className={className} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

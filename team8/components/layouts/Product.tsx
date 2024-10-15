@@ -7,17 +7,17 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Product({ product }) {
+export default function Product({ product, className }) {
     return (
-        <div className="w-[220px] group">
+        <div className="group">
             <div className="border border-[#e5e5e5] rounded-[5px] p-[5px] group-hover:bg-[#e5e5e5] group-hover:rounded-none transition-all ease-in-out duration-700">
-                <div className="relative aspect-square w-[208.4px] h-[277.862px]">
+                <div className={`relative aspect-square ${className} w-full`}>
                     <Link href={`/${product.id}`}>
                         <Image
                             src={product.image}
                             alt={product.name}
                             fill
-                            className="object-cover "
+                            className="object-cover"
                         />
                     </Link>
                     {product.isNew && (
