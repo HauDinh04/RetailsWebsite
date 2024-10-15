@@ -99,7 +99,7 @@ export default function FeatureProduct({
         640: { slidesPerView: 3, spaceBetween: 10 },
         1024: { slidesPerView: 5, spaceBetween: 10 },
     },
-    className = "",
+    className = "h-[555px] sm:h-[295px] lg:h-[278px]",
 }) {
     return (
         <div className="pt-[43px] relative">
