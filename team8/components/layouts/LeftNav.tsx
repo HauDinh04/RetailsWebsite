@@ -5,7 +5,7 @@ import Link from "next/link";
 const LeftNav = () => {
   return (
  
-      <div className="grid grid-cols-1 items-start  border  max-w-[250px] rounded-lg mt-3  ">
+      <div className="grid grid-cols-1 items-start  border  w-[250px] rounded-lg mt-3  ">
         <div className=" items-center gap-2 px-4 py-3 bg-bg-main text-white uppercase text-heading4-bold flex ">
           <Menu />
           all categoties
@@ -23,7 +23,7 @@ const LeftNav = () => {
               {link.label}
             </Link>
             {link.subLinks && (
-              <div className=" hidden group-hover:block absolute left-full top-0 w-[875px] bg-white border ">
+              <div className=" hidden group-hover:block absolute z-10 left-full top-0 w-[875px] bg-white border shadow-lg ">
                 <div className="grid grid-cols-3 ">
                   {link.subLinks.map((subLink) => (
                     <ul key={subLink.Label}>

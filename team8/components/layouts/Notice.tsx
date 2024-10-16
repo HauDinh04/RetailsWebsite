@@ -12,7 +12,7 @@ function Notice({isShow, setIsShow}: {
 
     if (isShow) {
         return (
-            <div className={'fixed inset-0 w-full h-screen bg-[rgba(0,0,0,0.65)] flex justify-center items-center'}>
+            <div className={'fixed inset-0 z-[10] w-full h-screen bg-[rgba(0,0,0,0.65)] flex justify-center items-center'}>
                 <div className="w-[850px] relative h-[376px] rounded bg-white" style={{
                     background: "url('/images/newletter-bg.jpg') no-repeat white"
                 }}>
