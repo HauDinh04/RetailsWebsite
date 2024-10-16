@@ -71,7 +71,7 @@ const config: Config = {
                 "16px",
                 {
                     lineHeight: "18px",
-                    fontWeight: "600",
+                    fontWeight: "500",
                 },
             ],
             "sub-heading": [
