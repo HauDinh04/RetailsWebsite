@@ -4,7 +4,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { IoLogoTwitter } from "react-icons/io";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/customui/inputs";
 import { TiSocialGooglePlus } from "react-icons/ti";
 import { RiSkypeFill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
