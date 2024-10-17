@@ -10,6 +10,12 @@ import {FaThLarge, FaThList} from "react-icons/fa";
 import {motion} from 'framer-motion';
 import BoxProduct from "@/components/pages/category/BoxProduct";
 import InformativeProduct from "@/components/layouts/InformativeProduct";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface DataProductAPI {
     products: {
@@ -170,12 +176,8 @@ function Page() {
             </div>
             <div className="flex w-full mb-[25px] flex-col md:flex-row">
                 <div className="pr-[15px] lg:flex lg:flex-col lg:gap-[30px]">
-                    <div>
-                        <CategorySideBar/>
-                    </div>
-                    <div>
-                        <LatestProduct/>
-                    </div>
+                    <CategorySideBar/>
+                    <LatestProduct/>
                     <Link href={'/'}
                           onMouseEnter={() => setHovered(true)}
                           onMouseLeave={() => setHovered(false)}
@@ -227,15 +229,35 @@ function Page() {
                             className="bg-none gap-[10px] md:gap-0 md:bg-[#f8f8f8] w-full h-max flex flex-col md:flex-row items-center px-[10px] justify-between
                              lg:h-[60px] rounded-[3px] border-none border md:border-solid border-[#dddddd]">
                             <div className="hidden lg:flex items-center gap-[5px]">
-                                <div onClick={() => setIsList(true)}
-                                     className={`w-[39px] border border-solid rounded-[3px]
-                                     flex items-center justify-center h-[34px] ${isList ? 'bg-[#0083c1] border-[#0083c1]' : 'border-[#ccc]'}`}>
-                                    <FaThLarge className={`text-[14px] ${isList ? 'text-white' : 'text-[#333]'}`}/>
-                                </div>
-                                <div onClick={() => setIsList(false)}
-                                     className={`w-[39px] border border-solid rounded-[3px] flex items-center justify-center h-[34px] ${isList ? 'border-[#ccc]' : 'bg-[#0083c1] border-[#0083c1]'}`}>
-                                    <FaThList className={`text-[14px] ${isList ? 'text-[#333]' : 'text-white'}`}/>
-                                </div>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <div onClick={() => setIsList(true)}
+                                                 className={`w-[39px] border border-solid rounded-[3px]
+                                                flex items-center justify-center h-[34px] ${isList ? 'bg-[#0083c1] border-[#0083c1]' : 'border-[#ccc]'}`}>
+                                                <FaThLarge
+                                                    className={`text-[14px] ${isList ? 'text-white' : 'text-[#333]'}`}/>
+                                            </div>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>Grid</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <div onClick={() => setIsList(false)}
+                                                 className={`w-[39px] border border-solid rounded-[3px] flex items-center justify-center h-[34px] ${isList ? 'border-[#ccc]' : 'bg-[#0083c1] border-[#0083c1]'}`}>
+                                                <FaThList
+                                                    className={`text-[14px] ${isList ? 'text-[#333]' : 'text-white'}`}/>
+                                            </div>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>List</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
                             </div>
                             <div
                                 className="bg-[#f8f8f8] w-full md:w-max text-center text-[12px] text-[#555555]
@@ -297,15 +319,35 @@ function Page() {
                             className="bg-none mt-[20px] gap-[10px] md:gap-0 md:bg-[#f8f8f8] w-full h-max flex flex-col md:flex-row items-center px-[10px] justify-between
                              lg:h-[60px] rounded-[3px] border-none border md:border-solid border-[#dddddd]">
                             <div className="hidden lg:flex items-center gap-[5px]">
-                                <div onClick={() => setIsList(true)}
-                                     className={`w-[39px] border border-solid rounded-[3px]
-                                     flex items-center justify-center h-[34px] ${isList ? 'bg-[#0083c1] border-[#0083c1]' : 'border-[#ccc]'}`}>
-                                    <FaThLarge className={`text-[14px] ${isList ? 'text-white' : 'text-[#333]'}`}/>
-                                </div>
-                                <div onClick={() => setIsList(false)}
-                                     className={`w-[39px] border border-solid rounded-[3px] flex items-center justify-center h-[34px] ${isList ? 'border-[#ccc]' : 'bg-[#0083c1] border-[#0083c1]'}`}>
-                                    <FaThList className={`text-[14px] ${isList ? 'text-[#333]' : 'text-white'}`}/>
-                                </div>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <div onClick={() => setIsList(true)}
+                                                 className={`w-[39px] border border-solid rounded-[3px]
+                                                flex items-center justify-center h-[34px] ${isList ? 'bg-[#0083c1] border-[#0083c1]' : 'border-[#ccc]'}`}>
+                                                <FaThLarge
+                                                    className={`text-[14px] ${isList ? 'text-white' : 'text-[#333]'}`}/>
+                                            </div>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>Grid</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <div onClick={() => setIsList(false)}
+                                                 className={`w-[39px] border border-solid rounded-[3px] flex items-center justify-center h-[34px] ${isList ? 'border-[#ccc]' : 'bg-[#0083c1] border-[#0083c1]'}`}>
+                                                <FaThList
+                                                    className={`text-[14px] ${isList ? 'text-[#333]' : 'text-white'}`}/>
+                                            </div>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                            <p>List</p>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
                             </div>
                             <div
                                 className="bg-[#f8f8f8] w-full md:w-max text-center text-[12px] text-[#555555]
