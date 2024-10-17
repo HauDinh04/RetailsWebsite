@@ -1,0 +1,238 @@
+[33mcommit 34449f966973def0c151196e77730d9003774169[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/add-footer[m[33m, [m[1;31morigin/feature/add-footer[m[33m)[m
+Merge: 470c804 e8fcdf2
+Author: NnKha <nhatkha2018@gmail.com>
+Date:   Thu Oct 17 00:35:59 2024 +0700
+
+    Merge branch 'developer' of https://github.com/HauDinh04/RetailsWebsite into feature/add-footer
+
+[33mcommit 470c8041295cdbbbe8fe3095563e955e887da1bf[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2b91932 4472736
+Author: NnKha <146690710+NnKha@users.noreply.github.com>
+Date:   Thu Oct 17 00:22:41 2024 +0700
+
+    Merge pull request #35 from HauDinh04/feature/add-footer
+    
+    Feature/add footer
+
+[33mcommit 447273632bed7532f1f90ee44916498201abef5c[m
+Author: NnKha <nhatkha2018@gmail.com>
+Date:   Thu Oct 17 00:20:43 2024 +0700
+
+    reponsive ui footer
+
+[33mcommit e8fcdf2c43069f15ce726091e582d373f1a411b4[m[33m ([m[1;31morigin/developer[m[33m)[m
+Merge: 7294e78 49c7452
+Author: Tiến Nguyễn <114715472+1stephen37@users.noreply.github.com>
+Date:   Wed Oct 16 16:55:50 2024 +0700
+
+    Merge pull request #34 from HauDinh04/fearture/page-FAQ,cart,return
+    
+    Fearture/page faq,cart,return
+
+[33mcommit 7294e78c7bf3b2d2d2822ef495ca8d1f2b747f02[m[33m ([m[1;32mdeveloper[m[33m)[m
+Merge: d8031ea 5080a61
+Author: NnKha <146690710+NnKha@users.noreply.github.com>
+Date:   Wed Oct 16 16:46:01 2024 +0700
+
+    Merge pull request #33 from HauDinh04/feature/add-site-map
+    
+    add UI sitemap
+
+[33mcommit 5080a61f5e4f4a1ec4b2579abcfd79326d65cdd2[m[33m ([m[1;31morigin/feature/add-site-map[m[33m, [m[1;32mfeature/add-site-map[m[33m)[m
+Author: NnKha <nhatkha2018@gmail.com>
+Date:   Wed Oct 16 16:44:33 2024 +0700
+
+    add UI sitemap
+
+[33mcommit 49c74529055748d5e81a8a297e5d994d08dd3ea2[m[33m ([m[1;31morigin/fearture/page-FAQ,cart,return[m[33m)[m
+Author: dangkhoa0807 <khoatran2b@gmail.com>
+Date:   Wed Oct 16 15:23:12 2024 +0700
+
+    page-FAQ,cart,return
+
+[33mcommit 81c231ae1e5f0dde3e11aa1c9446efcb7c14d295[m
+Merge: 19e63ae d8031ea
+Author: dangkhoa0807 <khoatran2b@gmail.com>
+Date:   Wed Oct 16 14:52:51 2024 +0700
+
+    Merge branch 'developer' of https://github.com/HauDinh04/RetailsWebsite into fearture/page-FAQ,cart,return
+
+[33mcommit 19e63ae0de03ef13516dbed8e54c4e89be43d47f[m
+Author: dangkhoa0807 <khoatran2b@gmail.com>
+Date:   Wed Oct 16 14:31:44 2024 +0700
+
+    page-FAQ,cart,return
+
+[33mcommit d8031ea378f72aee94958ab4a56338ee3e973ea9[m
+Merge: d268ef2 1e85ea1
+Author: Vũ Văn Sỹ <138703514+vuvansy@users.noreply.github.com>
+Date:   Wed Oct 16 00:52:26 2024 +0700
+
+    Merge pull request #32 from HauDinh04/feature/add-feature-product
+    
+    Add className default FeatureProduct
+
+[33mcommit 1e85ea104c3b6fc7b47a2d893700064832b58243[m[33m ([m[1;31morigin/feature/add-feature-product[m[33m)[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Wed Oct 16 00:51:11 2024 +0700
+
+    add className default FeatureProduct
+
+[33mcommit d268ef2658cb47ce9c1600150843a9d1f2d5a4ad[m
+Merge: 8e062cb 0b74a70
+Author: Vũ Văn Sỹ <138703514+vuvansy@users.noreply.github.com>
+Date:   Wed Oct 16 00:43:01 2024 +0700
+
+    Merge pull request #31 from HauDinh04/feature/add-feature-product
+    
+    Responsive component UI FeatureProduct
+
+[33mcommit 0b74a708881ce971b427741e71afca15a01088ac[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Wed Oct 16 00:41:04 2024 +0700
+
+    Responsive component UI FeatureProduct
+
+[33mcommit 8e062cbbc0929503d8119a087e888d0fa1c36c1d[m
+Merge: 100d2f5 c68746f
+Author: Vũ Văn Sỹ <138703514+vuvansy@users.noreply.github.com>
+Date:   Tue Oct 15 13:59:14 2024 +0700
+
+    Merge pull request #30 from HauDinh04/feature/add-register
+    
+    Add UI Register and Responsive & custom component ui
+
+[33mcommit c68746f2f4a678b52ed8f851970998c10338ef9d[m[33m ([m[1;31morigin/feature/add-register[m[33m)[m
+Merge: c7a9247 100d2f5
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Tue Oct 15 13:58:42 2024 +0700
+
+    Merge branch 'developer' of https://github.com/HauDinh04/RetailsWebsite into feature/add-register
+
+[33mcommit c7a9247d132c44afa11d4b18219e67acc64e9ae7[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Tue Oct 15 13:46:33 2024 +0700
+
+    Add UI Register and Responsive & custom component ui
+
+[33mcommit 100d2f5dcf667cc613a1e401a9a6429047b350ef[m
+Merge: e791860 885572e
+Author: Tiến Nguyễn <114715472+1stephen37@users.noreply.github.com>
+Date:   Mon Oct 14 11:28:23 2024 +0700
+
+    Merge pull request #29 from HauDinh04/feature/add-order-history-page
+    
+    add order history page and fix somebug in order-information page
+
+[33mcommit 885572e37af694b1abb93319ec337b4ab15a10f8[m[33m ([m[1;31morigin/feature/add-order-history-page[m[33m)[m
+Author: Tiến Nguyễn <=>
+Date:   Mon Oct 14 11:27:16 2024 +0700
+
+    add order history page and fix somebug in order-information page
+
+[33mcommit e7918600115a6d870dff7a1ff69d38c238bddd91[m
+Merge: 35dd6cd 6c1823f
+Author: Tiến Nguyễn <114715472+1stephen37@users.noreply.github.com>
+Date:   Mon Oct 14 07:54:06 2024 +0700
+
+    Merge pull request #28 from HauDinh04/feature/add-order-information-page
+    
+    add-order-information-page with url orders/information/id
+
+[33mcommit 6c1823f792b01edd8596dfd6100380db5d0a0086[m[33m ([m[1;31morigin/feature/add-order-information-page[m[33m)[m
+Author: Tiến Nguyễn <=>
+Date:   Mon Oct 14 07:53:34 2024 +0700
+
+    add-order-information-page with url orders/information/id
+
+[33mcommit 35dd6cd0f4367675854e22c8eb17fed2bfcada73[m
+Merge: 6bda70a 93b32b7
+Author: Tiến Nguyễn <=>
+Date:   Sun Oct 13 08:13:30 2024 +0700
+
+    gáp component vào trang chủ (test 2)
+
+[33mcommit 6bda70a1f57defe6ee329730d77a56a7f6d75e17[m
+Author: Tiến Nguyễn <=>
+Date:   Sun Oct 13 08:12:24 2024 +0700
+
+    gáp component vào trang chủ (test 2)
+
+[33mcommit 93b32b7afc7407ea05c309d92321cfd879a5b806[m
+Merge: 04099a0 333bd60
+Author: Vũ Văn Sỹ <138703514+vuvansy@users.noreply.github.com>
+Date:   Sat Oct 12 22:46:42 2024 +0700
+
+    Merge pull request #27 from HauDinh04/feature/add-wish-list
+    
+    Fix bug title my wish list
+
+[33mcommit 333bd60c26af39602990bdd18a753e47da146455[m[33m ([m[1;31morigin/feature/add-wish-list[m[33m)[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Sat Oct 12 22:45:00 2024 +0700
+
+    Fix bug title my wish list
+
+[33mcommit 04099a0c4b4898dac237e82098a7e47cdd2ef29d[m
+Merge: 644de90 cfe300f
+Author: Vũ Văn Sỹ <138703514+vuvansy@users.noreply.github.com>
+Date:   Sat Oct 12 22:37:04 2024 +0700
+
+    Merge pull request #26 from HauDinh04/feature/add-wish-list
+    
+    Responsive Wishlist
+
+[33mcommit cfe300f585ad72d0c4194953efdcf9552e57a7e7[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Sat Oct 12 22:31:44 2024 +0700
+
+    Responsive Wishlist
+
+[33mcommit 644de9029c592b44834b81c820ee4a9724a4c570[m
+Merge: 9d330bc c045d78
+Author: Tiến Nguyễn <=>
+Date:   Sat Oct 12 22:07:00 2024 +0700
+
+    gáp các component vào trang chủ (test)
+
+[33mcommit 9d330bcea9a9064ce4de3dfd632b84afde5edf8d[m
+Author: Tiến Nguyễn <=>
+Date:   Sat Oct 12 21:58:59 2024 +0700
+
+    gáp các component vào trang chủ (test)
+
+[33mcommit c045d7875c85cb9943fdc61d99c55e1ac2319558[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Sat Oct 12 21:54:58 2024 +0700
+
+    add dropdown-menu
+
+[33mcommit 5e64f9867199b26a7ee5fcccd7a14d0093da714d[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Sat Oct 12 21:48:42 2024 +0700
+
+    add dropdown-menu
+
+[33mcommit 518ab1b99af720ac253e27f2da988af1060aa1e1[m
+Merge: 93ab405 15f25ec
+Author: Vũ Văn Sỹ <138703514+vuvansy@users.noreply.github.com>
+Date:   Sat Oct 12 21:45:48 2024 +0700
+
+    Merge pull request #24 from HauDinh04/feature/add-wish-list
+    
+    UI Aside & Wishlist
+
+[33mcommit 15f25ecff321bd718e7139cc6eb88c5e5d6b1ed3[m
+Author: vuvansy <vuvansy3001@gmail.com>
+Date:   Sat Oct 12 21:44:28 2024 +0700
+
+    UI Aside & Wishlist
+
+[33mcommit 93ab405e16c44f5c27678e660ee519fa3f77744e[m
+Merge: 3c2e520 41e40eb
+Author: NnKha <146690710+NnKha@users.noreply.github.com>
+Date:   Sat Oct 12 00:47:04 2024 +0700
+
+    Merge pull request #23 from HauDinh04/feature/add-slider-show
+    
+    Feature/
