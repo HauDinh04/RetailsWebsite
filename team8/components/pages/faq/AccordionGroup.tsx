@@ -19,8 +19,8 @@ const AccordionGroup = (props : Props) => {
 	  onClick={() => setShow(id)} // Toggle khi click
 	  className="group cursor-pointer bg-[#f4f4f4] relative z-10 flex items-center text-[#555555] hover:bg-[#8e8e8e]"
 	>
-	{show === id ? (<HiOutlineMinusSm className="absolute w-8 h-8 bg-[#A0A0A0] text-white left-0 group-hover:bg-[#828282]" />):
-	(<IoAddSharp className="absolute w-8 h-8 bg-[#A0A0A0] text-white left-0 group-hover:bg-[#828282]" />)}
+	{show === id ? (<HiOutlineMinusSm className="absolute w-8 h-8 p-2 bg-[#A0A0A0] text-white left-0 group-hover:bg-[#828282]" />):
+	(<IoAddSharp className="absolute w-8 h-8 p-2 bg-[#A0A0A0] text-white left-0 group-hover:bg-[#828282]" />)}
 	  
 	  
 	  <span className="ml-12 leading-6 py-1 group-hover:text-[#fff] text-heading4 font-normal">

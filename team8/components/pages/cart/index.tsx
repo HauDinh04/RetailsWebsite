@@ -57,7 +57,7 @@ const Cart = () => {
           </li>
         </ul>
         <div className="w-full mb-[23px] pb-1">
-          <h2 className="mt-5 mb-[10px] text-heading1 text-[#222222]">
+          <h2 className="mt-5 mb-[10px] font-extralight text-[30px] text-[#222222]">
             Shopping Cart
           </h2>
           <div className="mb-[15px] p-1 overflow-x-auto">
