@@ -116,7 +116,7 @@ function CategorySideBar() {
         }
     ]
     return (
-        <div className={'sm:w-full mb-[30px]'}>
+        <div className={'sm:w-full'}>
             <div className="text-[22px] text-[#222222] mb-[10px]">Categories</div>
             <div className="rounded-[3px] w-full mt-[10px] border border-solid border-[#dddddd]">
                 {categories.map((item, index) => (
