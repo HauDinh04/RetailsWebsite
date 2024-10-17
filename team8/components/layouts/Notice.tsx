@@ -1,4 +1,5 @@
 import React, {FormEvent} from 'react';
+import { MdClose } from "react-icons/md";
 
 function Notice({isShow, setIsShow}: {
     isShow: boolean;
@@ -12,7 +13,8 @@ function Notice({isShow, setIsShow}: {
 
     if (isShow) {
         return (
-            <div className={'fixed inset-0 z-[10] w-full h-screen bg-[rgba(0,0,0,0.65)] flex justify-center items-center'}>
+            <div
+                className={'fixed inset-0 z-[20] w-full h-screen bg-[rgba(0,0,0,0.65)] flex justify-center items-center'}>
                 <div className="w-[850px] relative h-[376px] rounded bg-white" style={{
                     background: "url('/images/newletter-bg.jpg') no-repeat white"
                 }}>
@@ -37,7 +39,8 @@ function Notice({isShow, setIsShow}: {
                         </div>
                     </div>
                     <div onClick={() => setIsShow(false)}
-                         className="absolute top-0 right-0 opacity-[0.65] hover:opacity-[1] text-black text-center w-[44px] h-[44px] leading-[44px] cursor-pointer text-[28px]">x
+                         className="absolute top-0 right-0 opacity-[0.65] flex items-center justify-center hover:opacity-[1] text-black text-center w-[44px] h-[44px] cursor-pointer ">
+                        <MdClose className={'text-[28px] '} />
                     </div>
                 </div>
             </div>
