@@ -226,7 +226,6 @@ const Cart = () => {
                     <input
                       type="text"
                       name="postcode"
-                      value=""
                       placeholder="Post Code"
                       id="input-postcode"
                       className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"

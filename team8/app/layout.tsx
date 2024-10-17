@@ -25,10 +25,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <StoreProvider>
-            <Header/>
-            <NavBar/>
-            {children}
-            <Footer />
+            <main className="relative">
+                <Header/>
+                <NavBar/>
+                {children}
+                <Footer />
+            </main>
         </StoreProvider>
       </body>
     </html>

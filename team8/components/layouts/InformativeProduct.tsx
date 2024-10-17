@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {FaStar, FaStarHalfAlt, FaHeart, FaExchangeAlt, FaSearch  } from "react-icons/fa";
 
-function SmallBoxProduct({id, name, rating, price, image, oldPrice, content, DiscountPercentage, className = ''}: {
+function InformativeProduct({id, name, rating, price, image, oldPrice, content, DiscountPercentage, className = ''}: {
     id: string,
     name: string,
     rating: number,
@@ -83,4 +83,4 @@ function SmallBoxProduct({id, name, rating, price, image, oldPrice, content, Dis
     );
 }
 
-export default SmallBoxProduct;
+export default InformativeProduct;

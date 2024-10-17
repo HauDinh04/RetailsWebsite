@@ -38,7 +38,7 @@ function ZoomImageZone({isShow, setIsShow, imageArray, className = ''}: {
 
     if (isShow) {
         return (
-            <div className={'fixed w-full h-screen bg-[rgba(0,0,0,0.65)]' + ` ${className}`}>
+            <div className={'fixed z-20 inset-0 w-full h-screen bg-[rgba(0,0,0,0.65)]' + ` ${className}`}>
                 <div className="w-full h-screen flex justify-between items-center">
                     <div onClick={handleLeft} className="w-[90px] h-[110px] flex justify-center items-center">
                         <MdOutlineArrowLeft className={'text-[250px] text-[rgba(255,255,255,0.7)] hover:text-white'}/>
@@ -51,7 +51,7 @@ function ZoomImageZone({isShow, setIsShow, imageArray, className = ''}: {
                              onClick={() => setIsShow(false)}>x
                         </div>
                         <div
-                            className="absolute right-[1%] bottom-[-12%] text-[rgba(255,255,255,0.7)]">{index + 1} of {maxLength}</div>
+                            className="absolute right-[1%] md:bottom-[-4%] sm:bottom-[-5%] bottom-[-9%] text-[#ccc]">{index + 1} of {maxLength}</div>
                     </div>
                     <div onClick={handleRight} className="w-[90px] h-[110px] flex justify-center items-center">
                         <MdOutlineArrowRight className={'text-[250px] text-[rgba(255,255,255,0.7)] hover:text-white'}/>
