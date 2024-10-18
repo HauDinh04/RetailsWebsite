@@ -25,7 +25,6 @@ const BoxBlogHorizonta = ({image, label} :{image: string, label: string}) => {
         </div>
         </a>
       </div>
-  
   );
 };
 export default BoxBlogHorizonta;
