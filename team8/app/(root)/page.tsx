@@ -3,11 +3,11 @@ import LeftNav from "@/components/layouts/LeftNav";
 import SlideShow from "@/components/layouts/SlideShow";
 import {CountDownProduct} from "@/components/layouts/CountDownProduct";
 import FeatureProduct from "@/components/layouts/FeatureProduct";
-import {useState} from "react";
-import Notice from "@/components/layouts/Notice";
+
+
 
 export default function Home() {
-    const [isShow, setIsShow] = useState(true);
+
 
     return (
         <>
@@ -22,7 +22,7 @@ export default function Home() {
                                   price={12} name={'test home'}/>
             </div>
             <FeatureProduct/>
-            <Notice isShow={isShow} setIsShow={setIsShow} />
+       
         </>
     );
 }
