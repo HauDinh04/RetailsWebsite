@@ -9,7 +9,10 @@ import {useState} from "react";
 function Page() {
     const [isHoveredEffect1, setIsHoveredEffect1] = useState(false);
     const [isHoveredEffect2, setIsHoveredEffect2] = useState(false);
+    const [isHoveredEffect3, setIsHoveredEffect3] = useState(false);
+    const [isHoveredEffect4, setIsHoveredEffect4] = useState(false);
     const [isHoveredEffect6, setIsHoveredEffect6] = useState(false);
+    const [isHoveredEffect7, setIsHoveredEffect7] = useState(false);
     const [isHoveredEffect9, setIsHoveredEffect9] = useState(false);
     const [isHoveredEffect10, setIsHoveredEffect10] = useState(false);
 
@@ -90,7 +93,7 @@ function Page() {
                             className="absolute inset-0"
                             style={{
                                 borderRadius: '100%',
-                                background: 'radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.3) 30%)',
+                                background: 'radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.2) 30%)',
                                 transformOrigin: 'center',
                             }}
                         />
@@ -98,16 +101,79 @@ function Page() {
                 </div>
                 <div className="w-full h-auto flex flex-col gap-[10px] ">
                     <div className="text-[#555555] text-[18px]">Hover effect 4</div>
-                    <div className="block w-full group cursor-pointer relative aspect-[6/2.3]">
-                        <Image alt={'Hover effect 1'} className={'object-cover'} sizes="100vw"
-                               src={'/images/product-1.jpg'} fill/>
+                    <div
+                        className="block w-full group cursor-pointer relative aspect-[6/2.3] overflow-hidden"
+                        onMouseEnter={() => setIsHoveredEffect3(true)}
+                        onMouseLeave={() => setIsHoveredEffect3(false)}
+                    >
+                        <Image
+                            alt={'Hover effect 1'}
+                            className={'object-cover'}
+                            sizes="100vw"
+                            src={'/images/product-1.jpg'}
+                            fill
+                        />
+
+                        {/* Thanh chéo bên trái */}
+                        <motion.div
+                            initial={{x: '0%', width: '0%', height: '100%', rotate: '45deg'}}
+                            animate={isHoveredEffect3 ? {x: '-80%', width: '100%'} : {x: '0%', width: '0%'}}
+                            transition={{duration: 0.6}}
+                            className="absolute top-0 left-0 bg-[rgba(0,0,0,0.5)]"
+                        />
+
+                        {/* Thanh chéo bên phải */}
+                        <motion.div
+                            initial={{x: '0%', width: '0%', height: '100%', rotate: '-45deg'}}
+                            animate={isHoveredEffect3 ? {x: '80%', y: "0%", width: '100%'} : {x: '0%', width: '0%'}}
+                            transition={{duration: 0.6}}
+                            className="absolute top-0 right-0 bg-[rgba(0,0,0,0.5)]"
+                        />
                     </div>
                 </div>
-                <div className="w-full h-auto flex flex-col gap-[10px] ">
+                <div className="w-full h-auto flex flex-col gap-[10px]">
                     <div className="text-[#555555] text-[18px]">Hover effect 5</div>
-                    <div className="block w-full group cursor-pointer relative aspect-[6/2.3]">
-                        <Image alt={'Hover effect 1'} className={'object-cover'} sizes="100vw"
-                               src={'/images/product-1.jpg'} fill/>
+                    <div
+                        className="block w-full group cursor-pointer relative aspect-[6/2.3]"
+                        onMouseEnter={() => setIsHoveredEffect4(true)}
+                        onMouseLeave={() => setIsHoveredEffect4(false)}
+                    >
+                        {/* Hình ảnh */}
+                        <Image
+                            alt={'Hover effect 5'}
+                            className={'object-cover'}
+                            sizes="100vw"
+                            src={'/images/product-1.jpg'}
+                            fill
+                        />
+
+                        {/* Hình vuông màu đen nhạt */}
+                        <motion.div
+                            initial={{scale: 0}}
+                            animate={isHoveredEffect4 ? {scale: 1} : {scale: 0}}
+                            transition={{duration: 0.5, ease: 'easeInOut'}}
+                            className="absolute bottom-0 left-0 bg-black"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                background: 'rgba(0, 0, 0, 0.35)', // Đen nhạt
+                                zIndex: 1, // Dưới hình vuông màu trắng
+                            }}
+                        />
+
+                        {/* Hình vuông màu trắng nhạt */}
+                        <motion.div
+                            initial={{scale: 0}}
+                            animate={isHoveredEffect4 ? {scale: 0.75, background: 'rgba(0,0,0,0.001)'} : {scale: 0}}
+                            transition={{duration: 0.5, ease: 'easeInOut'}}
+                            className="absolute bottom-0 left-0 bg-white"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                background: 'rgba(255, 255, 255, 0.5)', // Trắng nhạt
+                                zIndex: 2, // Trên hình vuông màu đen
+                            }}
+                        />
                     </div>
                 </div>
                 <div className="w-full h-auto flex flex-col gap-[10px] ">
@@ -147,11 +213,44 @@ function Page() {
                         />
                     </div>
                 </div>
-                <div className="w-full h-auto flex flex-col gap-[10px] ">
+                <div className="w-full h-auto flex flex-col gap-[10px]">
                     <div className="text-[#555555] text-[18px]">Hover effect 8</div>
-                    <div className="block w-full group cursor-pointer relative aspect-[6/2.3]">
-                        <Image alt={'Hover effect 1'} className={'object-cover'} sizes="100vw"
-                               src={'/images/product-1.jpg'} fill/>
+                    <div
+                        className="block w-full group cursor-pointer relative aspect-[6/2.3]"
+                        onMouseEnter={() => setIsHoveredEffect7(true)}
+                        onMouseLeave={() => setIsHoveredEffect7(false)}
+                    >
+                        {/* Hình ảnh */}
+                        <Image
+                            alt={'Hover effect 8'}
+                            className={'object-cover'}
+                            sizes="100vw"
+                            src={'/images/product-1.jpg'}
+                            fill
+                        />
+
+                        {/* Màn đen che phủ */}
+                        <motion.div
+                            initial={{opacity: 0}}
+                            animate={isHoveredEffect7 ? {opacity: 0.7} : {opacity: 0}}
+                            transition={{duration: 0.5, ease: 'easeInOut'}}
+                            className="absolute inset-0 bg-black"
+                        />
+
+                        {/* Hình vuông trong suốt với viền trắng */}
+                        <motion.div
+                            initial={{opacity: 0, scale: 0}}
+                            animate={isHoveredEffect7 ? {opacity: 1, scale: 1} : {opacity: 0, scale: 0}}
+                            transition={{duration: 0.5, ease: 'easeInOut'}}
+                            className="absolute inset-0 border border-white"
+                            style={{
+                                width: '90%',
+                                height: '80%',
+                                top: '10%',
+                                left: '5%',
+                                background: 'transparent', // Đảm bảo hình vuông trong suốt
+                            }}
+                        />
                     </div>
                 </div>
                 <div className="w-full h-auto flex flex-col gap-[10px] ">
