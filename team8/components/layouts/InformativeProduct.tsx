@@ -37,12 +37,12 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                     </div>
                     <div className="absolute bottom-[10px] right-[10px] flex flex-col gap-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="w-[40px] h-[40px] bg-white rounded-sm hover:bg-[#0083c1] flex items-center justify-center transition duration-300 group">
-                            <FaHeart className="group-hover:text-white transition duration-300" />
+                            <FaHeart className="text-black hover:text-white transition duration-300" />
                         </div>
                         <div className="w-[40px] h-[40px] bg-white rounded-sm hover:bg-[#0083c1] flex items-center justify-center transition duration-300 group">
-                            <FaExchangeAlt className="group-hover:text-white transition duration-300" />
+                            <FaExchangeAlt className="text-black hover:text-white transition duration-300" />
                         </div><div className="w-[40px] h-[40px] bg-white rounded-sm hover:bg-[#0083c1] flex items-center justify-center transition duration-300 group">
-                            <FaSearch className="group-hover:text-white transition duration-300" />
+                            <FaSearch className="text-black hover:text-white transition duration-300" />
                         </div>
                     </div>
                 </div>
@@ -82,5 +82,6 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
         </Link>
     );
 }
+
 
 export default InformativeProduct;
