@@ -36,7 +36,7 @@ const ReturnProduct = () => {
       </ul>
       <div className="grid grid-cols-12 gap-[30px]">
         <div className="md:col-span-9 col-span-12 mb-[23px]">
-          <h2 className="mt-5 mb-[10px] text-heading1 text-[#222222]">
+          <h2 className="mt-5 mb-[10px] text-[30px] text-[#222222]">
             Product Returns
           </h2>
           <p className="mb-[10px] text-caption leading-[18px]">
@@ -59,7 +59,7 @@ const ReturnProduct = () => {
                   <input
                     type="text"
                     name="firstname"
-                    value=""
+                    defaultValue=""
                     placeholder="Firstname"
                     id="input-firstname"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -78,7 +78,7 @@ const ReturnProduct = () => {
                   <input
                     type="text"
                     name="lastname"
-                    value=""
+                    defaultValue=""
                     placeholder="Lastname"
                     id="input-lastname"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -98,7 +98,7 @@ const ReturnProduct = () => {
                   <input
                     type="email"
                     name="email"
-                    value=""
+                    defaultValue=""
                     placeholder="E-Mail"
                     id="input-email"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -118,7 +118,7 @@ const ReturnProduct = () => {
                   <input
                     type="tel"
                     name="telephone"
-                    value=""
+                    defaultValue=""
                     placeholder="Telephone"
                     id="input-telephone"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -138,7 +138,7 @@ const ReturnProduct = () => {
                   <input
                     type="text"
                     name="order-id"
-                    value=""
+                    defaultValue=""
                     placeholder="Order ID"
                     id="input-order-id"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -157,7 +157,7 @@ const ReturnProduct = () => {
                   <input
                     type="date"
                     name="order-date"
-                    value=""
+                    defaultValue=""
                     placeholder="Order Date"
                     id="input-order-date"
                     className="px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -181,7 +181,7 @@ const ReturnProduct = () => {
                   <input
                     type="text"
                     name="productName"
-                    value=""
+                    defaultValue=""
                     placeholder="Product Name"
                     id="input-productName"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -200,7 +200,7 @@ const ReturnProduct = () => {
                   <input
                     type="text"
                     name="productCode"
-                    value=""
+                    defaultValue=""
                     placeholder="Product Code"
                     id="input-productCode"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
@@ -219,7 +219,7 @@ const ReturnProduct = () => {
                   <input
                     type="text"
                     name="quantity"
-                    value=""
+                    defaultValue=""
                     placeholder="Quantity"
                     id="input-quantity"
                     className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
