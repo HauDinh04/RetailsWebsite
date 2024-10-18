@@ -26,21 +26,21 @@ function SmallBoxProduct({id, name, rating, price, image, oldPrice, className = 
             <div className="flex flex-col">
                 <div
                     className="text-[rgba(0,0,0,0.7)] text-[18px] mt-[10px] mb-[5px] group-hover:text-[#0083c1]">{name}</div>
-                <div className={'flex gap-[5px] text-[rgba(0,0,0,0.7)]'}>
+                <div className={'flex gap-[2px] text-[rgba(0,0,0,0.7)]'}>
                     {Array.from({length: fullStars}).map((_, index) => (
-                        <FaStar className={'text-[18px]'} key={index}/>
+                        <FaStar className={'text-[12px]'} key={index}/>
                     ))}
                     {hasHalfStar && (
                         <div className={'flex'}>
                             <FaStarHalfAlt style={{
-                                width: '18px',
-                                height: '18px',
+                                width: '12px',
+                                height: '12px',
                                 clipPath: 'inset(0 50% 0 0)'
                             }}/>
                         </div>
                     )}
                 </div>
-                <div className="flex gap-[10px]">
+                <div className="flex gap-[10px] mt-[7px]">
                     <div className="text-[#ff5555] leading-[30px] text-[18px] font-medium">
                         ${price.toFixed(2)}
                     </div>
