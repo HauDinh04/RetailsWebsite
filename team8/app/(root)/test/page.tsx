@@ -1,28 +1,11 @@
+import React from "react";
 
-// import React from 'react';
+function Page() {
+  return (
+    <div>
+      <h1 className={"text-center"}>Đây là trang test</h1>
+    </div>
+  );
+}
 
-// function Page() {
-//     return (
-//         <div>
-//             <h1 className={'text-center'}>
-         
-//                 Đây là trang test
-                
-//                 </h1>
-//         </div>
-//     );
-// }
-
-// export default Page;
-
-// import React from 'react';
-
-// function Page() {
-//     return (
-//         <div>
-//             <h1 className={'text-center'}>Đây là trang test</h1>
-//         </div>
-//     );
-// }
-
-// export default Page;
+export default Page;
