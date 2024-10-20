@@ -16,6 +16,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 interface DataProductAPI {
     products: {
@@ -169,11 +170,12 @@ function Page() {
 
     return (
         <section className={'container'}>
-            <div className="flex items-center my-[20px] text-[#555555] gap-[10px] text-[14px]">
-                <Link href={'/'} className={'hover:text-[#0083c1]'}>Home</Link>
-                <FaAngleRight className={'block'}/>
-                <div className="">Smartphone & Laptop</div>
-            </div>
+            <Breadcrumb breadcrumbItems={[
+                {
+                    label: "Smartphone & Laptop",
+                    link: "/category"
+                }
+            ]}/>
             <div className="flex w-full mb-[25px] flex-col md:flex-row">
                 <div className="pr-[15px] lg:flex lg:flex-col lg:gap-[30px]">
                     <CategorySideBar/>

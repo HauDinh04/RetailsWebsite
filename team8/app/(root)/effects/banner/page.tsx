@@ -5,6 +5,7 @@ import {FaAngleRight} from "react-icons/fa6";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useState} from "react";
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 function Page() {
     const [isHoveredEffect1, setIsHoveredEffect1] = useState(false);
@@ -18,13 +19,16 @@ function Page() {
 
     return (
         <div className={'container '}>
-            <div className="flex items-center my-[20px] text-[#555555] gap-[10px] text-[14px]">
-                <Link href={'/'} className={'hover:text-[#0083c1]'}>Home</Link>
-                <FaAngleRight className={'block'}/>
-                <div className="">Page</div>
-                <FaAngleRight className={'block'}/>
-                <div className="">Banner Effect</div>
-            </div>
+            <Breadcrumb breadcrumbItems={[
+                {
+                    label: "Page",
+                    link: "/"
+                },
+                {
+                    label: "Banner Effect",
+                    link: "/effects/banner"
+                },
+            ]}/>
             <div className="">
                 <h1 className={'text-[#555555] text-[18px] mt-[20px] mb-[10px]'}>Banner Hover</h1>
                 <div className="text-[#555555] text-[12px] mb-[10px]">
