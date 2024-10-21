@@ -4,6 +4,7 @@ import FeatureProduct from "@/components/layouts/FeatureProduct";
 import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
 import TabsSlider from "./TabsSlider";
 import ProductDetails from "./ProductDetails";
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 const products = [
     {
@@ -65,6 +66,18 @@ const productDetail = {
 export default function ProductDetail() {
     return (
         <>
+            <Breadcrumb
+                breadcrumbItems={[
+                    {
+                        label: "Smartphone & Tablets",
+                        link: "#",
+                    },
+                    {
+                        label: "Bint Beef",
+                        link: "#",
+                    },
+                ]}
+            />
             <div className="flex flex-row justify-between">
                 <div className="w-full xl:basis-3/4">
                     <ProductDetails productDetail={productDetail} />
@@ -89,7 +102,7 @@ export default function ProductDetail() {
                                 price={product.price}
                                 image={product.image}
                                 oldPrice={product.oldPrice}
-                                className="mb-[20px]"
+                                className="mb-[20px] text-[14px]"
                             />
                         ))}
                     </div>
