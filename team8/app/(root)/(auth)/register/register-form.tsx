@@ -21,6 +21,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/customui/selects";
+import FieldsetLegend from "./FieldsetLegend";
 
 const formSchema = z.object({
     firstName: z.string().min(2, {
@@ -100,11 +101,8 @@ export default function RegisterForm() {
                 className="w-full"
                 noValidate
             >
-                <fieldset className="">
-                    <legend className="w-full text-[18px] py-[7px] mb-[20px] text-[#333] border-b border-[#e5e5e5] block ">
-                        Your Personal Details
-                    </legend>
-
+                <fieldset>
+                    <FieldsetLegend title="Your Personal Details" />
                     <div className="mb-[15px]">
                         <FormField
                             control={form.control}
@@ -251,10 +249,8 @@ export default function RegisterForm() {
                         />
                     </div>
                 </fieldset>
-                <fieldset className="">
-                    <legend className="w-full text-[18px] py-[7px] mb-[20px] text-[#333] border-b border-[#e5e5e5] block ">
-                        Your Address
-                    </legend>
+                <fieldset>
+                    <FieldsetLegend title="Your Address" />
                     <div className="mb-[15px]">
                         <FormField
                             control={form.control}
@@ -491,10 +487,8 @@ export default function RegisterForm() {
                         />
                     </div>
                 </fieldset>
-                <fieldset className="">
-                    <legend className="w-full text-[18px] py-[7px] mb-[20px] text-[#333] border-b border-[#e5e5e5] block ">
-                        Your Password
-                    </legend>
+                <fieldset>
+                    <FieldsetLegend title="Your Password" />
                     <div className="mb-[15px]">
                         <FormField
                             control={form.control}
@@ -554,10 +548,8 @@ export default function RegisterForm() {
                         />
                     </div>
                 </fieldset>
-                <fieldset className="">
-                    <legend className="w-full text-[18px] py-[7px] mb-[20px] text-[#333] border-b border-[#e5e5e5] block ">
-                        Newsletter
-                    </legend>
+                <fieldset>
+                    <FieldsetLegend title="Newsletter" />
                     <div className="mb-[15px]">
                         <FormField
                             control={form.control}
