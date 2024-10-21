@@ -133,10 +133,10 @@ export default function ProductDetail() {
             <div className="pt-[40px]">
                 <FeatureProduct
                     breakpoints={{
-                        640: { slidesPerView: 4, spaceBetween: 30 },
+                        480: { slidesPerView: 4, spaceBetween: 30 },
                         1024: { slidesPerView: 5, spaceBetween: 30 },
                     }}
-                    className="h-[555px] sm:h-[162.53px] md:h-[194px] lg:h-[203.2px] xl:h-[256px]"
+                    className=""
                 />
             </div>
         </>
