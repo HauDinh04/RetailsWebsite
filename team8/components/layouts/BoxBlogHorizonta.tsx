@@ -3,7 +3,7 @@
  'use client'
 import React from "react";
 
-const BoxBlogHorizonta = ({image, label} :{image: string, label: string}) => {
+const BoxBlogHorizontal = ({image, label} :{image: string, label: string}) => {
   
   return (
        <div  className="relative group">
@@ -28,5 +28,5 @@ const BoxBlogHorizonta = ({image, label} :{image: string, label: string}) => {
   
   );
 };
-export default BoxBlogHorizonta;
+export default BoxBlogHorizontal;
 

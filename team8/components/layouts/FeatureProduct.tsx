@@ -96,10 +96,10 @@ const products = [
 
 export default function FeatureProduct({
     breakpoints = {
-        640: { slidesPerView: 3, spaceBetween: 10 },
+        480: { slidesPerView: 3, spaceBetween: 10 },
         1024: { slidesPerView: 5, spaceBetween: 10 },
     },
-    className = "h-[555px] sm:h-[295px] lg:h-[278px]",
+    className = "",
 }) {
     return (
         <div className="pt-[43px] relative">

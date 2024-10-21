@@ -15,9 +15,16 @@ export default function Product({ product, className }) {
                     <Link href={`/${product.id}`}>
                         <Image
                             src={product.image}
-                            alt={product.name}
-                            fill
-                            className="object-cover"
+                            alt={product.image}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            layout="responsive"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                            }}
+                            className="w-full aspect-[3/4] object-contain"
                         />
                     </Link>
                     {product.isNew && (

@@ -49,7 +49,7 @@ const ItemCart = ({ item }: { item: CartItem }) => {
       <td className="text-left border border-slate-300 align-top leading-none p-2" width="200px">
         <div className="flex items-center justify-center">
           <input
-            type="number"
+            type="text"
             name="quantity"
             value={quantity}
             onChange={handleQuantityChange}  // Lắng nghe sự kiện thay đổi

@@ -8,6 +8,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import {FaReply, FaShoppingCart} from "react-icons/fa";
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 const links = [
     {
@@ -98,11 +99,12 @@ function Page() {
 
     return (
         <section className={'container mb-[20px]'}>
-            <div className="flex items-center my-[20px] text-[#555555] gap-[10px] text-[14px]">
-                <Link href={'/'} className={'hover:text-[#0083c1]'}>Home</Link>
-                <FaAngleRight className={'block'}/>
-                <div className="">Order Information</div>
-            </div>
+            <Breadcrumb breadcrumbItems={[
+                {
+                    label: "Order Information",
+                    link: "/orders/information/1"
+                }
+            ]}/>
             <div className="w-full flex">
                 <div className="w-full xl:w-[75%]">
                     <h1 className="text-[30px] mt-[20px] mb-[10px] text-[#222222] font-light">Order Information</h1>

@@ -57,7 +57,7 @@ const Cart = () => {
           </li>
         </ul>
         <div className="w-full mb-[23px] pb-1">
-          <h2 className="mt-5 mb-[10px] text-heading1 text-[#222222]">
+          <h2 className="mt-5 mb-[10px] font-extralight text-[30px] text-[#222222]">
             Shopping Cart
           </h2>
           <div className="mb-[15px] p-1 overflow-x-auto">
@@ -226,7 +226,6 @@ const Cart = () => {
                     <input
                       type="text"
                       name="postcode"
-                      value=""
                       placeholder="Post Code"
                       id="input-postcode"
                       className="w-full px-3 py-[6px] h-[34px] leading-none bg-white border border-solid border-[#ccc] outline-none"
