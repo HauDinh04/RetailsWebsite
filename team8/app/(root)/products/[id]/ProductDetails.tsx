@@ -55,7 +55,7 @@ export default function ProductDetails({
     const images = productDetail.images;
     return (
         <div className="flex flex-row flex-wrap justify-between">
-            <div className="basis-full mb-[30px] md:mb-0 lg:basis-1/2 md:px-[15px] overflow-hidden">
+            <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 md:px-[15px] overflow-hidden">
                 <div className="relative aspect-[3/4] p-[1px] border border-[#e6e6e6] overflow-hidden">
                     <Image
                         src={
