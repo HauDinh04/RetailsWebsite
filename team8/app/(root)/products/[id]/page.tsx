@@ -78,12 +78,12 @@ export default function ProductDetail() {
                     },
                 ]}
             />
-            <div className="flex flex-row justify-between">
+            <div className="mx-[-15px] flex flex-row justify-between">
                 <div className="w-full xl:basis-3/4">
                     <ProductDetails productDetail={productDetail} />
                     <TabsSlider />
                 </div>
-                <div className="basis-1/4 shrink-0 grow hidden xl:block pl-[15px]">
+                <div className="basis-1/4 shrink-0 grow hidden xl:block px-[15px]">
                     <div className="flex flex-row items-center justify-between mb-[5px]">
                         <h3 className="text-[#222222] text-heading1 font-normal">
                             Latest Product
