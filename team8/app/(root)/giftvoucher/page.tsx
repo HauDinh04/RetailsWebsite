@@ -88,6 +88,11 @@ export default function Gifvoucher() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
+import Aside from "@/components/layouts/Aside";
+import React from "react";
+import GiftvoucherForm from "./giftvoucher-form";
+
+export default function GiftVoucher() {
   return (
     <div className="flex flex-wrap -mx-4 mb-[23px]">
       <div className="md:w-3/4 w-full px-[15px]">

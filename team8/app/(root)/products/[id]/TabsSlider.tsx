@@ -51,7 +51,7 @@ export default function TabsSlider() {
         console.log(values);
     }
     return (
-        <div className="md:pr-[15px] pt-[70px] mb-[35px]">
+        <div className="px-[15px] pt-[70px] mb-[35px]">
             <ul className="flex ">
                 <li className="mr-[10px] mb-[10px]">
                     <Button
@@ -278,7 +278,8 @@ export default function TabsSlider() {
                                     &nbsp;HTML is not translated!
                                 </span>
                                 <div className="mb-[15px] flex flex-row">
-                                    <b className="font-bold">Rating</b>&nbsp;
+                                    <b className="font-bold">Rating</b>
+                                    &nbsp;
                                     <span>Bad</span>&nbsp;&nbsp;
                                     <FormField
                                         control={form.control}
