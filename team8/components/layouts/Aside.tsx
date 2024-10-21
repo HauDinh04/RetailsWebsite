@@ -19,7 +19,7 @@ const menuItems = [
     },
     {
         title: "Wish List",
-        href: "/",
+        href: "/wishlist",
     },
     {
         title: "Order History",
@@ -61,7 +61,7 @@ export default function Aside() {
                     {menuItems.map((item) => {
                         return (
                             <li
-                                className="flex items-center text-[#444] text-sub-heading mb-[3px]"
+                                className="flex items-center text-[#444] text-info mb-[3px]"
                                 key={item.href}
                             >
                                 <MdNavigateNext className="mr-[10px]" />
