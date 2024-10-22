@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {FaStar, FaStarHalfAlt} from "react-icons/fa";
+import {FaStar} from "react-icons/fa";
 
 function SmallHorizontalBoxProduct({id, name, rating, price, image, oldPrice, className = ''}: {
     id: string,
