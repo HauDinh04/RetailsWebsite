@@ -74,16 +74,29 @@ export default function Home() {
               description="sadad"
               price={10000}
               discount_price={222}
+              sale_end_time=""
+              in_stock={true}
+              sku=""
+              images={[""]}
+              star={4}
+
+
             />
           </div>
           <div className="">
-            <CountDownProduct
+          <CountDownProduct
               thumbnail_url="/images/product-1.jpg "
               name="sanpham"
               description="sadad"
               price={10000}
               discount_price={222}
-            
+              sale_end_time=""
+              in_stock={true}
+              sku=""
+              images={[""]}
+              star={4}
+
+
             />
           </div>
         </div>
