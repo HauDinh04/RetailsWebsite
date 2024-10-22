@@ -130,6 +130,7 @@ export default function FeatureProduct({
                     }}
                     modules={[Navigation, Scrollbar, Autoplay]}
                     scrollbar={{ hide: true }}
+                    loop={true}
                     autoplay={{ delay: 6000, disableOnInteraction: false }}
                     breakpoints={breakpoints}
                     className=""
