@@ -71,13 +71,20 @@ const config: Config = {
                 "16px",
                 {
                     lineHeight: "18px",
-                    fontWeight: "500",
+                    fontWeight: "600",
                 },
             ],
             "sub-heading": [
                 "14px",
                 {
                     lineHeight: "24px",
+                },
+            ],
+            "sub-heading-bold": [
+                "14px",
+                {
+                    lineHeight: "24px",
+                    fontWeight:"600"
                 },
             ],
             caption: [
@@ -109,6 +116,7 @@ const config: Config = {
                 "sub-nav": "#828282",
                 "footer-info": "#CCCCCC",
                 "bg-main": "#0083C1",
+                customGray: 'rgb(34, 34, 34)',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
                 card: {
