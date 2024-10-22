@@ -79,5 +79,4 @@ export default function Home() {
     //     <Notice isShow={isShow} setIsShow={setIsShow}  />
     // </>
   );
->>>>>>> feature/homepage_ui
 }
