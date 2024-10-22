@@ -80,6 +80,13 @@ const config: Config = {
                     lineHeight: "24px",
                 },
             ],
+            "sub-heading-bold": [
+                "14px",
+                {
+                    lineHeight: "24px",
+                    fontWeight:"600"
+                },
+            ],
             caption: [
                 "12px",
                 {

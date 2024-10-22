@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 const NavBar = () => {
   const pathName=usePathname()
   return (
-    <div className="flex bg-bg-main py-[10px]">
-      <div className="flex container items-center text-left">
+    <div className="flex bg-bg-main py-[10px]   ">
+      <div className="hidden xl:flex items-center text-left container">
         {NavLinks.map((link) => (
           <Link
             href={link.url}
