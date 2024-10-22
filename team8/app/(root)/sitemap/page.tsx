@@ -2,6 +2,7 @@ import React from "react";
 import SiteMapList from "./site-map";
 import { MdNavigateNext } from "react-icons/md";
 import Link from "next/link";
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 interface SubItem {
   title: string;
@@ -184,82 +185,6 @@ const sitemapItems1: SubItem[] = [
       },
     ],
   },
-  {
-    title: "Special Offers",
-    link: "/kids-and-babies",
-  },
-  {
-    title: "My Account",
-    link: "/kids-and-babies",
-    subItems: [
-      {
-        title: "Order History",
-        link: "/kids-and-babies/toys",
-      },
-      {
-        title: "Order Information",
-        link: "/kids-and-babies/puzzles",
-      },
-      {
-        title: "Return",
-        link: "/kids-and-babies/hobbies",
-      },
-      {
-        title: "Gift Voucher",
-        link: "/kids-and-babies/strollers",
-      },
-    ],
-  },
-  {
-    title: "Shopping Cart",
-    link: "/kids-and-babies",
-  },
-  {
-    title: "Checkout",
-    link: "/kids-and-babies",
-  },
-  {
-    title: "Search",
-    link: "/kids-and-babies",
-  },
-  {
-    title: "Information",
-    link: "",
-    subItems: [
-      {
-        title: "About Us",
-        link: "/kids-and-babies/toys",
-      },
-      {
-        title: "Email Template Page",
-        link: "/kids-and-babies/puzzles",
-      },
-      {
-        title: "Elements",
-        link: "/kids-and-babies/hobbies",
-      },
-      {
-        title: "Forms",
-        link: "/kids-and-babies/strollers",
-      },
-      {
-        title: "Careers",
-        link: "/kids-and-babies/strollers",
-      },
-      {
-        title: "Faq",
-        link: "/kids-and-babies/strollers",
-      },
-      {
-        title: "404",
-        link: "/kids-and-babies/strollers",
-      },
-      {
-        title: "Contact Us",
-        link: "/kids-and-babies/strollers",
-      },
-    ],
-  },
 ];
 const sitemapItems2: SubItem[] = [
   {
@@ -303,117 +228,126 @@ const sitemapItems2: SubItem[] = [
 ];
 export default function SiteMap() {
   return (
-    <div className="container mb-[23px]">
-      <h2 className="text-[30px] text-[#222222] font-light mt-5 mb-[10px]">
-        Site Map
-      </h2>
-
-      <div className="flex flex-wrap">
-        <div className="md:w-5/12 w-full">
-          <SiteMapList sitemapItems={sitemapItems1} />
-        </div>
-        <div className="md:w-4/12	">
-          <SiteMapList sitemapItems={sitemapItems2} />
-          <ul className="pl-[12px]">
-            <li>
-              <div className="flex items-center">
-                <MdNavigateNext className="mr-[10px] h-[20px] text-[#444]" />
-                <p className=" text-[12px] leading-[18px] text-[#444]">
-                  Information
-                </p>
-              </div>
-              <ul>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      About Us
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      Email Template Page
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      Elements
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      Forms
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      Careers
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      Faq
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      404
-                    </Link>
-                  </div>
-                </li>
-                <li className="pl-[12px] pb-[8px]">
-                  <div className="flex items-center">
-                    <MdNavigateNext className="mr-[10px] text-[#444]" />
-                    <Link
-                      href={""}
-                      className="text-[12px] hover:text-[#0083c1]"
-                    >
-                      Contact Us
-                    </Link>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
+    <div>
+      <Breadcrumb
+        breadcrumbItems={[
+          {
+            label: "Site Map",
+            link: "/orders/history",
+          },
+        ]}
+      />
+      <div className="container mb-[23px]">
+        <h2 className="text-[30px] text-[#222222] font-light mt-5 mb-[10px]">
+          Site Map
+        </h2>
+        <div className="flex flex-wrap">
+          <div className="md:w-5/12 w-full">
+            <SiteMapList sitemapItems={sitemapItems1} />
+          </div>
+          <div className="md:w-4/12	">
+            <SiteMapList sitemapItems={sitemapItems2} />
+            <ul className="pl-[12px]">
+              <li>
+                <div className="flex items-center">
+                  <MdNavigateNext className="mr-[10px] h-[20px] text-[#444]" />
+                  <p className=" text-[12px] leading-[18px] text-[#444]">
+                    Information
+                  </p>
+                </div>
+                <ul>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        About Us
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        Email Template Page
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        Elements
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        Forms
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        Careers
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        Faq
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        404
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="pl-[12px] pb-[8px]">
+                    <div className="flex items-center">
+                      <MdNavigateNext className="mr-[10px] text-[#444]" />
+                      <Link
+                        href={""}
+                        className="text-[12px] hover:text-[#0083c1]"
+                      >
+                        Contact Us
+                      </Link>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
