@@ -16,49 +16,27 @@ import { Checkbox } from "@/components/customui/checkboxs";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const formSchema = z.object({
-  firstName: z.string().min(2, {
+  reciPientName: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  lastName: z.string().min(2, {
+  reciPientEmail: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  email: z.string().min(2, {
+  yourName: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  telephone: z.string().min(2, {
+  yourEmail: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  fax: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-
-  company: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  address1: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  address2: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  city: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  postCode: z.string().min(2, {
+  mesSage: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
 
-  country: z.enum(["0", "1", "2", "3"]),
-  regionState: z.enum(["0", "1", "2", "3"]),
-
-  password: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  passwordConfirm: z.string().min(2, {
+  aMount: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
 
-  Subscribe: z.enum(["yes", "no"], {
+  giftCertificate: z.enum(["General", "Birthday", "Christmas"], {
     required_error: "You need to select a notification type.",
   }),
   agree: z.boolean().default(false).optional(),
@@ -68,18 +46,12 @@ export default function GiftvoucherForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      telephone: "",
-      fax: "",
-      company: "",
-      address1: "",
-      address2: "",
-      city: "",
-      postCode: "",
-      password: "",
-      passwordConfirm: "",
+      reciPientName: "",
+      reciPientEmail: "",
+      yourName: "",
+      yourEmail: "",
+      mesSage: "",
+      aMount: "",
       agree: false,
     },
   });
@@ -98,19 +70,19 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="firstName"
+              name="reciPientName"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex items-center justify-between">
                     <Label
-                      htmlFor="firstName"
+                      htmlFor="reciPientName"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
                       Recipient's Name
                     </Label>
                     <div className="basis-5/6 px-[15px] ">
                       <Input
-                        id="firstName"
+                        id="reciPientName"
                         type="text"
                         placeholder=""
                         required
@@ -127,20 +99,20 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="email"
+              name="reciPientEmail"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex items-center justify-between">
                     <Label
-                      htmlFor="email"
+                      htmlFor="reciPientEmail"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
                       Recipient's e-mail
                     </Label>
                     <div className="basis-5/6 px-[15px]">
                       <Input
-                        id="email"
-                        type="text"
+                        id="reciPientEmail"
+                        type="reciPientEmail"
                         placeholder=""
                         required
                         {...field}
@@ -156,19 +128,19 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="firstName"
+              name="yourName"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex items-center justify-between">
                     <Label
-                      htmlFor="firstName"
+                      htmlFor="yourName"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
                       Your Name
                     </Label>
                     <div className="basis-5/6 px-[15px]">
                       <Input
-                        id="firstName"
+                        id="yourName"
                         type="text"
                         placeholder=""
                         required
@@ -185,19 +157,19 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="firstName"
+              name="yourEmail"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex items-center justify-between">
                     <Label
-                      htmlFor="firstName"
+                      htmlFor="yourEmail"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
                       Your e-mail
                     </Label>
                     <div className="basis-5/6 px-[15px]">
                       <Input
-                        id="firstName"
+                        id="yourEmail"
                         type="text"
                         placeholder=""
                         required
@@ -214,19 +186,19 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="firstName"
+              name="giftCertificate"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex">
                     <Label
-                      htmlFor="firstName"
+                      htmlFor="giftCertificate"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
-                      Your e-mail
+                      Gift Certificate Theme
                     </Label>
                     <div className="basis-5/6 px-[15px]">
                       <RadioGroup
-                        defaultValue="option-one"
+                        defaultValue="no"
                         onValueChange={field.onChange}
                       >
                         <div className="flex items-center space-x-2">
@@ -279,18 +251,23 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="firstName"
+              name="mesSage"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex ">
                     <Label
-                      htmlFor="firstName"
+                      htmlFor="mesSage"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
                       Message
                     </Label>
                     <div className="basis-5/6 px-[15px]">
-                      <Textarea className="text-[12px]  resize-none font-light h-[99px] text-black-2 rounded-none py-[6px] px-[12px] bg-white border border-slate-300 focus:shadow focus:shadow-sky-200 placeholder-slate-400 placeholder:text-[12px] focus:outline-none focus:border-sky-500 focus:ring-0 focus:ring-sky-500" />
+                      <Textarea
+                        id="mesSage"
+                        required
+                        {...field}
+                        className="text-[12px]  resize-none font-light h-[99px] text-black-2 rounded-none py-[6px] px-[12px] bg-white border border-slate-300 focus:shadow focus:shadow-sky-200 placeholder-slate-400 placeholder:text-[12px] focus:outline-none focus:border-sky-500 focus:ring-0 focus:ring-sky-500"
+                      />
                       <FormMessage className="text-[10px] font-normal mt-[4px]" />
                     </div>
                   </div>
@@ -301,19 +278,19 @@ export default function GiftvoucherForm() {
           <div className="mb-[15px] -mx-[15px]">
             <FormField
               control={form.control}
-              name="firstName"
+              name="aMount"
               render={({ field }) => (
                 <FormItem>
                   <div className=" mb-[15px] flex items-center justify-between">
                     <Label
-                      htmlFor="firstName"
+                      htmlFor="aMount"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
                       Amount
                     </Label>
                     <div className="basis-5/6 px-[15px]">
                       <Input
-                        id="firstName"
+                        id="aMount"
                         type="text"
                         placeholder=""
                         required
