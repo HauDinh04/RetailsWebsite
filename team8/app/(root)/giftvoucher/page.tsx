@@ -1,5 +1,4 @@
 import Aside from "@/components/layouts/Aside";
-import React from "react";
 import GiftvoucherForm from "./giftvoucher-form";
 import Breadcrumb from "@/components/layouts/Breadcrumb";
 
@@ -9,7 +8,11 @@ export default function GiftVoucher() {
       <Breadcrumb
         breadcrumbItems={[
           {
-            label: "Gift Voucher",
+            label: "Account",
+            link: "/orders/history",
+          },
+          {
+            label: "My Account",
             link: "/orders/history",
           },
         ]}

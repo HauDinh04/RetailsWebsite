@@ -63,170 +63,93 @@ const ProductCompare = () => {
   return (
     <div className="">
       <table className="min-w-full table-auto border-collapse border border-gray-300">
-        <div className="p-2">
-          <thead className="text-info font-bold text-black-2">
-            Products Details
-          </thead>
-        </div>
-
+        <thead className="text-info font-bold text-black-2">
+          <tr>
+            <th className="p-2">Products Details</th>
+            {products.map((product, index) => (
+              <th key={index} className="text-red-600 border border-gray-300 px-4 py-2">
+                {product.name}
+              </th>
+            ))}
+          </tr>
+        </thead>
         <tbody>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Products
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Image</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="text-red-600 text-info border border-gray-300 px-4 py-2"
-              >
-                {product.name}
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
+                <Image src={product.image} alt={product.name} width={100} height={100} />
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Image
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Price</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={100}
-                  height={100}
-                  className="w-16 h-16"
-                />
-              </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Price
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.price} VND
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Model
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Model</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.model}
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Brand
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Brand</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.brand}
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              availability
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Availability</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.availability}
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Summary
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Summary</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.rating}
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Weight
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Weight</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.weight}
               </td>
             ))}
           </tr>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              Dimensions
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Dimensions</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.dimensions}
               </td>
             ))}
           </tr>
-          <div className="p-2 ">
-            <thead className="text-info  font-bold text-black-2">
-              Processors
-            </thead>
-
-          </div>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              ClockSpeed
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">ClockSpeed</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.speed}
               </td>
             ))}
           </tr>
-          <div className="p-2 ">
-            <thead className="text-info  font-bold text-black-2">
-              Memory
-            </thead>
-
-          </div>
           <tr>
-            <td className="border text-info border-gray-300 px-4 py-2 ">
-              ClockSpeed
-            </td>
+            <td className="border text-info border-gray-300 px-4 py-2">Memory</td>
             {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
+              <td key={index} className="border text-info border-gray-300 px-4 py-2">
                 {product.memory} GB
               </td>
             ))}

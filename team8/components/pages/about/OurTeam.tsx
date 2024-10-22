@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import ItemOurteam from "./ItemOurteam";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdOutlineNavigateNext } from "react-icons/md";
-const Ourteam = ({
+const OurTeam = ({
   breakpoints = {
     480: { slidesPerView: 1, spaceBetween: 10 },
     640: { slidesPerView: 3, spaceBetween: 10 },
@@ -95,4 +95,4 @@ const Ourteam = ({
     </div>
   );
 };
-export default Ourteam;
+export default OurTeam;
