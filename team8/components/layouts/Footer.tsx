@@ -89,22 +89,22 @@ export default function Footer() {
               <ul>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>About Us</Link>
+                    <Link href={"/about"}>About Us</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>FAQ</Link>
+                    <Link href={"/faq"}>FAQ</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Order history</Link>
+                    <Link href={"/orders/history"}>Order history</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Oder information</Link>
+                    <Link href={"/orders/information/1"}>Oder information</Link>
                   </p>
                 </li>
               </ul>
@@ -119,22 +119,22 @@ export default function Footer() {
               <ul>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Contact Us</Link>
+                    <Link href={"/contact"}>Contact Us</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Returns</Link>
+                    <Link href={"/return"}>Returns</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Site Map</Link>
+                    <Link href={"/sitemap"}>Site Map</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>My Account</Link>
+                    <Link href={"/myacccount"}>My Account</Link>
                   </p>
                 </li>
               </ul>
@@ -148,12 +148,12 @@ export default function Footer() {
               <ul>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Brands</Link>
+                    <Link href={"/category"}>Brands</Link>
                   </p>
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Gift Vouchers</Link>
+                    <Link href={"/giftvocuher"}>Gift Vouchers</Link>
                   </p>
                 </li>
                 <li>
@@ -168,7 +168,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <p className="flex items-center text-footer-info text-caption font-normal hover:transform hover:translate-x-2 transition-transform duration-500 hover:text-bg-main">
-                    <Link href={""}>Our Blog</Link>
+                    <Link href={"/blog"}>Our Blog</Link>
                   </p>
                 </li>
               </ul>
