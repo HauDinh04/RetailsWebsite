@@ -1,12 +1,17 @@
 import ProductCompare from "@/components/layouts/ProductCompare";
 import React from "react";
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 const Compare = () => {
   return (
-    <div className="container mx-auto">
-      <div className="">
-        <h2 className="py-4 text-heading2-bold">Product Comparison</h2>
-      </div>
+    <div className="container mb-[40px]">
+        <Breadcrumb breadcrumbItems={[
+            {
+                label: "Product Comparison",
+                link: "/compare",
+            },
+        ]}/>
+        <div className="mt-[20px] font-light mb-[10px] text-[#222222] text-[30px]">Product Comparison</div>
       <ProductCompare />
     </div>
   );
