@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {FaStar, FaStarHalfAlt} from "react-icons/fa";
+import {FaStar} from "react-icons/fa";
 
 function SmallBoxProduct({id, name, rating, price, image, oldPrice, className = ''}: {
     id: string,
@@ -32,11 +32,11 @@ function SmallBoxProduct({id, name, rating, price, image, oldPrice, className = 
                     ))}
                     {hasHalfStar && (
                         <div className={'flex'}>
-                            <FaStarHalfAlt style={{
+                            {/* <FaStarHalfAl style={{
                                 width: '12px',
                                 height: '12px',
                                 clipPath: 'inset(0 50% 0 0)'
-                            }}/>
+                            }}/> */}
                         </div>
                     )}
                 </div>
