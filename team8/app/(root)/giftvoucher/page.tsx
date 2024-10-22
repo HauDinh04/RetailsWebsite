@@ -8,11 +8,7 @@ export default function GiftVoucher() {
       <Breadcrumb
         breadcrumbItems={[
           {
-            label: "Account",
-            link: "/orders/history",
-          },
-          {
-            label: "My Account",
+            label: "Gift Voucher",
             link: "/orders/history",
           },
         ]}
