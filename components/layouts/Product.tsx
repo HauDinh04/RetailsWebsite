@@ -8,10 +8,10 @@ import Image from "next/image";
 import Link from "next/link";
 interface productType {
   product: {
-    id: string;
+    id: number;
     image: string;
     isNew: boolean;
-    isSale: number;
+    isSale?: number;
     rating: number;
     name: string;
     price: number;
