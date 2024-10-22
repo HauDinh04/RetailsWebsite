@@ -9,7 +9,6 @@ import {
   FormField,
   FormItem,
   FormMessage,
-  FormControl,
 } from "@/components/customui/forms";
 import { Label } from "@/components/ui/label";
 
@@ -73,7 +72,7 @@ export default function Login() {
                 </div>
                 <div className="text-[12px] text-zinc-500">
                   By creating an account you will be able to shop faster, be up
-                  to date on an order's status, and keep track of the orders you
+                  to date on an order status, and keep track of the orders you
                   have previously made.
                 </div>
               </div>

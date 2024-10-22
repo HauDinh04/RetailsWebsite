@@ -7,7 +7,7 @@ interface ImageProps {
   className?: string;
 }
 
-export default function ImageZoomIn({ image, scale, className }: ImageProps) {
+export default function ImageZoomIn({ image, scale }: ImageProps) {
   const imageRef = useRef<HTMLDivElement>(null);
   const [transformStyle, setTransformStyle] = useState<string>("scale(1)");
   const [transformOrigin, setTransformOrigin] = useState<string>("50% 50%");

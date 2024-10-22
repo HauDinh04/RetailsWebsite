@@ -78,7 +78,7 @@ export default function GiftvoucherForm() {
                       htmlFor="reciPientName"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
-                      Recipient's Name
+                      Recipient Name
                     </Label>
                     <div className="basis-5/6 px-[15px] ">
                       <Input
@@ -107,7 +107,7 @@ export default function GiftvoucherForm() {
                       htmlFor="reciPientEmail"
                       className=" pt-[7px] basis-1/6 text-right px-[12px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                     >
-                      Recipient's e-mail
+                      Recipient e-mail
                     </Label>
                     <div className="basis-5/6 px-[15px]">
                       <Input

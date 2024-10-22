@@ -3,7 +3,7 @@ import React from 'react';
 import CategorySideBar from "@/components/pages/category/CategorySideBar";
 import Link from "next/link";
 import Image from 'next/image';
-import {FaAngleRight} from "react-icons/fa6";
+
 import LatestProduct from "@/components/pages/category/LatestProduct";
 import {useState} from "react";
 import {FaThLarge, FaThList} from "react-icons/fa";
