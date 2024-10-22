@@ -84,13 +84,19 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
-      {/* <div className="py-4 mx-auto w-full">
-        <div className="flex justify-center space-x-4 mb-4 w-full h-[100px]">
-          <Image src="/images/ggplay.jpg" alt="Image 1" width={100} height={50} className="w-1/3"  />
-          <Image src="/images/ggplay.jpg" alt="Image 2"  width={100} height={50} className="w-1/3" />
+      </div> 
+      <div className="mt-5">
+        <div className="flex flex-row gap-3 justify-between w-full">
+          <div className="w-1/2 bg-[#f0f0f0] object-cover"><Image src={'/images/ggpla.jpg'} alt="product" width={500} height={100} /></div>
+          <div className="w-1/2 bg-[#f0f0f0] object-cover"><Image src={'/images/ggpla.jpg'} alt="product" width={500} height={100} /></div>
         </div>
-      </div> */}
+        <div className="md:grid grid-cols-3 gap-2 sm:grid-flow-col-1   justify-between w-full mt-2">
+          <div className=" bg-[#f0f0f0] object-cover"><Image src={'/images/ggpla.jpg'} alt="product" width={300} height={300} /></div>
+          <div className=" bg-[#f0f0f0] object-cover"><Image src={'/images/ggpla.jpg'} alt="product" width={500} height={300} /></div>
+          <div className=" bg-[#f0f0f0] object-cover"><Image src={'/images/ggpla.jpg'} alt="product" width={300} height={300} /></div>
+        </div>
+        <div className=""></div>
+      </div>
       <FeatureProduct />
       <div className="">
         <div className="py-3">
