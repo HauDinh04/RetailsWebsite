@@ -52,7 +52,7 @@ const menuItems = [
 ];
 export default function Aside() {
     return (
-        <aside className="basis-3/12 pl-[15px] hidden md:block">
+        <aside className="basis-3/12 px-[15px] hidden md:block">
             <h2 className="mt-[20px] mb-[10px] text-heading2-bold font-medium text-black-2">
                 Account
             </h2>
