@@ -1,7 +1,5 @@
 'use client';
 import React from 'react';
-import Link from "next/link";
-import {FaAngleRight} from "react-icons/fa6";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useState} from "react";
