@@ -1,7 +1,6 @@
 "use client";
 import LeftNav from "@/components/layouts/LeftNav";
-
-
+import { Swiper, SwiperSlide } from "swiper/react";
 // import { CountDownProduct } from "@/components/layouts/CountDownProduct";
 // import FeatureProduct from "@/components/layouts/FeatureProduct";
 // import { useState } from "react";
@@ -10,6 +9,10 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { TbPigMoney } from "react-icons/tb";
 import { IoRocketOutline } from "react-icons/io5";
 import FeatureProduct from "@/components/layouts/FeatureProduct";
+import Slideshow from "@/components/layouts/SlideShow";
+import { CountDownProduct } from "@/components/layouts/CountDownProduct";
+import Image from "next/image";
+import { FreeMode, Pagination } from "swiper/modules";
 
 export default function Home() {
   // /  const [isShow, setIsShow] = useState(true);
@@ -18,7 +21,7 @@ export default function Home() {
     <div className="items-center justify-center py-[10px] ">
       <div className="flex justify-between ">
         <LeftNav />
-
+        <Slideshow />
       </div>
       <div className="mt-4">
         <div className="py-[10px] grid grid-cols-1 md:grid-cols-3  ">
@@ -58,9 +61,118 @@ export default function Home() {
         </div>
       </div>
       <div className="">
-      
+        <div className="py-3">
+          <h3 className="text-heading2">Deals of the Week</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="">
+            <CountDownProduct
+              thumbnail_url="/images/product-1.jpg "
+              name="sanpham"
+              description="sadad"
+              price={10000}
+              discount_price={222}
+            />
+          </div>
+          <div className="">
+            <CountDownProduct
+              thumbnail_url="/images/product-1.jpg "
+              name="sanpham"
+              description="sadad"
+              price={10000}
+              discount_price={222}
+            />
+          </div>
+        </div>
       </div>
+      {/* <div className="py-4 mx-auto w-full">
+        <div className="flex justify-center space-x-4 mb-4 w-full h-[100px]">
+          <Image src="/images/ggplay.jpg" alt="Image 1" width={100} height={50} className="w-1/3"  />
+          <Image src="/images/ggplay.jpg" alt="Image 2"  width={100} height={50} className="w-1/3" />
+        </div>
+      </div> */}
       <FeatureProduct />
+      <div className="">
+        <div className="py-3">
+          <h3 className="text-heading2">Latest Blog</h3>
+        </div>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={30}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[FreeMode, Pagination]}
+          className="mySwiper h-[200px]"
+        >
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className="">
+        <div className="py-3">
+          <h3 className="text-heading2">Fetured brands</h3>
+        </div>
+        <Swiper
+          slidesPerView={6}
+          spaceBetween={10}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[FreeMode, Pagination]}
+          className="mySwiper h-[100px]"
+        >
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>{" "}
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>{" "}
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>{" "}
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>{" "}
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>{" "}
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>{" "}
+          <SwiperSlide>
+            <Image src={"/images/blog-3.jpg"} alt="images blogs" fill></Image>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className=""></div>
     </div>
 
     // <>
