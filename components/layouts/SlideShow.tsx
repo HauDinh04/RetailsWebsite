@@ -18,7 +18,7 @@ const images = [
 
 export default function Slideshow() {
     return (
-        <div className="lg:w-3/4 w-full px-[15px] relative">
+        <div className="lg:w-3/4 w-full px-[15px]">
             <Swiper
                 cssMode={true}
                 navigation={{
@@ -30,13 +30,14 @@ export default function Slideshow() {
                     el: ".custom-pagination", // Gán pagination vào element tùy chỉnh
                 }}
                 mousewheel={true}
+                loop={true}
                 keyboard={true}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                 className="mySwiper"
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                        <div className="w-full">
+                        <div className="w-full relative">
                             <Image
                                 src={image}
                                 alt={`slide-${index}`}
