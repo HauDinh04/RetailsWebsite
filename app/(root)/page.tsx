@@ -21,7 +21,8 @@ export default function Home() {
         <div className="items-center justify-center py-[10px] mb-4 ">
             <div className="mx-[-15px]">
                 <div className="flex justify-between">
-                    <LeftNav />
+                  <div className=""><LeftNav /></div>
+                    
                     <Slideshow />
                 </div>
             </div>
