@@ -24,6 +24,23 @@ const formSchema = z.object({
     search: z.string().min(2).max(50),
 });
 
+const cartItems = [
+    {
+        id: 1,
+        image: "./images/product-1.jpg",
+        name: "Filet Mign",
+        quantity: 1,
+        price: 12200,
+    },
+    {
+        id: 2,
+        image: "./images/product-1.jpg",
+        name: "Canon EOS 5D",
+        quantity: 2,
+        price: 60,
+    },
+];
+
 export default function Header() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -250,16 +267,34 @@ export default function Header() {
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent className="w-[330px] mt-[10px] border-t-[3px] border-[#0083c1]">
                                             <DropdownMenuLabel>
-                                                <CartItem
-                                                    image="./images/product-1.jpg"
-                                                    name="Filet Mign"
-                                                    quantity={1}
-                                                    price={120200}
-                                                />
+                                                <table>
+                                                    <tbody>
+                                                        {cartItems.map(
+                                                            (item) => (
+                                                                <CartItem
+                                                                    key={
+                                                                        item.id
+                                                                    }
+                                                                    image={
+                                                                        item.image
+                                                                    }
+                                                                    name={
+                                                                        item.name
+                                                                    }
+                                                                    quantity={
+                                                                        item.quantity
+                                                                    }
+                                                                    price={
+                                                                        item.price
+                                                                    }
+                                                                />
+                                                            )
+                                                        )}
+                                                    </tbody>
+                                                </table>
                                             </DropdownMenuLabel>
 
                                             <DropdownMenuLabel>
-                                                <DropdownMenuSeparator className="bg-[#ddd]" />
                                                 <div className="mb-[20px]">
                                                     <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading font-bold py-2 px-2">
                                                         <p className="">
