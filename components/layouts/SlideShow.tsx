@@ -18,7 +18,7 @@ const images = [
 
 export default function Slideshow() {
   return (
-    <div className="lg:w-3/4 w-full lg:h-[414px] lg:px-[15px] h-[345px] relative">
+    <div className="lg:w-3/4 w-full  lg:px-[15px]  mx-auto relative">
       <Swiper
         cssMode={true}
         navigation={{
