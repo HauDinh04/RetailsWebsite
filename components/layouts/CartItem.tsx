@@ -6,7 +6,7 @@ const CartItem = ({image, name, quantity, price, }:{image:string, name:string,qu
   return (
 	<tr className='bg-white my-[10px] border-b last:border-0'>
 		<td className="p-2 text-center w-[70px]">
-			<a href="product.html"> <Image src={image} alt={name} title={name} className="w-[70px]"/> </a>
+			<a href="product.html"> <Image src={image} alt={name} title={name} width={70} /> </a>
 		</td>
 		<td className="p-2 text-[14px] hover:text-[#0083c1] font-normal text-left text-[#666]"> <a className="cart_product_name" href="product.html">{name}</a> </td>
 		<td className="p-2 text-[14px] font-normal text-center text-[#666]">x{quantity.toString()}</td>
