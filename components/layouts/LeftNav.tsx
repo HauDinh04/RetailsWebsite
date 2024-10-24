@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const LeftNav = () => {
   return (
-      <div className=" xl:grid grid-cols-1 items-start  border  max-w-[250px] rounded-lg mt-3 hidden ">
+      <div className=" xl:grid grid-cols-1 items-start  border  w-[250px] rounded-lg  hidden ">
         <div className=" items-center gap-2 px-4 py-3 bg-bg-main text-white uppercase text-heading4-bold flex ">
           <Menu />
           all categoties

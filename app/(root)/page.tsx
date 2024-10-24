@@ -1,4 +1,3 @@
-
 "use client";
 import LeftNav from "@/components/layouts/LeftNav";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,14 +14,16 @@ import { CountDownProduct } from "@/components/layouts/CountDownProduct";
 import Image from "next/image";
 import { FreeMode, Pagination } from "swiper/modules";
 
-
 export default function Home() {
   // /  const [isShow, setIsShow] = useState(true);
 
   return (
     <div className="items-center justify-center py-[10px] mb-4 ">
-      <div className="flex justify-between ">
-        <LeftNav />
+      <div className="flex justify-between border">
+        <div className="">
+          <LeftNav />
+        </div>
+
         <Slideshow />
       </div>
       <div className="mt-4">
@@ -79,12 +80,10 @@ export default function Home() {
               sku=""
               images={[""]}
               star={4}
-
-
             />
           </div>
           <div className="">
-          <CountDownProduct
+            <CountDownProduct
               thumbnail_url="/images/product-1.jpg "
               name="sanpham"
               description="sadad"
@@ -95,21 +94,29 @@ export default function Home() {
               sku=""
               images={[""]}
               star={4}
-
-
             />
           </div>
         </div>
-      </div> 
+      </div>
       <div className="mt-5">
         <div className="flex flex-row gap-3 justify-between w-full">
-          <div className="w-1/2 bg-[#f0f0f0] object-cover"><Image src={''} alt="product" width={500} height={100} /></div>
-          <div className="w-1/2 bg-[#f0f0f0] object-cover"><Image src={''} alt="product" width={500} height={100} /></div>
+          <div className="w-1/2 bg-[#f0f0f0] object-cover">
+            <Image src={""} alt="product" width={500} height={100} />
+          </div>
+          <div className="w-1/2 bg-[#f0f0f0] object-cover">
+            <Image src={""} alt="product" width={500} height={100} />
+          </div>
         </div>
         <div className="md:grid grid-cols-3 gap-2 sm:grid-flow-col-1   justify-between w-full mt-2">
-          <div className=" bg-[#f0f0f0] object-cover"><Image src={''} alt="product" width={300} height={300} /></div>
-          <div className=" bg-[#f0f0f0] object-cover"><Image src={''} alt="product" width={500} height={300} /></div>
-          <div className=" bg-[#f0f0f0] object-cover"><Image src={''} alt="product" width={300} height={300} /></div>
+          <div className=" bg-[#f0f0f0] object-cover">
+            <Image src={""} alt="product" width={300} height={300} />
+          </div>
+          <div className=" bg-[#f0f0f0] object-cover">
+            <Image src={""} alt="product" width={500} height={300} />
+          </div>
+          <div className=" bg-[#f0f0f0] object-cover">
+            <Image src={""} alt="product" width={300} height={300} />
+          </div>
         </div>
         <div className=""></div>
       </div>
@@ -149,7 +156,7 @@ export default function Home() {
         <div className="py-3">
           <h3 className="text-heading2">Fetured brands</h3>
         </div>
-       
+
         <Swiper
           slidesPerView={6}
           spaceBetween={10}

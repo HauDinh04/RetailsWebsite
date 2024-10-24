@@ -74,8 +74,8 @@ export default function ProductDetails({
                         spaceBetween={8}
                         slidesPerView={2}
                         navigation={{
-                            nextEl: ".button-next-slide",
-                            prevEl: ".button-prev-slide",
+                            nextEl: ".button-next-slide-1",
+                            prevEl: ".button-prev-slide-1",
                         }}
                         modules={[Navigation, Scrollbar, Autoplay]}
                         scrollbar={{ hide: true }}
@@ -122,13 +122,13 @@ export default function ProductDetails({
                         ))}
                     </Swiper>
                     <button
-                        className="button-prev-slide absolute top-1/2 left-[-28px] transform -translate-y-1/2 bg-none"
+                        className="button-prev-slide-1 absolute top-1/2 left-[-28px] transform -translate-y-1/2 bg-none"
                         aria-label="Previous Slide"
                     >
                         <GrFormPrevious className="text-[#ababab] w-[40px] h-[40px] hover:text-bg-main" />
                     </button>
                     <button
-                        className="button-next-slide absolute top-1/2 right-[-28px] transform -translate-y-1/2 bg-none "
+                        className="button-next-slide-1 absolute top-1/2 right-[-28px] transform -translate-y-1/2 bg-none "
                         aria-label="Next Slide"
                     >
                         <MdOutlineNavigateNext className="text-[#ababab] w-[40px] h-[40px] hover:text-bg-main" />

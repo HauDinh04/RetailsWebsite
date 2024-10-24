@@ -134,9 +134,9 @@ export const leftNavLinks = [
 ];
 export const NavLinks=[
   {url:"/",label:"home"},
-  {url:"/",label:"features"},
-  {url:"/",label:"pages"},
-  {url:"/",label:"categories"},
-  {url:"/",label:"accessories"},
-  {url:"/",label:"blog"},
+  {url:"/features",label:"features"},
+  {url:"/pages",label:"pages"},
+  {url:"/categories",label:"categories"},
+  {url:"/accessories",label:"accessories"},
+  {url:"/blog",label:"blog"},
 ]
