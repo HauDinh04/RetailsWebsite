@@ -228,10 +228,10 @@ export default function Header() {
                                     </Form>
                                 </div>
                             </div>
-                            <div className="md:order-3 order-2 basis-5/12 sm:basis-4/12 flex flex-row items-center justify-end lg:justify-end xl:justify-between pl-[18px]">
+                            <div className="md:order-3 order-2 basis-5/12 sm:basis-4/12 flex flex-row md:items-center justify-end lg:justify-end xl:justify-between pl-[18px]">
                                 <div className="hidden xl:flex flex-row items-center pt-[3px]">
                                     <FaPhone className="w-[11px] h-[14px] text-[#0083c1]" />
-                                    <span className="text-sub-heading pl-2 text-[#555555] leading-[58px]">
+                                    <span className="text-sub-heading pl-2 text-[#555555] xl:leading-[58px]">
                                         Call Us: (888) 123456789
                                     </span>
                                 </div>
@@ -240,7 +240,7 @@ export default function Header() {
                                         <DropdownMenuTrigger asChild>
                                             <Button
                                                 variant="outline"
-                                                className="border-none hover:bg-white px-0 focus:outline-none bg-white-1"
+                                                className="pt-[16px] sm:pt-0 border-none hover:bg-white px-0 focus:outline-none bg-white-1"
                                             >
                                                 <div className="flex flex-row">
                                                     <div className="relative aspect-square w-[31px] h-[40px] my-[5px] mx-[10px]">
