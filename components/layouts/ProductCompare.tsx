@@ -2,7 +2,7 @@
 import Image from "next/image";
 import AddToCart from "../customui/addTocart";
 import RemoveCart from "../customui/removeCart";
-import { ScrollArea,ScrollBar } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const ProductCompare = () => {
   const products = [
@@ -55,175 +55,174 @@ const ProductCompare = () => {
       <div className="p-2 border text-info font-bold bg-[#f0f0f0] wi-full ">
         <p className="text-[#555555]">Product Details</p>{" "}
       </div>
-      <ScrollArea className="w-full ">
-      <table className="min-w-full text-left table-auto border-collapse border border-gray-300">
-        <thead className="text-info font-bold text-black-2">
-          <tr>
-            <th className="p-2">Product</th>
-            {products.map((product, index) => (
-              <th
-                key={index}
-                className="text-red-600 border border-gray-300 px-4 py-2"
-              >
-                {product.name}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Image
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2 items-center"
-              >
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={100}
-                  height={100}
-                />
+      <ScrollArea className="w-full border ">
+        <table className="min-w-full text-left table-auto border-collapse border border-gray-300">
+          <thead className="text-info font-bold text-black-2">
+            <tr>
+              <th className="p-2">Product</th>
+              {products.map((product, index) => (
+                <th
+                  key={index}
+                  className="text-red-600 border border-gray-300 px-4 py-2"
+                >
+                  {product.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Image
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Price
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.price} VND
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2 items-center"
+                >
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={100}
+                    height={100}
+                   className="border p-1"/>
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Price
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Model
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.model}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.price} VND
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Model
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Brand
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.brand}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.model}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Brand
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Availability
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.availability}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.brand}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Availability
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Summary
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.summary}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.availability}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Summary
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Weight
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.weight}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.summary}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Weight
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              Dimensions (L x W x H)
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.dimensions}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.weight}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                Dimensions (L x W x H)
               </td>
-            ))}
-          </tr>
-          {/* <td className="bg-[#f0f0f0] text-[12px] font-bold p-2">Processor</td> */}
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">
-              ClockSpeed
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.speed}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.dimensions}
+                </td>
+              ))}
+            </tr>
+            {/* <td className="bg-[#f0f0f0] text-[12px] font-bold p-2">Processor</td> */}
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                ClockSpeed
               </td>
-            ))}
-          </tr>
-          {/* <td className="bg-[#f0f0f0] text-[12px] font-bold p-2">Memory</td> */}
-          <tr>
-            <td className="border text-info border-gray-300 px-4 py-2">RAM</td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                {product.memory}
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.speed}
+                </td>
+              ))}
+            </tr>
+            {/* <td className="bg-[#f0f0f0] text-[12px] font-bold p-2">Memory</td> */}
+            <tr>
+              <td className="border text-info border-gray-300 px-4 py-2">
+                RAM
               </td>
-            ))}
-          </tr>
-          <tr>
-            <td className="">
-              
-            </td>
-            {products.map((product, index) => (
-              <td
-                key={index}
-                className="border text-info border-gray-300 px-4 py-2"
-              >
-                
-                <AddToCart product={product}/>
-                <RemoveCart product={product}/>
-              </td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-      <ScrollBar orientation="horizontal" />
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  {product.memory}
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <td className=""></td>
+              {products.map((product, index) => (
+                <td
+                  key={index}
+                  className="border text-info border-gray-300 px-4 py-2"
+                >
+                  <AddToCart product={product} />
+                  <RemoveCart product={product} />
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+        <ScrollBar orientation="horizontal" className="  p-2 mt-3" />
       </ScrollArea>
     </div>
   );
