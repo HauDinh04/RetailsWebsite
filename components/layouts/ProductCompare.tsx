@@ -80,12 +80,14 @@ const ProductCompare = () => {
                   key={index}
                   className="border text-info border-gray-300 px-4 py-2 items-center"
                 >
+                  <div className="flex items-center justify-center">
                   <Image
                     src={product.image}
                     alt={product.name}
                     width={100}
                     height={100}
                    className="border p-1"/>
+                   </div>
                 </td>
               ))}
             </tr>
