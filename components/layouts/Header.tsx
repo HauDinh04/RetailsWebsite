@@ -19,9 +19,27 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Form, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/customui/inputs";
+import CartItem from "./CartItem";
 const formSchema = z.object({
     search: z.string().min(2).max(50),
 });
+
+const cartItems = [
+    {
+        id: 1,
+        image: "/images/product-1.jpg",
+        name: "Filet Mign",
+        quantity: 1,
+        price: 12200,
+    },
+    {
+        id: 2,
+        image: "/images/product-1.jpg",
+        name: "Canon EOS 5D",
+        quantity: 2,
+        price: 60,
+    },
+];
 
 export default function Header() {
     const form = useForm<z.infer<typeof formSchema>>({
@@ -210,10 +228,10 @@ export default function Header() {
                                     </Form>
                                 </div>
                             </div>
-                            <div className="md:order-3 order-2 basis-5/12 sm:basis-4/12 flex flex-row items-center justify-end lg:justify-end xl:justify-between pl-[18px]">
+                            <div className="md:order-3 order-2 basis-5/12 sm:basis-4/12 flex flex-row md:items-center justify-end lg:justify-end xl:justify-between pl-[18px]">
                                 <div className="hidden xl:flex flex-row items-center pt-[3px]">
                                     <FaPhone className="w-[11px] h-[14px] text-[#0083c1]" />
-                                    <span className="text-sub-heading pl-2 text-[#555555] leading-[58px]">
+                                    <span className="text-sub-heading pl-2 text-[#555555] xl:leading-[58px]">
                                         Call Us: (888) 123456789
                                     </span>
                                 </div>
@@ -222,7 +240,7 @@ export default function Header() {
                                         <DropdownMenuTrigger asChild>
                                             <Button
                                                 variant="outline"
-                                                className="border-none hover:bg-white px-0 focus:outline-none bg-white-1"
+                                                className="pt-[16px] sm:pt-0 border-none hover:bg-white px-0 focus:outline-none bg-white-1"
                                             >
                                                 <div className="flex flex-row">
                                                     <div className="relative aspect-square w-[31px] h-[40px] my-[5px] mx-[10px]">
@@ -249,43 +267,70 @@ export default function Header() {
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent className="w-[330px] mt-[10px] border-t-[3px] border-[#0083c1]">
                                             <DropdownMenuLabel>
-                                                Panel Position
+                                                <table>
+                                                    <tbody>
+                                                        {cartItems.map(
+                                                            (item) => (
+                                                                <CartItem
+                                                                    key={
+                                                                        item.id
+                                                                    }
+                                                                    image={
+                                                                        item.image
+                                                                    }
+                                                                    name={
+                                                                        item.name
+                                                                    }
+                                                                    quantity={
+                                                                        item.quantity
+                                                                    }
+                                                                    price={
+                                                                        item.price
+                                                                    }
+                                                                />
+                                                            )
+                                                        )}
+                                                    </tbody>
+                                                </table>
                                             </DropdownMenuLabel>
 
                                             <DropdownMenuLabel>
-                                                <DropdownMenuSeparator className="bg-[#ddd]" />
-                                                <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading py-2 px-2">
-                                                    <p className="">
-                                                        Sub-Total
-                                                    </p>
-                                                    <span className="font-normal">
-                                                        $1,060.00
-                                                    </span>
+                                                <div className="mb-[20px]">
+                                                    <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading font-bold py-2 px-2">
+                                                        <p className="">
+                                                            Sub-Total
+                                                        </p>
+                                                        <span className="font-normal">
+                                                            $1,060.00
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading font-bold py-2 px-2">
+                                                        <p className="">
+                                                            Eco Tax (-2.00)
+                                                        </p>
+                                                        <span className="font-normal">
+                                                            $1.00
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading font-bold py-2 px-2">
+                                                        <p className="">
+                                                            VAT (20%)
+                                                        </p>
+                                                        <span className="font-normal">
+                                                            $200.00
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading font-bold py-2 px-2">
+                                                        <p className="">
+                                                            Total
+                                                        </p>
+                                                        <span className="font-normal">
+                                                            $1,262.00
+                                                        </span>
+                                                    </div>
+                                                    <DropdownMenuSeparator className="bg-[#ddd]" />
                                                 </div>
-                                                <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading py-2 px-2">
-                                                    <p className="">
-                                                        Eco Tax (-2.00)
-                                                    </p>
-                                                    <span className="font-normal">
-                                                        $1.00
-                                                    </span>
-                                                </div>
-                                                <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading py-2 px-2">
-                                                    <p className="">
-                                                        VAT (20%)
-                                                    </p>
-                                                    <span className="font-normal">
-                                                        $200.00
-                                                    </span>
-                                                </div>
-                                                <div className="flex flex-row items-center justify-between text-black-2 text-sub-heading py-2 px-2">
-                                                    <p className="">Total</p>
-                                                    <span className="font-normal">
-                                                        $1,262.00
-                                                    </span>
-                                                </div>
-                                                <DropdownMenuSeparator className="bg-[#ddd]" />
-                                                <DropdownMenuLabel className=" flex items-center justify-end">
+                                                <DropdownMenuLabel className="mb-[10px] flex items-center justify-end">
                                                     <Link
                                                         href="/cart"
                                                         className="bg-[#444] text-white py-[6px] px-[12px] text-sub-heading font-normal flex items-center hover:bg-[#0083c1]"
