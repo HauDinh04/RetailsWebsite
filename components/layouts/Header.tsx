@@ -13,7 +13,6 @@ import { FaShare } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import CartItem from "./CartItem";
 
 export default function Header() {
   return (
@@ -193,8 +192,7 @@ export default function Header() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-[330px] mt-[10px] left-[-106px]">
-                      <DropdownMenuLabel>
-                      </DropdownMenuLabel>
+                      <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
 
                       <DropdownMenuLabel>
                         <DropdownMenuSeparator />
