@@ -27,14 +27,14 @@ const formSchema = z.object({
 const cartItems = [
     {
         id: 1,
-        image: "./images/product-1.jpg",
+        image: "/images/product-1.jpg",
         name: "Filet Mign",
         quantity: 1,
         price: 12200,
     },
     {
         id: 2,
-        image: "./images/product-1.jpg",
+        image: "/images/product-1.jpg",
         name: "Canon EOS 5D",
         quantity: 2,
         price: 60,
