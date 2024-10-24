@@ -55,7 +55,7 @@ export default function ProductDetails({
     const images = productDetail.images;
     return (
         <div className="flex flex-row flex-wrap justify-between">
-            <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 md:px-[15px] overflow-hidden">
+            <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 px-[15px] overflow-hidden">
                 <div className="relative aspect-[3/4] p-[1px] border border-[#e6e6e6] overflow-hidden">
                     <Image
                         src={
@@ -135,7 +135,7 @@ export default function ProductDetails({
                     </button>
                 </div>
             </div>
-            <div className="basis-full lg:basis-1/2  text-left md:px-[15px]">
+            <div className="basis-full lg:basis-1/2  text-left px-[15px]">
                 <h3 className="text-[24px] font-light">Bint Beef</h3>
                 <div className="my-[30px]">
                     <div className="flex">
