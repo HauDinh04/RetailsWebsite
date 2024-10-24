@@ -2,6 +2,7 @@
 import Image from "next/image";
 import AddToCart from "../customui/addTocart";
 import RemoveCart from "../customui/removeCart";
+import { ScrollArea,ScrollBar } from "@/components/ui/scroll-area"
 
 const ProductCompare = () => {
   const products = [
@@ -54,6 +55,7 @@ const ProductCompare = () => {
       <div className="p-2 border text-info font-bold bg-[#f0f0f0] wi-full ">
         <p className="text-[#555555]">Product Details</p>{" "}
       </div>
+      <ScrollArea className="w-full ">
       <table className="min-w-full text-left table-auto border-collapse border border-gray-300">
         <thead className="text-info font-bold text-black-2">
           <tr>
@@ -221,6 +223,8 @@ const ProductCompare = () => {
           </tr>
         </tbody>
       </table>
+      <ScrollBar orientation="horizontal" />
+      </ScrollArea>
     </div>
   );
 };
