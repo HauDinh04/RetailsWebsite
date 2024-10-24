@@ -56,123 +56,119 @@ export default function Header() {
         <header>
             <div className="bg-[#f1f1f1]">
                 <div className="container">
-                    <div className="mx-[-15px]">
-                        <div className="p- flex flex-row items-center justify-between text-[#555555]">
-                            <div className="basis-1/2 flex items-center justify-start">
-                                <div className="relative group px-5 after:absolute after:top-[14px] after:right-0 after:h-[13px] after:w-[1px] after:bg-[#cccccc]">
-                                    <div className="flex h-[40px] items-center justify-start text-caption hover:text-[#337ab7] cursor-pointer">
-                                        <span className="">USD</span>
-                                        <FaAngleDown className="ml-[3px]" />
-                                    </div>
-                                    <ul className="items-center absolute hidden group-hover:block top-full left-[-20px] min-w-[105px] bg-white-1 py-[5px] shadow-lg shadow-[#f1f1f1]-500/50 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 transition-all duration-800 ease-out translate-y-[-10px] z-50">
-                                        <li className=" hover:bg-[#f1f1f1]">
-                                            <Link
-                                                href="#"
-                                                className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] block"
-                                            >
-                                                (€)&nbsp;Euro
-                                            </Link>
-                                        </li>
-                                        <li className=" hover:bg-[#f1f1f1]">
-                                            <Link
-                                                href="#"
-                                                className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] block"
-                                            >
-                                                (€)&nbsp;Pounds
-                                            </Link>
-                                        </li>
-                                        <li className=" hover:bg-[#f1f1f1]">
-                                            <Link
-                                                href="#"
-                                                className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] block"
-                                            >
-                                                (€)&nbsp;USD
-                                            </Link>
-                                        </li>
-                                    </ul>
+                    <div className="mx-[-15px] flex flex-row items-center justify-between text-[#555555]">
+                        <div className="basis-1/2 flex flex-wrap items-center justify-start">
+                            <div className="relative group px-5 after:absolute after:top-[14px] after:right-0 after:h-[13px] after:w-[1px] after:bg-[#cccccc]">
+                                <div className="flex h-[40px] items-center justify-start text-caption hover:text-[#337ab7] cursor-pointer">
+                                    <span className="">USD</span>
+                                    <FaAngleDown className="ml-[3px]" />
                                 </div>
-                                <div className="relative group flex flex-row items-center px-5 cursor-pointer">
-                                    <div className="relative aspect-square w-[16px] h-[11px] mr-[2px]">
-                                        <Image
-                                            src="/images/gb.png"
-                                            alt=""
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <div className="flex h-[40px] items-center justify-start text-info hover:text-bg-main">
-                                        <span className="hidden md:block">
-                                            English
-                                        </span>
-                                        <FaAngleDown className="ml-[3px]" />
-                                    </div>
+                                <ul className="items-center absolute hidden group-hover:block top-full left-[-20px] min-w-[105px] bg-white-1 py-[5px] shadow-lg shadow-[#f1f1f1]-500/50 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 transition-all duration-800 ease-out translate-y-[-10px] z-50">
+                                    <li className=" hover:bg-[#f1f1f1]">
+                                        <Link
+                                            href="#"
+                                            className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] block"
+                                        >
+                                            (€)&nbsp;Euro
+                                        </Link>
+                                    </li>
+                                    <li className=" hover:bg-[#f1f1f1]">
+                                        <Link
+                                            href="#"
+                                            className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] block"
+                                        >
+                                            (€)&nbsp;Pounds
+                                        </Link>
+                                    </li>
+                                    <li className=" hover:bg-[#f1f1f1]">
+                                        <Link
+                                            href="#"
+                                            className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] block"
+                                        >
+                                            (€)&nbsp;USD
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="relative group flex flex-row items-center px-5 cursor-pointer">
+                                <div className="relative aspect-square w-[16px] h-[11px] mr-[2px]">
+                                    <Image
+                                        src="/images/gb.png"
+                                        alt=""
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="flex h-[40px] items-center justify-start text-info hover:text-bg-main">
+                                    <span className="hidden md:block">
+                                        English
+                                    </span>
+                                    <FaAngleDown className="ml-[3px]" />
+                                </div>
 
-                                    <ul className="items-center absolute hidden group-hover:block top-full left-0 min-w-[105px] bg-white-1 py-[5px] shadow-lg shadow-[#f1f1f1]-500/50 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 transition-all duration-800 ease-out translate-y-[-10px] z-50">
-                                        <li className=" hover:bg-[#f1f1f1]">
-                                            <Link
-                                                href="#"
-                                                className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] flex items-center"
-                                            >
-                                                <div className="relative aspect-square w-[16px] h-[11px] mr-[2px]">
-                                                    <Image
-                                                        src="/images/gb.png"
-                                                        alt=""
-                                                        fill
-                                                        className="object-cover"
-                                                    />
-                                                </div>
-                                                English
-                                            </Link>
-                                        </li>
-                                        <li className=" hover:bg-[#f1f1f1]">
-                                            <Link
-                                                href="#"
-                                                className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] flex items-center"
-                                            >
-                                                <div className="relative aspect-square w-[16px] h-[11px] mr-[2px]">
-                                                    <Image
-                                                        src="/images/gb.png"
-                                                        alt=""
-                                                        fill
-                                                        className="object-cover"
-                                                    />
-                                                </div>
-                                                Arabic
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul className="items-center absolute hidden group-hover:block top-full left-0 min-w-[105px] bg-white-1 py-[5px] shadow-lg shadow-[#f1f1f1]-500/50 opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 transition-all duration-800 ease-out translate-y-[-10px] z-50">
+                                    <li className=" hover:bg-[#f1f1f1]">
+                                        <Link
+                                            href="#"
+                                            className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] flex items-center"
+                                        >
+                                            <div className="relative aspect-square w-[16px] h-[11px] mr-[2px]">
+                                                <Image
+                                                    src="/images/gb.png"
+                                                    alt=""
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            English
+                                        </Link>
+                                    </li>
+                                    <li className=" hover:bg-[#f1f1f1]">
+                                        <Link
+                                            href="#"
+                                            className="py-[3px] px-5 text-info font-normal hover:text-[#337ab7] flex items-center"
+                                        >
+                                            <div className="relative aspect-square w-[16px] h-[11px] mr-[2px]">
+                                                <Image
+                                                    src="/images/gb.png"
+                                                    alt=""
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            Arabic
+                                        </Link>
+                                    </li>
+                                </ul>
                             </div>
-                            <div className="basis-1/2 px-[15px]">
-                                <div className="">
-                                    <ul className="flex items-center justify-end text-caption">
-                                        <li className="px-[17px] h-[40px] relative md:after:absolute md:after:right-0 md:after:top-1/2 md:after:translate-y-[-50%] md:after:h-[13px] md:after:w-[1px] md:after:bg-[#cccccc]">
-                                            <Link
-                                                href="#"
-                                                className="hidden md:block hover:text-bg-main"
-                                            >
-                                                Welcome Customer!
-                                            </Link>
-                                        </li>
-                                        <li className="pl-[17px] md:pr-[17px] h-[40px] relative md:after:absolute md:after:right-0 md:after:top-1/2 md:after:translate-y-[-50%] md:after:h-[13px] md:after:w-[1px] md:after:bg-[#cccccc]">
-                                            <Link
-                                                href="/login"
-                                                className="hover:text-bg-main"
-                                            >
-                                                Sign In
-                                            </Link>
-                                        </li>
-                                        <li className="pl-[17px]">
-                                            <Link
-                                                href="/register"
-                                                className="hover:text-bg-main"
-                                            >
-                                                Register
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        </div>
+                        <div className="basis-1/2 px-[15px]">
+                            <ul className="flex items-center flex-wrap justify-end text-caption">
+                                <li className="px-[17px] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:translate-y-[-50%] md:after:h-[13px] md:after:w-[1px] md:after:bg-[#cccccc]">
+                                    <Link
+                                        href="#"
+                                        className="hidden md:block hover:text-bg-main"
+                                    >
+                                        Welcome Customer!
+                                    </Link>
+                                </li>
+                                <li className="pl-[17px] md:pr-[17px] relative md:after:absolute md:after:right-0 md:after:top-1/2 md:after:translate-y-[-50%] md:after:h-[13px] md:after:w-[1px] md:after:bg-[#cccccc]">
+                                    <Link
+                                        href="/login"
+                                        className="hover:text-bg-main"
+                                    >
+                                        Sign In
+                                    </Link>
+                                </li>
+                                <li className="pl-[17px]">
+                                    <Link
+                                        href="/register"
+                                        className="hover:text-bg-main"
+                                    >
+                                        Register
+                                    </Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
