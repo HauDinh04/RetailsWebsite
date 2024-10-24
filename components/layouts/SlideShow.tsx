@@ -36,19 +36,20 @@ export default function Slideshow() {
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                        <Image
-                            src={image}
-                            alt={`slide-${index}`}
-                            width={0}
-                            height={0}
-                            sizes="100vw"
-                            layout="responsive"
-                            style={{
-                                width: "100%",
-                                height: "auto",
-                            }}
-                            className="w-full"
-                        />
+                        <div className="w-full">
+                            <Image
+                                src={image}
+                                alt={`slide-${index}`}
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                style={{
+                                    width: "100%",
+                                    height: "auto",
+                                }}
+                                className="w-full"
+                            />
+                        </div>
                     </SwiperSlide>
                 ))}
 
