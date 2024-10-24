@@ -16,23 +16,6 @@ import Image from "next/image";
 import CartItem from "./CartItem";
 
 export default function Header() {
-  const CartItems = [
-    {
-      id:1,
-      image: "https://template-intern.l5elb4sxvvqkvl.flashvps.xyz/market/Destino_HTML_main_file/Code_v1.0/destino_html_pl_v1.0/img/demo/shop/product/35.jpg", // Thay thế bằng URL thực tế
-      name: "Filet Mign",
-      quantity: 2,
-      price: 250000
-    },
-    {
-      id:2,
-      image: "https://template-intern.l5elb4sxvvqkvl.flashvps.xyz/market/Destino_HTML_main_file/Code_v1.0/destino_html_pl_v1.0/img/demo/shop/product/35.jpg", // Thay thế bằng URL thực tế
-      name: "Canon EOS 5D",
-      quantity: 1,
-      price: 150000
-    },
-   
-  ];
   return (
     <header>
       <div className="bg-[#f1f1f1]">
@@ -211,13 +194,6 @@ export default function Header() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="w-[330px] mt-[10px] left-[-106px]">
                       <DropdownMenuLabel>
-                        <table className="w-full">
-                          <tbody>
-                            {CartItems.map(item=>(
-                              <CartItem key={item.id} image={item.image} name={item.name} quantity={item.quantity} price={item.price}/>
-                            ))}
-                          </tbody>
-                        </table>
                       </DropdownMenuLabel>
 
                       <DropdownMenuLabel>
