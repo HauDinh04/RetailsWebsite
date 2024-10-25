@@ -52,7 +52,7 @@ export default function TabsSlider() {
     }
     return (
         <div className="px-[15px] pt-[70px] mb-[35px]">
-            <ul className="flex ">
+            <ul className="flex flex-row flex-wrap">
                 <li className="mr-[10px] mb-[10px]">
                     <Button
                         onClick={() => handleTabClick("description")}

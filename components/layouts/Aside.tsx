@@ -58,11 +58,11 @@ export default function Aside() {
             </h2>
             <div className="mb-[20px]">
                 <ul>
-                    {menuItems.map((item) => {
+                    {menuItems.map((item, index) => {
                         return (
                             <li
                                 className="flex items-center text-[#444] text-info mb-[3px]"
-                                key={item.href}
+                                key={index}
                             >
                                 <MdNavigateNext className="mr-[10px]" />
                                 <a

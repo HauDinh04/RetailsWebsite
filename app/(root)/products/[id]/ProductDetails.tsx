@@ -55,7 +55,7 @@ export default function ProductDetails({
     const images = productDetail.images;
     return (
         <div className="flex flex-row flex-wrap justify-between">
-            <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 md:px-[15px] overflow-hidden">
+            <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 px-[15px] overflow-hidden">
                 <div className="relative aspect-[3/4] p-[1px] border border-[#e6e6e6] overflow-hidden">
                     <Image
                         src={
@@ -74,8 +74,8 @@ export default function ProductDetails({
                         spaceBetween={8}
                         slidesPerView={2}
                         navigation={{
-                            nextEl: ".button-next-slide",
-                            prevEl: ".button-prev-slide",
+                            nextEl: ".button-next-slide-1",
+                            prevEl: ".button-prev-slide-1",
                         }}
                         modules={[Navigation, Scrollbar, Autoplay]}
                         scrollbar={{ hide: true }}
@@ -122,20 +122,20 @@ export default function ProductDetails({
                         ))}
                     </Swiper>
                     <button
-                        className="button-prev-slide absolute top-1/2 left-[-28px] transform -translate-y-1/2 bg-none"
+                        className="button-prev-slide-1 absolute top-1/2 left-[-28px] transform -translate-y-1/2 bg-none"
                         aria-label="Previous Slide"
                     >
                         <GrFormPrevious className="text-[#ababab] w-[40px] h-[40px] hover:text-bg-main" />
                     </button>
                     <button
-                        className="button-next-slide absolute top-1/2 right-[-28px] transform -translate-y-1/2 bg-none "
+                        className="button-next-slide-1 absolute top-1/2 right-[-28px] transform -translate-y-1/2 bg-none "
                         aria-label="Next Slide"
                     >
                         <MdOutlineNavigateNext className="text-[#ababab] w-[40px] h-[40px] hover:text-bg-main" />
                     </button>
                 </div>
             </div>
-            <div className="basis-full lg:basis-1/2  text-left md:px-[15px]">
+            <div className="basis-full lg:basis-1/2  text-left px-[15px]">
                 <h3 className="text-[24px] font-light">Bint Beef</h3>
                 <div className="my-[30px]">
                     <div className="flex">

@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 const Compare = () => {
   return (
-    <div className="container mb-[40px]">
+    <div className="mb-[40px]">
         <Breadcrumb breadcrumbItems={[
             {
                 label: "Product Comparison",

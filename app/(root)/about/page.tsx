@@ -4,31 +4,21 @@ import Link from 'next/link'
 import React from 'react'
 import {MdKeyboardArrowRight} from 'react-icons/md'
 import Image from 'next/image'
+import Breadcrumb from "@/components/layouts/Breadcrumb";
 
 const AboutPage = () => {
     return (
-        <div className='container mb-[23px]'>
-            <ul className="my-5 mb-10">
-                <li className="inline-block list-none text-sub-heading items-center text-[#777777]">
-                    <Link href="" className="hover:text-[#337ab7] ">
-                        Home
-                    </Link>
-                    <span>
-              <MdKeyboardArrowRight className="inline-block mx-[10px] size-4"/>
-            </span>
-                </li>
-                <li className="inline-block list-none text-sub-heading items-center text-[#777777]">
-                    <Link href="" className="hover:text-[#337ab7] ">
-                        Page
-                    </Link>
-                    <span>
-              <MdKeyboardArrowRight className="inline-block mx-[10px] size-4"/>
-            </span>
-                </li>
-                <li className="inline-block list-none text-sub-heading items-center text-[#777777]">
-                    Contact Us
-                </li>
-            </ul>
+        <div className='mb-[23px]'>
+            <Breadcrumb breadcrumbItems={[
+                {
+                    label: "Page",
+                    link: "/"
+                },
+                {
+                    label: "Contact Us",
+                    link: "/contact"
+                },
+            ]}/>
             <div className='text-[#555555] w-full'>
                 <div className='grid grid-cols-1 sm:grid-cols-12 sm:gap-[30px] w-full h-auto'>
                     <div className='md:col-span-5 col-span-12'>
