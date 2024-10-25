@@ -98,7 +98,7 @@ function Page() {
     }
 
     return (
-        <section className={'container mb-[20px]'}>
+        <section className={'mb-[20px]'}>
             <Breadcrumb breadcrumbItems={[
                 {
                     label: "Order Information",

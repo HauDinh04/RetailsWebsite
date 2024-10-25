@@ -42,7 +42,7 @@ const Cart = () => {
   ];
 
   return (
-    <div className="container text-[#555555]">
+    <div className="text-[#555555]">
         <ul className="my-5 mb-10">
           <li className="inline-block list-none text-sub-heading items-center text-[#777777]">
             <Link href="" className="hover:text-[#337ab7] ">

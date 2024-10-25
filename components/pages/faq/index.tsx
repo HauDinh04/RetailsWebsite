@@ -42,7 +42,7 @@ const FAQ = () => {
 	]
 	const [show, setShow] = useState<number>(ListAccordionGroup[0].id);
   return (
-    <div className="container">
+    <div className="mb-[20px]">
       <ul className="my-5 mb-10">
         <li className="inline-block list-none text-sub-heading items-center text-[#777777]">
           <Link href="" className="hover:text-[#337ab7] ">
@@ -87,7 +87,7 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="mb-[23px]">
+        <div className="">
           <ul className="list-none">
 			{ListAccordionGroup.map(item=> (
 				<AccordionGroup key={item.id} id={item.id} title={item.title} label1={item.label1} label2={item.label2} show={show} setShow={setShow}/>
