@@ -169,14 +169,14 @@ function Page() {
     }
 
     return (
-        <section className={'container'}>
+        <section className={'mb-[25px]'}>
             <Breadcrumb breadcrumbItems={[
                 {
                     label: "Smartphone & Laptop",
-                    link: "/category"
+                    link: "/categories"
                 }
             ]}/>
-            <div className="flex w-full mb-[25px] flex-col md:flex-row">
+            <div className="flex w-full  flex-col md:flex-row">
                 <div className="pr-[15px] lg:flex lg:flex-col lg:gap-[30px]">
                     <CategorySideBar/>
                     <LatestProduct/>

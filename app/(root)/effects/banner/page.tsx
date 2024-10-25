@@ -16,7 +16,7 @@ function Page() {
     const [isHoveredEffect10, setIsHoveredEffect10] = useState(false);
 
     return (
-        <div className={'container '}>
+        <div>
             <Breadcrumb breadcrumbItems={[
                 {
                     label: "Page",
