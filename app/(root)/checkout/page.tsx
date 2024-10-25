@@ -22,7 +22,7 @@ const CheckoutPage = () => {
         setSelected((prev) => (prev === value ? null : value));
     };
     return (
-        <div className="container">
+        <div className={'mb-[20px]'}>
             <Breadcrumb breadcrumbItems={[
                 {
                     label: "Checkout",
