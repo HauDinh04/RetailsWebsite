@@ -130,7 +130,7 @@ export default function ProductDetail() {
                     </div>
                 </div>
             </div>
-            <div className="pt-[40px]">
+            <div className="pb-[20px]">
                 <FeatureProduct
                     breakpoints={{
                         480: { slidesPerView: 4, spaceBetween: 30 },

@@ -159,7 +159,7 @@ export default function ProductDetails({
                         <li>20 MP front and 28 megapixel CMOS rear camera</li>
                     </ul>
                 </div>
-                <div className="mb-[15px]">
+                <div className="mb-[15px] inline-block w-full">
                     <div className="text-info">
                         <span className="text-black-2  font-bold">
                             Availability:&nbsp;
@@ -182,51 +182,50 @@ export default function ProductDetails({
                         </span>
                     </div>
                 </div>
-                <div className="pt-[10px] h-[99px]">
-                    <div className="mb-[35px] h-[84px] md:h-[64px]">
-                        <div className="flex flex-row items-center justify-between">
-                            <div className="relative">
-                                <label
-                                    htmlFor="quantity"
-                                    className="text-[14px] font-bold text-black-2"
-                                >
-                                    Qty:&nbsp;
-                                </label>
-                                <input
-                                    type="text"
-                                    name="quantity"
-                                    value={quantity}
-                                    onChange={handleQuantityChange}
-                                    className="w-[80px] h-[40px] text-[12px] text-[#555] py-[6px] px-[12px] leading-[28px] border border-[#dddddd] rounded-[5px]"
-                                />
-                                <span
-                                    onClick={handleIncrement}
-                                    className="absolute w-[40px] h-[20px] top-0 right-0 flex items-center justify-center border-l border-[#dddddd] cursor-pointer group"
-                                >
-                                    <FaAngleUp className="w-[9px] h-[14px] text-black-2 text-[14px] group-hover:text-[#0083c1]" />
+                <div className="mt-[10px]">
+                    <div className="mb-[35px] flex flex-row flex-wrap sm:justify-between">
+                        <div className="relative">
+                            <label
+                                htmlFor="quantity"
+                                className="text-[14px] font-bold text-black-2 pr-[5px] pt-[8px] pb-[5px]"
+                            >
+                                Qty:
+                            </label>
+                            <input
+                                type="text"
+                                name="quantity"
+                                value={quantity}
+                                onChange={handleQuantityChange}
+                                className="w-[80px] h-[40px] text-[12px] text-[#555] py-[6px] px-[12px] leading-[28px] border border-[#dddddd] rounded-[5px]"
+                            />
+                            <span
+                                onClick={handleIncrement}
+                                className="absolute w-[40px] h-[20px] top-0 right-0 flex items-center justify-center border-l border-[#dddddd] cursor-pointer group"
+                            >
+                                <FaAngleUp className="w-[9px] h-[14px] text-black-2 text-[14px] group-hover:text-[#0083c1]" />
+                            </span>
+                            <span
+                                onClick={handleDecrement}
+                                className="absolute w-[40px] h-[20px] top-[20px] right-0 flex items-center justify-center  border-l border-[#dddddd] cursor-pointer before:content-[''] before:w-[26px] before:h-[1px] before:bg-[#dddddd] before:absolute before:top-0 group"
+                            >
+                                <FaAngleDown className="w-[9px] h-[14px] text-black-2 text-[14px] group-hover:text-[#0083c1]" />
+                            </span>
+                        </div>
+
+                        <div className="w-full sm:w-auto flex flex-wrap md:flex-nowrap md:justify-between mt-[20px] sm:mt-0">
+                            <Button className="uppercase mr-[10px] py-[12px] px-[16px] h-[43px] text-info bg-bg-main hover:bg-[#444] transition-all ease-in-out duration-300">
+                                <span className="text-white group-hover:text-white">
+                                    Add to Cart
                                 </span>
-                                <span
-                                    onClick={handleDecrement}
-                                    className="absolute w-[40px] h-[20px] top-[20px] right-0 flex items-center justify-center  border-l border-[#dddddd] cursor-pointer before:content-[''] before:w-[26px] before:h-[1px] before:bg-[#dddddd] before:absolute before:top-0 group"
-                                >
-                                    <FaAngleDown className="w-[9px] h-[14px] text-black-2 text-[14px] group-hover:text-[#0083c1]" />
-                                </span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <Button className="uppercase mr-[10px] py-[12px] px-[16px] h-[43px] text-info bg-bg-main hover:bg-[#444] transition-all ease-in-out duration-300">
-                                    <span className="text-white group-hover:text-white">
-                                        Add to Cart
-                                    </span>
-                                </Button>
-                                <ul className="flex gap-x-[10px]">
-                                    <li className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
-                                        <FaHeart className="text-[14px] text-[#666] group-hover:text-[#0083c1] transition duration-900 ease-out" />
-                                    </li>
-                                    <li className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
-                                        <FaExchangeAlt className="text-[14px] text-[#666] group-hover:text-[#0083c1] transition duration-900 ease-out" />
-                                    </li>
-                                </ul>
-                            </div>
+                            </Button>
+                            <ul className="flex gap-x-[10px] mb-[10px]">
+                                <li className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
+                                    <FaHeart className="text-[14px] text-[#666] group-hover:text-[#0083c1] transition duration-900 ease-out" />
+                                </li>
+                                <li className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
+                                    <FaExchangeAlt className="text-[14px] text-[#666] group-hover:text-[#0083c1] transition duration-900 ease-out" />
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
