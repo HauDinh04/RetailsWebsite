@@ -106,7 +106,7 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-3 w-full">
           <div className="bg-[#f0f0f0]">
             <Image
-              src="/path/to/image1.jpg"
+              src=""
               alt="product"
              
               width={500}
@@ -115,7 +115,7 @@ export default function Home() {
           </div>
           <div className="bg-[#f0f0f0]">
             <Image
-              src="/path/to/image2.jpg"
+              src=""
               alt="product"
               
               width={500}
@@ -128,7 +128,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-3">
           <div className="bg-[#f0f0f0]">
             <Image
-              src="/path/to/image3.jpg"
+              src=""
               alt="product"
             
               width={150}
@@ -137,7 +137,7 @@ export default function Home() {
           </div>
           <div className="bg-[#f0f0f0]">
             <Image
-              src="/path/to/image4.jpg"
+              src=""
               alt="product"
            
               width={150}
@@ -146,7 +146,7 @@ export default function Home() {
           </div>
           <div className="bg-[#f0f0f0]">
             <Image
-              src="/path/to/image5.jpg"
+              src=""
               alt="product"
              
               width={150}
