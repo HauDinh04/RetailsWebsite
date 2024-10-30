@@ -9,10 +9,10 @@ const LeftNav = () => {
           <Menu />
           all categoties
         </div>
-        {leftNavLinks.map((link) => (
+        {leftNavLinks.map((link,index) => (
           <div
             className="group relative px-[11px] py-[15px] border items-center text-left "
-            key={link.label}
+            key={index}
           >
             <Link
               href={link.url}
@@ -24,8 +24,8 @@ const LeftNav = () => {
             {link.subLinks && (
               <div className=" hidden group-hover:block absolute z-10 left-full top-0 w-[875px] bg-white border shadow-lg ">
                 <div className="grid grid-cols-3 ">
-                  {link.subLinks.map((subLink) => (
-                    <ul key={subLink.Label}>
+                  {link.subLinks.map((subLink,index) => (
+                    <ul key={index}>
                       <Link
                         href={subLink.url}
                         className="block px-4 py-2 hover:bg-gray-200 text-heading3-bold "
@@ -34,10 +34,10 @@ const LeftNav = () => {
                       </Link>
                       {subLink.subsubLinks && (
                         <div className="">
-                          {subLink.subsubLinks.map((subSubLinks) => (
+                          {subLink.subsubLinks.map((subSubLinks,index) => (
                             <Link
                               href={subSubLinks.url}
-                              key={subSubLinks.label}
+                              key={index}
                               className="grid grid-cols-1 px-4 py-1"
                             >
                               {subSubLinks.label}
