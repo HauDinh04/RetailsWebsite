@@ -6,6 +6,8 @@ import {FiMenu} from "react-icons/fi";
 import {IoClose} from "react-icons/io5";
 import Image from "next/image";
 import SmallHorizontalBoxProduct from "@/components/pages/category/SmallHorizontalBoxProduct";
+import {LuPlus} from "react-icons/lu";
+import {FaMinus} from "react-icons/fa";
 
 const home = [
     {
@@ -389,6 +391,11 @@ const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeMenuIndex, setActiveMenuIndex] = useState<null | number>(null);
     const [isHoveringOnMenu, setIsHoveringOnMenu] = useState(false);
+    const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
+
+    const toggleExpand = (index: number) => {
+        setExpandedCategory(expandedCategory === index ? null : index);
+    };
 
     const handleMouseEnter = (index: number) => {
         setActiveMenuIndex(index);
@@ -410,7 +417,7 @@ const NavBar = () => {
                 <div className="lg:hidden">
                     <button
                         onClick={toggleMenu}
-                        className="text-white text-3xl focus:outline-none"
+                        className="text-white text-[20px] hover:bg-[#ddd] hover:text-[#2222222] p-[10px] rounded focus:outline-none"
                     >
                         <FiMenu/>
                     </button>
@@ -418,7 +425,7 @@ const NavBar = () => {
 
                 <div className="hidden lg:flex items-center gap-[10px]">
                     {NavLinks.map((link, index) => (
-                        <div key={link.url} className="relative">
+                        <div key={index} className="relative">
                             {index === 5 && (
                                 <Link href={link.url}
                                       className={`flex items-center text-left px-5 py-[5px] uppercase text-[14px] font-bold leading-[18px] ${
@@ -489,7 +496,7 @@ const NavBar = () => {
                                         setIsHoveringOnMenu(false);
                                         handleMouseLeave();
                                     }}
-                                    className="absolute top-full z-[30] p-5 grid grid-cols-4 left-0 mt-2 bg-white lg:w-[70dvw] xl:w-[65dvw]
+                                    className="absolute top-full z-[30] p-5 grid grid-cols-4 left-[-95%] mt-2 bg-white lg:w-[70dvw] xl:w-[65dvw]
                                      2xl:w-[60dvw] rounded shadow-lg gap-[30px]"
                                 >
                                     {features.map((item, index) => (
@@ -606,22 +613,139 @@ const NavBar = () => {
                 </div>
             </div>
             {isMenuOpen && (
-                <div className="xl:hidden bg-white text-black w-2/5 h-full absolute top-12 left-0 py-2 z-10 ">
+                <div
+                    className="xl:hidden bg-white text-black min-w-2/5 w-2/5 h-screen overflow-auto fixed top-0 left-0 p-[10px] z-50">
                     <button
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-white text-xl absolute right-0"
+                        className="h-[40px] block w-full p-[10px] text-xl"
                     >
-                        <IoClose className="bg-black"/>
+                        <IoClose stroke="currentColor" strokeWidth={2}
+                                 className="w-[20px] h-[20px] ml-auto font-medium text-black"/>
                     </button>
-                    {NavLinks.map((link) => (
-                        <Link
-                            href={link.url}
-                            key={link.url}
-                            className={`block px-6 py-2 uppercase text-[14px] font-bold leading-[18px] hover:text-bg-main hover:bg-white`}
-                            onClick={toggleMenu}
-                        >
-                            {link.label}
-                        </Link>
+                    {NavLinks.map((link, index) => (
+                        <div key={index} className={'pl-[15px] text-[13px]'}>
+                            <div
+                                className={'flex items-center justify-between border-t border-solid border-[#ddd] py-[5px] px-[10px]'}>
+                                <Link
+                                    href={link.url}
+                                    className={`block uppercase text-[14px] text-[#666666] font-bold leading-[18px] hover:text-bg-main hover:bg-white`}
+                                >
+                                    {link.label}
+                                </Link>
+                                {index < 5 && expandedCategory !== index && (
+                                    <LuPlus onClick={() => toggleExpand(index)}
+                                            className={"text-[#51cfc6] text-[18px] cursor-pointer font-bold"}/>
+                                )}
+                                {index < 5 && expandedCategory === index && (
+                                    <div onClick={() => toggleExpand(index)}
+                                         className={'cursor-pointer bg-[#f6f6f6] p-[5px]'}>
+                                        <FaMinus
+                                            className={"text-[#51cfc6] text-[18px] font-bold"}/>
+                                    </div>
+                                )}
+                            </div>
+                            {expandedCategory === 0 && index === 0 && (
+                                <div className={'py-[10px] flex flex-col gap-[10px]'}>
+                                    {home.map((item, index) => (
+                                        <Link href={item.href} key={index}
+                                              className="w-full px-[10px] text-center group flex flex-col gap-[10px]">
+                                            <div className="relative aspect-[3/1.8] group-hover:bg-[rgba(0,0,0,0.2)]">
+                                                <Image fill sizes={'50'} alt={item.label} src={item.image}
+                                                       className={'object-contain border border-solid border-[#ddd] w-full p-[3px]'}/>
+                                            </div>
+                                            <div
+                                                className="group-hover:text-[#0083c1] text-[12px] uppercase">{item.label}</div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                            {expandedCategory === 1 && index === 1 && (
+                                <div className={"py-[10px] flex flex-col gap-[10px]"}>
+                                    {features.map((item, index) => (
+                                        <div key={index} className="flex px-[10px] flex-col gap-[5px] text-[13px]">
+                                            <div
+                                                className="text-[#222222] cursor-pointer hover:text-[#0083c1] font-bold leading-[24px]
+                                                 border-b border-solid border-[#ddd] pb-[5px]">{item.heading}</div>
+                                            <div
+                                                className="flex flex-col gap-[5px]">
+                                                {item.links.map((item, index) => (
+                                                    <Link key={index}
+                                                          href={item.href}
+                                                          className="text-[#828282] hover:text-[#0083c1]">{item.label}</Link>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                            {expandedCategory === 2 && index === 2 && (
+                                <div className={"py-[10px] flex flex-col gap-[10px]"}>
+                                    {pages.map((item, index) => (
+                                        <Link href={item.href} key={index}
+                                              className={`text-[13px] text-[#828282]
+                                               px-[10px] hover:text-[#0083c1] ${index == 4 ? 'mt-5' : ''}`}>
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                            {expandedCategory === 3 && index === 3 && (
+                                <div className={"py-[10px] flex flex-col gap-[10px]"}>
+                                    {categories.map((item, index) => (
+                                        <div key={index}
+                                             className={'cursor-pointer px-[10px] flex flex-col gap-[10px]'}>
+                                            <div className="relative w-full aspect-[3/2]">
+                                                <Image alt={item.heading} fill sizes={'100'} src={item.image}/>
+                                            </div>
+                                            <div
+                                                className="text-[#222222] cursor-pointer hover:text-[#0083c1] font-bold leading-[24px]
+                                                 border-b border-solid border-[#ddd] pb-[5px]">{item.heading}</div>
+                                            <div className="flex flex-col gap-[5px]">
+                                                {item.Links.map((item, index) => (
+                                                    <Link href={item.href} key={index}
+                                                          className={'text-[#828282] text-[13px] hover:text-[#0083c1]'}>
+                                                        {item.label}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                            {expandedCategory === 4 && index === 4 && (
+                                <div className={"p-[10px] flex flex-col gap-[10px] "}>
+                                    <div className="flex flex-col gap-[10px]">
+                                        {accessories.information.map((item, index) => (
+                                            <div key={index} className={'flex flex-col gap-[10px]'}>
+                                                <div onMouseEnter={() => setIsHoveringOnMenu(true)}
+                                                     className="text-[#222222] cursor-pointer hover:text-[#0083c1] font-bold leading-[24px]
+                                                 border-b border-solid border-[#ddd] pb-[5px]">{item.heading}</div>
+                                                <div className="flex flex-col gap-[5px]">
+                                                    {item.links.map((item, index) => (
+                                                        <Link href={item.href} key={index}>
+                                                            {item.label}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="flex flex-col gap-[10px]">
+                                        <div onMouseEnter={() => setIsHoveringOnMenu(true)}
+                                             className="text-[#222222] cursor-pointer hover:text-[#0083c1] font-bold leading-[24px]
+                                                 border-b border-solid border-[#ddd] pb-[5px]">{accessories.bestSeller.heading}</div>
+                                        <div className="">
+                                            {accessories.bestSeller.products.map((item, index) => (
+                                                <SmallHorizontalBoxProduct key={index} name={item.name}
+                                                                           price={item.price} rating={item.rating}
+                                                                           image={item.image} id={item.id}
+                                                                           oldPrice={item.oldPrice}/>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     ))}
 
                 </div>
