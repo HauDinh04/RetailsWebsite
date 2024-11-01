@@ -20,8 +20,8 @@ export default function Home() {
 
   return (
     <div className="items-center justify-center py-[10px] mb-4 ">
-      <div className="mx-[-15px]">
-        <div className="flex justify-between">
+      <div className="mx-[-15px] items-center">
+        <div className="flex justify-between items-center">
           <div className="">
             <LeftNav />
           </div>
@@ -105,53 +105,23 @@ export default function Home() {
         {/* Row with 2 Images */}
         <div className="grid grid-cols-2 gap-3 w-full">
           <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-             
-              width={500}
-              height={100}
-            />
+            <Image src="" alt="product" width={500} height={100} />
           </div>
           <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-              
-              width={500}
-              height={100}
-            />
+            <Image src="" alt="product" width={500} height={100} />
           </div>
         </div>
 
         {/* Row with 3 Smaller Images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-3">
           <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-            
-              width={150}
-              height={200}
-            />
+            <Image src="" alt="product" width={150} height={200} />
           </div>
           <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-           
-              width={150}
-              height={200}
-            />
+            <Image src="" alt="product" width={150} height={200} />
           </div>
           <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-             
-              width={150}
-              height={200}
-            />
+            <Image src="" alt="product" width={150} height={200} />
           </div>
         </div>
       </div>
