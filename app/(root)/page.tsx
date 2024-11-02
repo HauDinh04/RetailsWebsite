@@ -175,6 +175,7 @@ export default function Home() {
         </Swiper>
       </div>
       <div className="my-5 grid lg:grid-cols-4 sm:grid-cols-2 gap-2">
+        
         {Array(4)
           .fill("")
           .map((_, index) => (

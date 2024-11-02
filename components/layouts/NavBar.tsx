@@ -403,7 +403,7 @@ const NavBar = () => {
 
     const handleMouseLeave = () => {
         if (!isHoveringOnMenu) {
-            setTimeout(() => setActiveMenuIndex(null), 300); // Thêm khoảng trễ 300ms khi tắt menu
+            setTimeout(() => setActiveMenuIndex(null), 0);
         }
     };
 
