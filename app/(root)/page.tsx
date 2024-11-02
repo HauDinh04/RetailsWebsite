@@ -14,20 +14,18 @@ import { CountDownProduct } from "@/components/layouts/CountDownProduct";
 import Image from "next/image";
 import { FreeMode, Pagination } from "swiper/modules";
 import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
-
+import Link from "next/link";
 export default function Home() {
   // /  const [isShow, setIsShow] = useState(true);
 
   return (
     <div className="items-center justify-center py-[10px] mb-4 ">
-      <div className="mx-[-15px] items-center">
-        <div className="flex justify-between items-center">
-          <div className="">
-            <LeftNav />
-          </div>
-
-          <Slideshow />
-        </div>
+      <div className="mx-[-15px] items-center w-full  flex justify-between border relative">
+        <div className=""><LeftNav /></div>
+        <Slideshow />
+          
+         
+          
       </div>
       <div className="mt-4">
         <div className="py-[10px] grid grid-cols-1 md:grid-cols-3  ">
@@ -101,30 +99,28 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-5 space-y-2">
-        {/* Row with 2 Images */}
-        <div className="grid grid-cols-2 gap-3 w-full">
-          <div className="bg-[#f0f0f0]">
-            <Image src="" alt="product" width={500} height={100} />
+      <section className="xl:block mt-10 md:hidden">
+          <div className="flex gap-4 object-cover">
+            <Link href={'/'} >
+              <Image src={'/banner/banner1.jpg'} alt="banner" width={578} height={200}></Image>
+            </Link>
+            <Link href={'/'}>
+              <Image src={'/banner/banner1.jpg'} alt="banner" width={578} height={200}></Image>
+            </Link>
           </div>
-          <div className="bg-[#f0f0f0]">
-            <Image src="" alt="product" width={500} height={100} />
+          <div className="flex gap-4 mt-4">
+            <Link href={'/'}>
+              <Image src={'/banner/banner2.jpg'} alt="banner" width={282} height={400}></Image>
+            </Link>
+            <Link href={'/'}>
+              <Image src={'/banner/banner3.jpg'} alt="banner" width={578} height={400}></Image>
+            </Link>
+            <Link href={'/'}>
+              <Image src={'/banner/banner2.jpg'} alt="banner" width={282} height={400}></Image>
+            </Link>
           </div>
-        </div>
 
-        {/* Row with 3 Smaller Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-3">
-          <div className="bg-[#f0f0f0]">
-            <Image src="" alt="product" width={150} height={200} />
-          </div>
-          <div className="bg-[#f0f0f0]">
-            <Image src="" alt="product" width={150} height={200} />
-          </div>
-          <div className="bg-[#f0f0f0]">
-            <Image src="" alt="product" width={150} height={200} />
-          </div>
-        </div>
-      </div>
+      </section>
 
       <FeatureProduct />
       <div className="">
@@ -164,9 +160,8 @@ export default function Home() {
                 <Image
                   src="/images/blog-3.jpg"
                   alt="images blogs"
-                  layout="responsive"
-                  width={200}
-                  height={200}
+                 fill
+                  
                   className=" object-cover"
                 />
               </div>
@@ -175,7 +170,6 @@ export default function Home() {
         </Swiper>
       </div>
       <div className="my-5 grid lg:grid-cols-4 sm:grid-cols-2 gap-2">
-        
         {Array(4)
           .fill("")
           .map((_, index) => (
