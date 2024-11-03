@@ -1,8 +1,6 @@
 import ClientSay from '@/components/pages/about/ClientSay'
 import OurTeam from '@/components/pages/about/OurTeam'
-import Link from 'next/link'
 import React from 'react'
-import {MdKeyboardArrowRight} from 'react-icons/md'
 import Image from 'next/image'
 import Breadcrumb from "@/components/layouts/Breadcrumb";
 

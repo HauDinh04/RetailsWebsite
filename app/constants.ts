@@ -1,48 +1,66 @@
+
+import { GoTriangleRight } from "react-icons/go";
 export const leftNavLinks = [
   {
+    icons: GoTriangleRight,
     url: "/",
     label: "Automotive & Motocrycle",
     subLinks: [
       {
         url: "/",
-        Label: "Link1",
+        Label: "Apparel",
+
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          {
+            url: "/car-accessories/interior",
+            label: "Accessories for Tablet PC",
+          },
+          { url: "/car-accessories/interior", label: "Accessories for i Pad" },
+          { url: "/car-accessories/interior", label: "Accessories for iPhone" },
+          { url: "/car-accessories/interior", label: "Bags, Holiday Supplies" },
+          { url: "/car-accessories/interior", label: "Bags, Holiday Supplies" },
+          {
+            url: "/car-accessories/interior",
+            label: "Car Alarms and Security",
+          },
+          { url: "/car-accessories/interior", label: "Car Audio & Speakers" },
         ],
       },
       {
         url: "/",
-        Label: "Link2",
+        Label: "Camping & Hiking",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          { url: "/car-accessories/interior", label: "Earings" },
+          { url: "/car-accessories/interior", label: "Shaving & Hair Removal" },
+          { url: "/car-accessories/interior", label: "Salon & Spa Equipment" },
         ],
       },
       {
         url: "/",
-        Label: "Link3",
+        Label: "Bags, Holiday Supplies",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          { url: "/car-accessories/interior", label: "Battereries & Chargers" },
+          { url: "/car-accessories/interior", label: "Bath & Body" },
+          { url: "/car-accessories/interior", label: "Headphones, Headsets" },
+          { url: "/car-accessories/interior", label: "Home Audio" },
         ],
       },
       {
         url: "/",
-        Label: "Link4",
+        Label: "Cables & Connectors",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          { url: "/car-accessories/interior", label: "Cameras & Photo" },
+          { url: "/car-accessories/interior", label: "Electronics" },
+          { url: "/car-accessories/interior", label: "Outdoor & Traveling" },
+        ],
+      },
+      {
+        url: "/",
+        Label: "Cables & Connectors",
+        subsubLinks: [
+          { url: "/car-accessories/interior", label: "Cameras & Photo" },
+          { url: "/car-accessories/interior", label: "Electronics" },
+          { url: "/car-accessories/interior", label: "Outdoor & Traveling" },
         ],
       },
     ],
@@ -52,73 +70,84 @@ export const leftNavLinks = [
     label: "Electronic",
   },
   {
+    icons: GoTriangleRight,
     url: "/",
     label: "Health & Beauty",
     subLinks: [
       {
         url: "/",
-        Label: "Link1",
+        Label: "Car Alarms and Security",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          { url: "/car-accessories/interior", label: "Car Audio & Speakers" },
+          { url: "/car-accessories/interior", label: "Gadgets & Auto Parts" },
+          { url: "/car-accessories/interior", label: "Gadgets & Auto Parts" },
+          { url: "/car-accessories/interior", label: "Headphones, Headsets" },
         ],
       },
       {
         url: "/",
-        Label: "Link2",
+        Label: "Electronics",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          { url: "/car-accessories/interior", label: "Earings" },
+          { url: "/car-accessories/interior", label: "Salon & Spa Equipment" },
+          { url: "/car-accessories/interior", label: "Shaving & Hair Removal" },
+          { url: "/car-accessories/interior", label: "Smartphone & Tablets" },
         ],
       },
       {
         url: "/",
-        Label: "Link3",
+        Label: "More Car Accessories",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          {
+            url: "/car-accessories/interior",
+            label: "Lighter & Cigar Supplies",
+          },
+          {
+            url: "/car-accessories/interior",
+            label: "Mp3 Players & Accessories",
+          },
+          { url: "/car-accessories/interior", label: "Men Watches" },
+          { url: "/car-accessories/interior", label: "Mobile Accessories" },
+        ],
+      },
+      {
+      
+        url: "/",
+        Label: "Health & Beauty",
+        subsubLinks: [
+          { url: "/car-accessories/interior", label: "Home Audio" },
+          { url: "/car-accessories/interior", label: "Helicopters & Parts" },
+          { url: "/car-accessories/interior", label: "Outdoor & Traveling" },
+          { url: "/car-accessories/interior", label: "Toys & Hobbies" },
+        ],
+      },
+      {
+        url: "/",
+        Label: "Sports & Outdoors",
+        subsubLinks: [
+          { url: "/car-accessories/interior", label: "Flashlights & Lamps" },
+          { url: "/car-accessories/interior", label: "Fragrances" },
+          { url: "/car-accessories/interior", label: "Fishing" },
+          { url: "/car-accessories/interior", label: "FPV System & Parts" },
         ],
       },
     ],
   },
+
   {
+    icons: GoTriangleRight,
     url: "/",
     label: "Smartphone & Tables",
     subLinks: [
       {
         url: "/",
-        Label: "Link1",
+        Label: "",
         subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-        ],
-      },
-      {
-        url: "/",
-        Label: "Link2",
-        subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-        ],
-      },
-      {
-        url: "/",
-        Label: "Link3",
-        subsubLinks: [
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
-          { url: "/car-accessories/interior", label: "Interior" },
+          { url: "/car-accessories/interior", label: "Headphones, Headsets" },
+          { url: "/car-accessories/interior", label: "Home Audio" },
+          { url: "/car-accessories/interior", label: "Health & Beauty" },
+          { url: "/car-accessories/interior", label: "Helicopters & Parts" },
+          { url: "/car-accessories/interior", label: "Helicopters & Parts" },
         ],
       },
     ],
@@ -132,11 +161,11 @@ export const leftNavLinks = [
     label: "Camera & Photo ",
   },
 ];
-export const NavLinks=[
-  {url:"/",label:"home"},
-  {url:"/features",label:"features"},
-  {url:"/pages",label:"pages"},
-  {url:"/categories",label:"categories"},
-  {url:"/accessories",label:"accessories"},
-  {url:"/blog",label:"blog"},
-]
+export const NavLinks = [
+  { url: "/", label: "home" },
+  { url: "/features", label: "features" },
+  { url: "/pages", label: "pages" },
+  { url: "/categories", label: "categories" },
+  { url: "/accessories", label: "accessories" },
+  { url: "/blog", label: "blog" },
+];

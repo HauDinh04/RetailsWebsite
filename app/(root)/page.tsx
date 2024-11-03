@@ -14,20 +14,18 @@ import { CountDownProduct } from "@/components/layouts/CountDownProduct";
 import Image from "next/image";
 import { FreeMode, Pagination } from "swiper/modules";
 import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
-
+import Link from "next/link";
 export default function Home() {
   // /  const [isShow, setIsShow] = useState(true);
 
   return (
     <div className="items-center justify-center py-[10px] mb-4 ">
-      <div className="mx-[-15px]">
-        <div className="flex justify-between">
-          <div className="">
-            <LeftNav />
-          </div>
-
-          <Slideshow />
-        </div>
+      <div className="mx-[-15px] items-center w-full  flex justify-between  relative">
+        <div className=""><LeftNav /></div>
+        <Slideshow />
+          
+         
+          
       </div>
       <div className="mt-4">
         <div className="py-[10px] grid grid-cols-1 md:grid-cols-3  ">
@@ -101,60 +99,72 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="mt-5 space-y-2">
-        {/* Row with 2 Images */}
-        <div className="grid grid-cols-2 gap-3 w-full">
-          <div className="bg-[#f0f0f0]">
+      <section className="xl:block mt-10 md:hidden">
+      <div className="flex gap-4 object-cover">
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[578px] h-[200px]">
             <Image
-              src=""
-              alt="product"
-             
-              width={500}
-              height={100}
+              src={'/banner/banner1.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
           </div>
-          <div className="bg-[#f0f0f0]">
+        </Link>
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[578px] h-[200px]">
             <Image
-              src=""
-              alt="product"
-              
-              width={500}
-              height={100}
+              src={'/banner/banner1.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
           </div>
-        </div>
-
-        {/* Row with 3 Smaller Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full mt-3">
-          <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-            
-              width={150}
-              height={200}
-            />
-          </div>
-          <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-           
-              width={150}
-              height={200}
-            />
-          </div>
-          <div className="bg-[#f0f0f0]">
-            <Image
-              src=""
-              alt="product"
-             
-              width={150}
-              height={200}
-            />
-          </div>
-        </div>
+        </Link>
       </div>
+      <div className="flex gap-4 mt-4">
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[282px] h-[400px]">
+            <Image
+              src={'/banner/banner2.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+          </div>
+        </Link>
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[578px] h-[400px]">
+            <Image
+              src={'/banner/banner3.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+          </div>
+        </Link>
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[282px] h-[400px]">
+            <Image
+              src={'/banner/banner2.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+          </div>
+        </Link>
+      </div>
+    </section>
 
       <FeatureProduct />
       <div className="">
@@ -194,9 +204,8 @@ export default function Home() {
                 <Image
                   src="/images/blog-3.jpg"
                   alt="images blogs"
-                  layout="responsive"
-                  width={200}
-                  height={200}
+                 fill
+                  
                   className=" object-cover"
                 />
               </div>

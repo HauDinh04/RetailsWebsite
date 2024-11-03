@@ -403,7 +403,7 @@ const NavBar = () => {
 
     const handleMouseLeave = () => {
         if (!isHoveringOnMenu) {
-            setTimeout(() => setActiveMenuIndex(null), 300); // Thêm khoảng trễ 300ms khi tắt menu
+            setTimeout(() => setActiveMenuIndex(null), 0);
         }
     };
 
@@ -412,8 +412,8 @@ const NavBar = () => {
     };
 
     return (
-        <div className="flex bg-bg-main py-[10px] h-[48px]">
-            <div className="flex container items-center justify-between">
+        <div className="flex bg-bg-main py-[10px] h-[48px] ">
+            <div className="flex container items-center justify-between  px-0">
                 <div className="lg:hidden">
                     <button
                         onClick={toggleMenu}
@@ -423,7 +423,7 @@ const NavBar = () => {
                     </button>
                 </div>
 
-                <div className="hidden lg:flex items-center gap-[10px]">
+                <div className="hidden lg:flex items-center gap-[10px] ">
                     {NavLinks.map((link, index) => (
                         <div key={index} className="relative">
                             {index === 5 && (

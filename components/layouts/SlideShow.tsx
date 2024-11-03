@@ -18,7 +18,7 @@ const images = [
 
 export default function Slideshow() {
     return (
-        <div className="lg:w-3/4 w-full px-[15px]">
+        <div className="lg:w-3/4 w-full mx-[-15px]">
             <Swiper
                 cssMode={true}
                 navigation={{
@@ -41,8 +41,8 @@ export default function Slideshow() {
                             <Image
                                 src={image}
                                 alt={`slide-${index}`}
-                                width={0}
-                                height={0}
+                                width={884}
+                                height={430}
                                 sizes="100vw"
                                 style={{
                                     width: "100%",
