@@ -8,7 +8,7 @@ import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 const LeftNav = () => {
   const [showMoreCategories, setShowMoreCategories] = useState(false);
   return (
-    <div className=" xl:grid grid-cols-1 items-start  border  w-[250px] rounded-lg  hidden  ">
+    <div className=" xl:grid grid-cols-1 items-start  border  w-[250px] rounded-lg  hidden absolute top-0  ">
       <div className=" items-center gap-2 px-4 py-3 bg-bg-main text-white uppercase text-heading4-bold flex ">
         <Menu />
         all categoties
@@ -58,7 +58,7 @@ const LeftNav = () => {
         </div>
       ))}
 
-      <div className="">
+      <div className="bg-white">
         {showMoreCategories && (
           <div className="transition-all duration-300 ease-in-out">
             <div className="px-[11px] py-[13px] border items-center text-left bg-white  hover:text-bg-main transition-all 0.5">

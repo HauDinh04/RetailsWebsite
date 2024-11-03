@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="items-center justify-center py-[10px] mb-4 ">
-      <div className="mx-[-15px] items-center w-full  flex justify-between border relative">
+      <div className="mx-[-15px] items-center w-full  flex justify-between  relative">
         <div className=""><LeftNav /></div>
         <Slideshow />
           
@@ -100,27 +100,71 @@ export default function Home() {
         </div>
       </div>
       <section className="xl:block mt-10 md:hidden">
-          <div className="flex gap-4 object-cover">
-            <Link href={'/'} >
-              <Image src={'/banner/banner1.jpg'} alt="banner" width={578} height={200}></Image>
-            </Link>
-            <Link href={'/'}>
-              <Image src={'/banner/banner1.jpg'} alt="banner" width={578} height={200}></Image>
-            </Link>
+      <div className="flex gap-4 object-cover">
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[578px] h-[200px]">
+            <Image
+              src={'/banner/banner1.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
           </div>
-          <div className="flex gap-4 mt-4">
-            <Link href={'/'}>
-              <Image src={'/banner/banner2.jpg'} alt="banner" width={282} height={400}></Image>
-            </Link>
-            <Link href={'/'}>
-              <Image src={'/banner/banner3.jpg'} alt="banner" width={578} height={400}></Image>
-            </Link>
-            <Link href={'/'}>
-              <Image src={'/banner/banner2.jpg'} alt="banner" width={282} height={400}></Image>
-            </Link>
+        </Link>
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[578px] h-[200px]">
+            <Image
+              src={'/banner/banner1.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
           </div>
-
-      </section>
+        </Link>
+      </div>
+      <div className="flex gap-4 mt-4">
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[282px] h-[400px]">
+            <Image
+              src={'/banner/banner2.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+          </div>
+        </Link>
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[578px] h-[400px]">
+            <Image
+              src={'/banner/banner3.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+          </div>
+        </Link>
+        <Link href={'/'}>
+          <div className="relative group overflow-hidden w-[282px] h-[400px]">
+            <Image
+              src={'/banner/banner2.jpg'}
+              alt="banner"
+              layout="fill"
+              objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+          </div>
+        </Link>
+      </div>
+    </section>
 
       <FeatureProduct />
       <div className="">
