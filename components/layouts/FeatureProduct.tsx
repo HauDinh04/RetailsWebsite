@@ -108,11 +108,11 @@ export default function FeatureProduct({
                     Smartphone & Tablet
                 </h3>
                 <div className="flex flex-row">
-                    <div className="w-[30px] h-[30px] bg-[#f2f2f2] group hover:bg-bg-main flex items-center justify-center rounded button-prev-slide">
+                    <div className="w-[30px] h-[30px] bg-[#f2f2f2] group hover:bg-bg-main flex items-center justify-center rounded button-prev-slide-p">
                         <GrFormPrevious className="text-[#333] group-hover:text-white-1 w-[16px] h-[16px]" />
                     </div>
 
-                    <div className="bg-[#f2f2f2] group hover:bg-bg-main w-[30px] h-[30px] flex items-center justify-center rounded ml-[5px] button-next-slide">
+                    <div className="bg-[#f2f2f2] group hover:bg-bg-main w-[30px] h-[30px] flex items-center justify-center rounded ml-[5px] button-next-slide-p">
                         <MdOutlineNavigateNext className="text-[#333] group-hover:text-white-1" />
                     </div>
                 </div>
@@ -125,8 +125,8 @@ export default function FeatureProduct({
                     spaceBetween={10}
                     slidesPerView={1}
                     navigation={{
-                        nextEl: ".button-next-slide",
-                        prevEl: ".button-prev-slide",
+                        nextEl: ".button-next-slide-p",
+                        prevEl: ".button-prev-slide-p",
                     }}
                     modules={[Navigation, Scrollbar, Autoplay]}
                     scrollbar={{ hide: true }}
