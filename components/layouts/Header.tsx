@@ -261,7 +261,7 @@ export default function Header() {
                                                 </div>
                                             </Button>
                                         </DropdownMenuTrigger>
-                                        <DropdownMenuContent className="w-[330px] mt-[10px] border-t-[3px] border-[#0083c1]">
+                                        <DropdownMenuContent className="w-[330px] mt-[10px] border-t-[3px] border-[#0083c1] md:absolute md:top-0 md:right-[-60px]">
                                             <DropdownMenuLabel>
                                                 <table>
                                                     <tbody>
