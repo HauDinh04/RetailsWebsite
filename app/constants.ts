@@ -160,11 +160,6 @@ export const leftNavLinks = [
     url: "/",
     label: "Camera & Photo ",
   },
- 
-  {
-    url : "/",
-    label:  "Close categories",
-  },
 ];
 export const NavLinks = [
   { url: "/", label: "home" },

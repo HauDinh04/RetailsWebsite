@@ -22,7 +22,7 @@ interface productType {
 export default function Product({ product, className }: productType) {
     return (
         <div className="group">
-            <div className="border border-[#e5e5e5] rounded-[5px] p-[5px] group-hover:bg-[#e5e5e5] group-hover:rounded-none transition-all ease-in-out duration-700">
+            <div className="relative border border-[#e5e5e5] rounded-[5px] p-[5px] group-hover:bg-[#e5e5e5] group-hover:rounded-none transition-all ease-in-out duration-700">
                 <div className={`relative ${className} w-full`}>
                     <Link href={`/products/${product.id}`}>
                         <Image
@@ -48,25 +48,25 @@ export default function Product({ product, className }: productType) {
                             {`-${product.isSale}%`}
                         </div>
                     )}
-                    <div className="absolute bottom-0 right-[5px] opacity-0 transition-all ease-in-out duration-1000 group-hover:opacity-100">
-                        <ul className="mb-[10px] w-[50px] h-[130px] flex flex-col">
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
-                                <Link href="">
-                                    <FaHeart className="w-[18px] h-[18px]" />
-                                </Link>
-                            </li>
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
-                                <Link href="">
-                                    <FaExchangeAlt className="w-[18px] h-[18px]" />
-                                </Link>
-                            </li>
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
-                                <Link href="">
-                                    <FaSearch className="w-[18px] h-[18px]" />
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+                <div className="absolute bottom-0 right-[5px] opacity-0 transition-all ease-in-out duration-1000 group-hover:opacity-100">
+                    <ul className="mb-[10px] w-[50px] items-center flex flex-col gap-[5px]">
+                        <li className="h-10 w-10 rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            <Link href="">
+                                <FaHeart className="w-[18px] h-[18px]" />
+                            </Link>
+                        </li>
+                        <li className="h-10 w-10 rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            <Link href="">
+                                <FaExchangeAlt className="w-[18px] h-[18px]" />
+                            </Link>
+                        </li>
+                        <li className="h-10 w-10 rounded-[3px] hidden  bg-white md:flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            <Link href="">
+                                <FaSearch className="w-[18px] h-[18px]" />
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div className="pt-[5px]">

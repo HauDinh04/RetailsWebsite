@@ -2,17 +2,20 @@
 import { leftNavLinks } from "@/app/constants";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
+
 const LeftNav = () => {
+  const [showMoreCategories, setShowMoreCategories] = useState(false);
   return (
-    <div className=" xl:grid grid-cols-1 items-start  border  w-[250px] rounded-lg  hidden ">
+    <div className=" xl:grid grid-cols-1 items-start  border  w-[250px] rounded-lg  hidden absolute top-0  ">
       <div className=" items-center gap-2 px-4 py-3 bg-bg-main text-white uppercase text-heading4-bold flex ">
         <Menu />
         all categoties
       </div>
       {leftNavLinks.map((link, index) => (
         <div
-          className="group relative px-[11px] py-[13px] border items-center text-left "
+          className="group px-[11px] py-[13px] border items-center text-left  "
           key={index}
         >
           <Link
@@ -23,7 +26,6 @@ const LeftNav = () => {
             {link.label}
             {link.icons && React.createElement(link.icons)}
           </Link>
-          
           {link.subLinks && (
             <div className=" hidden group-hover:block absolute z-10 p-4 left-full top-0 w-[875px] bg-white border shadow-lg ">
               <div className="grid grid-cols-3 ">
@@ -55,6 +57,29 @@ const LeftNav = () => {
           )}
         </div>
       ))}
+
+      <div className="bg-white">
+        {showMoreCategories && (
+          <div className="transition-all duration-300 ease-in-out">
+            <div className="px-[11px] py-[13px] border items-center text-left bg-white  hover:text-bg-main transition-all 0.5">
+              <Link href={"/"}>Jewelry & Watches</Link>
+            </div>
+            <div className="px-[11px] py-[13px] border items-center text-left  bg-white  hover:text-bg-main transition-all 0.5">
+              <Link href={"/"}>Bags, Holiday Supplies</Link>
+            </div>
+            <div className="px-[11px] py-[13px] border items-center text-left  bg-white  hover:text-bg-main transition-all 0.5">
+              <Link href={"/"}>More Car Accessories</Link>
+            </div>
+          </div>
+        )}
+        <button
+          className="px-[11px] py-[13px] flex text-left items-center gap-2  bg-white text-4  hover:text-bg-main transition-all 0.5"
+          onClick={() => setShowMoreCategories(!showMoreCategories)}
+        >
+          {showMoreCategories ? <CiSquareMinus /> : <CiSquarePlus />}
+          {showMoreCategories ? "Close categories" : "More categories"}
+        </button>
+      </div>
     </div>
   );
 };

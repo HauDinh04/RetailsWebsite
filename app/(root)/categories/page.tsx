@@ -1,9 +1,8 @@
 'use client';
-import React from 'react';
+import React, {useEffect} from 'react';
 import CategorySideBar from "@/components/pages/category/CategorySideBar";
 import Link from "next/link";
 import Image from 'next/image';
-
 import LatestProduct from "@/components/pages/category/LatestProduct";
 import {useState} from "react";
 import {FaThLarge, FaThList} from "react-icons/fa";
@@ -17,6 +16,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import Breadcrumb from "@/components/layouts/Breadcrumb";
+import {fetchOrders} from "@/lib/Categories.action";
 
 interface DataProductAPI {
     products: {
@@ -38,6 +38,7 @@ interface DataProductAPI {
 }
 
 function Page() {
+    const [url, setUrl] = useState([])
     const [hovered, setHovered] = useState(false);
     const [isList, setIsList] = useState(true);
 
@@ -167,6 +168,11 @@ function Page() {
             currentPage: 1
         }
     }
+
+    useEffect(() => {
+        fetchOrders()
+            .then(data => console.log(data));
+    }, [])
 
     return (
         <section className={'mb-[25px]'}>

@@ -403,7 +403,7 @@ const NavBar = () => {
 
     const handleMouseLeave = () => {
         if (!isHoveringOnMenu) {
-            setTimeout(() => setActiveMenuIndex(null), 300); // Thêm khoảng trễ 300ms khi tắt menu
+            setTimeout(() => setActiveMenuIndex(null), 0);
         }
     };
 
@@ -412,7 +412,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className="flex bg-bg-main py-[10px] h-[48px] ">
+        <div className="flex bg-bg-main py-[10px] h-[48px] px-[-15px] border ">
             <div className="flex container items-center justify-between  px-0">
                 <div className="lg:hidden">
                     <button
@@ -477,7 +477,7 @@ const NavBar = () => {
                                 >
                                     {home.map((item, index) => (
                                         <Link href={item.href} key={index}
-                                              className="w-full text-center group flex flex-col gap-[10px]">
+                                              className="w-full text-center group flex flex-col gap-[10px]  ">
                                             <div className="relative aspect-[3/1.8] group-hover:bg-[rgba(0,0,0,0.2)]">
                                                 <Image fill sizes={'50'} alt={item.label} src={item.image}
                                                        className={'object-contain border border-solid border-[#ddd] w-full p-[3px]'}/>
