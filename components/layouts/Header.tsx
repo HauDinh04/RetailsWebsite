@@ -237,7 +237,7 @@ export default function Header() {
                                         Call Us: (888) 123456789
                                     </span>
                                 </div>
-                                <div className="pr-[15px] relative">
+                                <div className="pr-[15px]">
                                     <Button onClick={() => setIsShowCart(!isShowCart)}
                                             variant="outline"
                                             className="pt-[16px] sm:pt-0 border-none hover:bg-white px-0 focus:outline-none bg-white-1"
@@ -267,8 +267,13 @@ export default function Header() {
                                         </div>
                                     </Button>
                                     {isShowCart && (
+                                        <div onClick={() => setIsShowCart(false)}
+                                             className={"w-screen h-screen fixed top-0 left-0 z-[10]"}>
+                                        </div>
+                                    )}
+                                    {isShowCart && (
                                         <div
-                                            className="w-[330px] mt-[10px] border-t-[3px] bg-white z-[10] border-[#0083c1] md:absolute md:top-[45px] md:right-[-60px]">
+                                            className="w-[330px] mt-[10px] border-t-[3px] bg-white border-[#0083c1] md:absolute z-[10] md:top-[120px] md:right-[300px]">
                                             <div>
                                                 <table>
                                                     <tbody>
@@ -335,7 +340,8 @@ export default function Header() {
                                                     </div>
                                                     <DropdownMenuSeparator className="bg-[#ddd]"/>
                                                 </div>
-                                                <DropdownMenuLabel className="mb-[10px] flex items-center justify-end">
+                                                <DropdownMenuLabel
+                                                    className="mb-[10px] flex items-center justify-end">
                                                     <Link
                                                         href="/cart"
                                                         className="bg-[#444] text-white py-[6px] px-[12px] text-sub-heading font-normal flex items-center hover:bg-[#0083c1]"
