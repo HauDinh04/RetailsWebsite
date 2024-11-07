@@ -1,10 +1,12 @@
 import {configureStore} from '@reduxjs/toolkit';
 import demoReducer from './features/todos/demoSlice'
+import accountReducer from './features/account/account.slice'
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
-            demo : demoReducer
+            demo : demoReducer,
+            account: accountReducer
         },
     })
 }
