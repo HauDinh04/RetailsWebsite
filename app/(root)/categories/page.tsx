@@ -16,7 +16,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import Breadcrumb from "@/components/layouts/Breadcrumb";
-import {fetchOrders} from "@/lib/Categories.action";
+import {fetchCategories} from "@/lib/Categories.action";
 
 interface DataProductAPI {
     products: {
@@ -38,7 +38,8 @@ interface DataProductAPI {
 }
 
 function Page() {
-    const [url, setUrl] = useState([])
+    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
     const [hovered, setHovered] = useState(false);
     const [isList, setIsList] = useState(true);
 
@@ -170,8 +171,10 @@ function Page() {
     }
 
     useEffect(() => {
-        fetchOrders()
-            .then(data => console.log(data));
+        fetchCategories()
+            .then(data => {
+                setCategories(data);
+            });
     }, [])
 
     return (
@@ -184,7 +187,7 @@ function Page() {
             ]}/>
             <div className="flex w-full  flex-col md:flex-row">
                 <div className="pr-[15px] lg:flex lg:flex-col lg:gap-[30px]">
-                    <CategorySideBar/>
+                    <CategorySideBar data={categories}/>
                     <LatestProduct/>
                     <Link href={'/'}
                           onMouseEnter={() => setHovered(true)}

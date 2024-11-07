@@ -16,6 +16,7 @@ import {
 import {FiRefreshCcw} from "react-icons/fi";
 import {FaTimesCircle} from "react-icons/fa";
 import {useForm} from 'react-hook-form';
+import {CreateOrder} from "@/lib/Checkout.action";
 
 interface CheckoutInput {
     account: string;
@@ -49,6 +50,10 @@ const CheckoutPage = () => {
 
     const onSubmit = (data: CheckoutInput) => {
         console.log(data);
+        CreateOrder(data)
+            .then(data => {
+                console.log(data)
+            })
     }
 
     return (
