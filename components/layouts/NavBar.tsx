@@ -402,9 +402,7 @@ const NavBar = () => {
     };
 
     const handleMouseLeave = () => {
-        if (!isHoveringOnMenu) {
-            setTimeout(() => setActiveMenuIndex(null), 0);
-        }
+        setTimeout(() => setActiveMenuIndex(null), 0);
     };
 
     const toggleMenu = () => {
@@ -437,11 +435,14 @@ const NavBar = () => {
 
                             {index === 0 && (
                                 <div
-                                    onMouseEnter={() => handleMouseEnter(index)}
+                                    onMouseEnter={() => {
+                                        handleMouseEnter(index);
+                                        setIsHoveringOnMenu(true)
+                                    }}
                                     onMouseLeave={() => {
                                         if (!isHoveringOnMenu) {
                                             handleMouseLeave();
-                                        }
+                                        } else setTimeout(() => setIsHoveringOnMenu(false), 100);
                                     }}
                                     className={`flex items-center cursor-pointer text-left px-5 py-[5px] uppercase text-[14px] font-bold leading-[18px] 
                                     text-bg-main bg-white hover:text-bg-main hover:bg-white rounded-lg`}
@@ -452,11 +453,14 @@ const NavBar = () => {
 
                             {index !== 5 && index !== 0 && (
                                 <div
-                                    onMouseEnter={() => handleMouseEnter(index)}
+                                    onMouseEnter={() => {
+                                        handleMouseEnter(index);
+                                        setIsHoveringOnMenu(true)
+                                    }}
                                     onMouseLeave={() => {
                                         if (!isHoveringOnMenu) {
                                             handleMouseLeave();
-                                        }
+                                        } else setTimeout(() => setIsHoveringOnMenu(false), 100);
                                     }}
                                     className={`flex items-center cursor-pointer text-left px-5 py-[5px] uppercase text-[14px] font-bold leading-[18px] ${
                                         index === activeMenuIndex ? "text-bg-main bg-white" : "text-white"
@@ -473,7 +477,7 @@ const NavBar = () => {
                                         setIsHoveringOnMenu(false);
                                         handleMouseLeave();
                                     }}
-                                    className="absolute top-full z-[30] p-5 grid grid-cols-4 left-0 mt-2 bg-white lg:w-[90dvw] xl:w-[70dvw] 2xl:w-[60dvw] rounded shadow-lg gap-[30px]"
+                                    className="absolute top-full z-[30] p-5 grid grid-cols-4 left-0 mt-2 bg-white lg:w-[90dvw] xl:w-[70dvw] 2xl:w-[61dvw] rounded shadow-lg gap-[30px]"
                                 >
                                     {home.map((item, index) => (
                                         <Link href={item.href} key={index}
@@ -496,8 +500,8 @@ const NavBar = () => {
                                         setIsHoveringOnMenu(false);
                                         handleMouseLeave();
                                     }}
-                                    className="absolute top-full z-[30] p-5 grid grid-cols-4 left-[-95%] mt-2 bg-white lg:w-[70dvw] xl:w-[65dvw]
-                                     2xl:w-[60dvw] rounded shadow-lg gap-[30px]"
+                                    className="absolute top-full z-[30] p-5 grid grid-cols-4 left-[-85%] mt-2 bg-white lg:w-[70dvw] xl:w-[65dvw]
+                                     2xl:w-[61dvw] rounded shadow-lg gap-[30px]"
                                 >
                                     {features.map((item, index) => (
                                         <div key={index} onMouseEnter={() => setIsHoveringOnMenu(true)}
@@ -585,7 +589,7 @@ const NavBar = () => {
                                                  border-b border-solid border-[#ddd] pb-[5px]">{item.heading}</div>
                                                 <div className="flex flex-col gap-[5px]">
                                                     {item.links.map((item, index) => (
-                                                        <Link href={item.href} key={index}>
+                                                        <Link className={'text-[#828282] text-[13px] hover:text-[#0083c1]'} href={item.href} key={index}>
                                                             {item.label}
                                                         </Link>
                                                     ))}
@@ -614,7 +618,7 @@ const NavBar = () => {
             </div>
             {isMenuOpen && (
                 <div
-                    className="xl:hidden bg-white text-black min-w-2/5 w-2/5 h-screen overflow-auto fixed top-0 left-0 p-[10px] z-50">
+                    className="xl:hidden bg-white text-black min-w-3/5 w-3/5 h-screen overflow-auto fixed top-0 left-0 p-[10px] z-50">
                     <button
                         onClick={() => setIsMenuOpen(false)}
                         className="h-[40px] block w-full p-[10px] text-xl"
