@@ -23,7 +23,7 @@ function Notice({isShow, setIsShow}: {
                         <div className="text-[#333333] text-[22px] font-bold uppercase tracking-normal">SIGN UP FOR
                             NEWSLETTER
                         </div>
-                        <form onSubmit={handleSubmit} className={'flex flex-col mt-[30px] h-[129px] w-[302px] mx-auto'}>
+                        <form onSubmit={handleSubmit} className={'flex flex-col mt-[30px] h-[129px] w-[302px] ml-auto mr-[20px]'}>
                             <input placeholder={'Your email address'}
                                    className={'w-[280px] shadow transition-all ease-in focus:shadow-[0_0_3px_1px_#66afe9] text-[12px] px-[6px] outline-0 py-[12px] h-[41px] mb-[30px] border border-solid border-[#ddd]'}
                                    type="text"/>

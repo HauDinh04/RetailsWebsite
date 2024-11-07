@@ -5,20 +5,21 @@ import {FaRegPlusSquare} from "react-icons/fa";
 import {motion} from "framer-motion";
 import {FaAngleRight, FaRegSquareMinus} from "react-icons/fa6";
 
-interface categories {
+interface Category {
     name: string;
     subCategories?: {
         name: string;
     }[]
 }
 
-function CategorySideBar() {
+function CategorySideBar({data}: { data: any[] }) {
+    console.log(data)
     const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
 
     const toggleExpand = (index: number) => {
         setExpandedCategory(expandedCategory === index ? null : index);
     };
-    const categories: categories[] = [
+    const categories: Category[] = [
         {
             name: 'Smartphone & Tablets',
             subCategories: [
