@@ -15,42 +15,12 @@ import {
 } from "@/components/ui/tooltip"
 import {FiRefreshCcw} from "react-icons/fi";
 import {FaTimesCircle} from "react-icons/fa";
-import {useForm} from 'react-hook-form';
-
-interface CheckoutInput {
-    account: string;
-    shipping: string;
-    payment: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    fax: string;
-    company: string;
-    address1: string;
-    address2: string;
-    city: string;
-    postCode: string;
-    country: string;
-    region: string;
-}
 
 const CheckoutPage = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm<CheckoutInput>({
-        defaultValues: {
-            account: "guest",
-        }
-    });
-
     const [selected, setSelected] = useState<string | null>(null);
     const handleChange = (value: string) => {
         setSelected((prev) => (prev === value ? null : value));
     };
-
-    const onSubmit = (data: CheckoutInput) => {
-        console.log(data);
-    }
-
     return (
         <div className={'mb-[20px]'}>
             <Breadcrumb breadcrumbItems={[
@@ -62,7 +32,7 @@ const CheckoutPage = () => {
             <h2 className="text-[30px] font-light leading-[33px] mt-5 mb-[10px] text-customGray">
                 Checkout{" "}
             </h2>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col sm:flex-row bg-[#f5f5f5] py-5 px-5 ">
+            <div className="flex flex-col sm:flex-row bg-[#f5f5f5] py-5 px-5 ">
                 <div className="grid grid-cols-1 w-full sm:w-1/4 gap-5">
                     <div className="grid grid-cols-1 border p-[10px] bg-white ">
                         <div className=" bg-[#5f6874] px-[10px] py-[15px] ">
@@ -71,20 +41,26 @@ const CheckoutPage = () => {
                             </h4>
                         </div>
                         <div className="flex flex-col gap-1 p-[15px]">
-                            <div className="flex items-center">
-                                <input value={'register'} id={'account1'}
-                                       type="radio" {...register("account", {required: true})}/>
-                                <label className="ml-2 text-[12px]" htmlFor="account1">Register Account</label>
+                            <div className="">
+                                <Checkbox
+                                    checked={selected === "option1"}
+                                    onCheckedChange={() => handleChange("option1")}
+                                />
+                                <label className="ml-2 text-[12px]">Register Account</label>
                             </div>
-                            <div className="flex items-center">
-                                <input value={'guest'} id={'account2'}
-                                       type="radio" {...register("account", {required: true})}/>
-                                <label className="ml-2 text-[12px]" htmlFor="account2">Guest Checkout</label>
+                            <div className="">
+                                <Checkbox
+                                    checked={selected === "option2"}
+                                    onCheckedChange={() => handleChange("option2")}
+                                />
+                                <label className="ml-2 text-[12px]">Guest Checkout</label>
                             </div>
-                            <div className="flex items-center">
-                                <input value={'returning'} id={'account3'}
-                                       type="radio" {...register("account", {required: true})}/>
-                                <label className="ml-2 text-[12px]" htmlFor={'account3'}>Returning Customer</label>
+                            <div className="">
+                                <Checkbox
+                                    checked={selected === "option3"}
+                                    onCheckedChange={() => handleChange("option3")}
+                                />
+                                <label className="ml-2 text-[12px]">Returning Customer</label>
                             </div>
                         </div>
                     </div>
@@ -97,21 +73,21 @@ const CheckoutPage = () => {
                         </div>
                         <div className="flex flex-col gap-1 p-[15px]">
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> First Name
+                                * First Name
                             </label>
                             <Input
                                 placeholder="First Name"
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> Last Name
+                                *Last Name
                             </label>
                             <Input
                                 placeholder="Last Name"
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> Email
+                                * Email
                             </label>
                             <Input
                                 type="email"
@@ -119,7 +95,7 @@ const CheckoutPage = () => {
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> Telephone
+                                * Telephone
                             </label>
                             <Input
                                 required
@@ -127,7 +103,7 @@ const CheckoutPage = () => {
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                Fax
+                                * Fax
                             </label>
                             <Input
                                 required
@@ -144,21 +120,21 @@ const CheckoutPage = () => {
                         </div>
                         <div className="flex flex-col gap-1 p-[15px]">
                             <label htmlFor="" className="text-[12px]">
-                                Company
+                                * Company
                             </label>
                             <Input
                                 placeholder="Company"
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span>Address 1
+                                *Address 1
                             </label>
                             <Input
                                 placeholder="Address 1"
                                 className="rounded-none text-[14px] block focus:outline-none focus:ring-0 "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                Address 2
+                                * Address 2
                             </label>
                             <Input
                                 type=""
@@ -166,7 +142,7 @@ const CheckoutPage = () => {
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> City
+                                * City
                             </label>
                             <Input
                                 required
@@ -174,7 +150,7 @@ const CheckoutPage = () => {
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> Post code
+                                * Post code
                             </label>
                             <Input
                                 type=""
@@ -183,7 +159,7 @@ const CheckoutPage = () => {
                                 className="rounded-none outline-none text-[14px] block active::border-none focus:outline-none "
                             />
                             <label htmlFor="" className="text-[12px]">
-                                <span className={'text-[#F00]'}>*</span> Country
+                                * Country
                             </label>
                             <Input
                                 type=""
@@ -208,14 +184,20 @@ const CheckoutPage = () => {
                                     order.
                                 </p>
                                 <div className="flex flex-col gap-1 p-[10px] sm:p-[15px]">
-                                    <div className="flex items-center">
-                                        <input name={'shipping'} type="radio"/>
+                                    <div className="">
+                                        <Checkbox
+                                            checked={selected === "Free"}
+                                            onCheckedChange={() => handleChange("Free")}
+                                        />
                                         <label className="ml-2 text-[12px]">
                                             Free Shipping - $0.00
                                         </label>
                                     </div>
-                                    <div className="flex items-center">
-                                        <input name={'shipping'} type="radio"/>
+                                    <div className="">
+                                        <Checkbox
+                                            checked={selected === "ShippingRate"}
+                                            onCheckedChange={() => handleChange("ShippingRate")}
+                                        />
                                         <label className="ml-2 text-[12px]">
                                             Flat Shipping Rate - $7.50
                                         </label>
@@ -236,12 +218,18 @@ const CheckoutPage = () => {
                                     order.
                                 </p>
                                 <div className="flex flex-col gap-1 p-[10px] sm:p-[15px]">
-                                    <div className="flex items-center">
-                                        <input name={'delivery'} type="radio"/>
+                                    <div className="">
+                                        <Checkbox
+                                            checked={selected === "CashOnDelivery"}
+                                            onCheckedChange={() => handleChange("CashOnDelivery")}
+                                        />
                                         <label className="ml-2 text-[12px]">Cash On Delivery</label>
                                     </div>
-                                    <div className="flex items-center">
-                                        <input name={'delivery'} type="radio"/>
+                                    <div className="">
+                                        <Checkbox
+                                            checked={selected === "Paypal"}
+                                            onCheckedChange={() => handleChange("Paypal")}
+                                        />
                                         <label className="ml-2 text-[12px]">Paypal</label>
                                     </div>
                                 </div>
@@ -407,14 +395,14 @@ const CheckoutPage = () => {
                                 I have read and agree to the Terms & Conditions
                             </label>
                         </div>
-                        <div className="flex items-center justify-end p-[15px]">
-                            <Button className="bg-bg-main rounded-none px-[12px] py-[6px] text-[14px] font-thin ">
-                                Confirm Orders
+                        <div className="items-end p-[15px]">
+                            <Button className="bg-bg-main rounded-none text-[14px] font-thin ">
+                                Comfirm Orders
                             </Button>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     );
 };
