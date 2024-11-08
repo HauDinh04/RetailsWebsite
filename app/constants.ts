@@ -158,6 +158,10 @@ export const leftNavLinks = [
   },
   {
     url: "/",
+    label: "Smart phone & Tables",
+  },
+  {
+    url: "/",
     label: "Camera & Photo ",
   },
 ];

@@ -15,7 +15,7 @@ const LeftNav = () => {
       </div>
       {leftNavLinks.map((link, index) => (
         <div
-          className="group px-[11px] py-[13px] border items-center text-left  "
+          className="group px-[9px] py-[10px] border items-center text-left  "
           key={index}
         >
           <Link
@@ -58,7 +58,7 @@ const LeftNav = () => {
         </div>
       ))}
 
-      <div className="bg-white">
+      <div className="bg-white transition-all 0.3s ease-in-out z-1">
         {showMoreCategories && (
           <div className="transition-all duration-300 ease-in-out">
             <div className="px-[11px] py-[13px] border items-center text-left bg-white  hover:text-bg-main transition-all 0.5">
