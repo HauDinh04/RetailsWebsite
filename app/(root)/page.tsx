@@ -105,8 +105,8 @@ export default function Home() {
 
                     </div>
                 </div>
-                <section className="xl:block mt-10 md:hidden">
-                    <div className="flex gap-4 object-cover">
+                <section className="xl:block mt-10 md:hidden sm:hidden">
+                    <div className="flex gap-4 object-cover ">
                         <Link href={"/"}>
                             <div className="relative group overflow-hidden w-[578px] h-[200px]">
                                 <Image
