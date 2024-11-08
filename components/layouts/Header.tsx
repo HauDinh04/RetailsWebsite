@@ -250,7 +250,7 @@ export default function Header() {
                                         Call Us: (888) 123456789
                                     </span>
                                 </div>
-                                <div className="pr-[15px]">
+                                <div className="pr-[15px] relative">
                                     <Button onClick={() => setIsShowCart(!isShowCart)}
                                             variant="outline"
                                             className="pt-[16px] sm:pt-0 border-none hover:bg-white px-0 focus:outline-none bg-white-1"
@@ -280,13 +280,8 @@ export default function Header() {
                                         </div>
                                     </Button>
                                     {isShowCart && (
-                                        <div onClick={() => setIsShowCart(false)}
-                                             className={"w-screen h-screen fixed top-0 left-0 z-[10]"}>
-                                        </div>
-                                    )}
-                                    {isShowCart && (
                                         <div
-                                            className="w-[330px] mt-[10px] border-t-[3px] bg-white border-[#0083c1] md:absolute z-[10] md:top-[120px] md:right-[300px]">
+                                            className="w-[330px] mt-[10px] border-t-[3px] bg-white border-[#0083c1] right-[10px] absolute z-[10] md:top-[40px] 2xl:right-[-100px]">
                                             <div>
                                                 <table>
                                                     <tbody>
@@ -379,6 +374,11 @@ export default function Header() {
                     </div>
                 </div>
             </div>
+            {isShowCart && (
+                <div onClick={() => setIsShowCart(false)}
+                     className={"w-screen h-screen fixed top-0 left-0 z-[10]"}>
+                </div>
+            )}
         </header>
     );
 }
