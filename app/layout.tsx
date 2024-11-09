@@ -6,6 +6,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/components/layouts/Footer";
 import NavBar from "@/components/layouts/NavBar";
 import Header from "@/components/layouts/Header";
+import ButtonToTop from "@/components/layouts/ButtonToTop";
 export const metadata: Metadata = {
     title: "Retails Website",
     description: "",
@@ -30,6 +31,7 @@ export default function RootLayout({
                 <NavBar/>
                 {children}
                 <Footer />
+                <ButtonToTop/>
             </main>
         </StoreProvider>
       </body>
