@@ -11,17 +11,17 @@ import Slideshow from "@/components/layouts/SlideShow";
 import {CountDownProduct} from "@/components/layouts/CountDownProduct";
 import Image from "next/image";
 import {
-    Autoplay,
+    // Autoplay,
     FreeMode,
-    Navigation,
+    // Navigation,
     Pagination,
-    Scrollbar,
+    // Scrollbar,
 } from "swiper/modules";
-import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
+// import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
 import Link from "next/link";
 
-import {MdOutlineNavigateNext} from "react-icons/md";
-import {GrFormPrevious} from "react-icons/gr";
+// import {MdOutlineNavigateNext} from "react-icons/md";
+// import {GrFormPrevious} from "react-icons/gr";
 
 export default function Home() {
     const [isShow, setIsShow] = useState(true);
@@ -225,85 +225,6 @@ export default function Home() {
                         ))}
                     </Swiper>
                 </div>
-                <div className="my-5 grid lg:grid-cols-4 sm:grid-cols-2 gap-2">
-                    {Array(4)
-                        .fill("")
-                        .map((_, index) => (
-                            <div key={index}>
-                                <div className="pt-[43px] relative">
-                                    <div className="flex flex-row items-center justify-between mb-[5px]">
-                                        <h3 className="text-[#222222] text-heading3-bold">
-                                            New Arrivals
-                                        </h3>
-                                        <div className="flex flex-row">
-                                            <div
-                                                className="w-[30px] h-[30px] bg-[#f2f2f2] group hover:bg-bg-main flex items-center justify-center rounded">
-                                                <GrFormPrevious
-                                                    className="text-[#333] group-hover:text-white-1 w-[16px] h-[16px]"/>
-                                            </div>
-
-                                            <div
-                                                className="bg-[#f2f2f2] group hover:bg-bg-main w-[30px] h-[30px] flex items-center justify-center rounded ml-[5px]">
-                                                <MdOutlineNavigateNext
-                                                    className="text-[#333] group-hover:text-white-1"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr className="border-dashed border border-[#f2f2f2]"/>
-                                    <hr className="border-dashed border border-[#f2f2f2]"/>
-                                    <hr className="border-dashed border border-[#f2f2f2]"/>
-                                    <div className="py-[20px]">
-                                        <Swiper
-                                            spaceBetween={10}
-                                            slidesPerView={1}
-                                            navigation={{
-                                                nextEl: ".button-next-slide",
-                                                prevEl: ".button-prev-slide",
-                                            }}
-                                            modules={[Navigation, Scrollbar, Autoplay]}
-                                            scrollbar={{hide: true}}
-                                            loop={true}
-                                            autoplay={{delay: 6000, disableOnInteraction: false}}
-                                            className=""
-                                        >
-                                            <SwiperSlide className="shrink">
-
-                                                {[...Array(10)].map((_, index) => (
-                                                    <SwiperSlide
-                                                        key={index}
-                                                        className="flex items-center justify-center"
-                                                    >
-                                                        <div className="w-full h-auto relative">
-                                                            <Image
-                                                                src="/images/blog-3.jpg"
-                                                                alt="images blogs"
-                                                                fill
-                                                                className=" object-cover"
-                                                            />
-                                                        </div>
-                                                    </SwiperSlide>
-                                                ))}
-
-                                            </SwiperSlide>
-                                        </Swiper>
-                                    </div>
-                                </div>
-                                {[...Array(3)].map((_, idx) => (
-                                    <SmallBoxProduct
-                                        key={`${index}-${idx}`}
-                                        id={`product${idx + 1}`}
-                                        name="Sample Product"
-                                        rating={4.5}
-                                        price={100}
-                                        image="/images/product-1.jpg"
-                                        oldPrice={150}
-                                        className="optional-class"
-                                    />
-                                ))}
-                            </div>
-                        ))}
-                </div>
-
                 <div className="">
                     <div className="py-3">
                         <h3 className="text-heading2">Fetured brands</h3>
