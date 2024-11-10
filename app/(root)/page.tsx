@@ -105,7 +105,7 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* <section className="xl:block mt-10 md:hidden sm:hidden">
+        <section className="hidden lg:block  mt-10 ">
           <div className="flex gap-4 object-cover ">
             <Link href={"/"}>
               <div className="relative group overflow-hidden w-[578px] h-[200px]">
@@ -170,7 +170,7 @@ export default function Home() {
               </div>
             </Link>
           </div>
-        </section> */}
+        </section>
 
         <FeatureProduct />
         <div className="">
