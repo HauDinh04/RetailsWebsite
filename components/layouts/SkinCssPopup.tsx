@@ -16,7 +16,7 @@ function SkinCssPopup() {
     if (isShow) {
         return (
             <div onClick={handleHideSkinCss}
-                 className="h-screen w-screen fixed inset-0 bg-[rgba(0,0,0,0.4)]">
+                 className="h-screen w-screen hidden lg:block fixed inset-0 bg-[rgba(0,0,0,0.4)]">
                 <AnimatePresence>
                     <motion.div onClick={(e) => e.stopPropagation()}
                                 initial={{opacity: 0, y: -50}}

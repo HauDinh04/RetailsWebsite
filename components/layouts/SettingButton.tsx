@@ -102,7 +102,7 @@ function SettingButton() {
             animate={{x: 0}}
             exit={{x: -100}}
             transition={{duration: 0.7, ease: "easeOut"}}
-            className="fixed w-[240px] z-50 shadow-2xl h-max left-0 top-[120px] rounded-[3px] bg-white">
+            className="fixed hidden lg:block w-[240px] z-50 shadow-2xl h-max left-0 top-[120px] rounded-[3px] bg-white">
             <div className="bg-[#444] flex items-center justify-between w-full text-white h-[36px]">
                 <div className="uppercase text-[14px] text-center font-semibold flex-1">Demo option</div>
                 <div onClick={() => setIsOpen(false)}
@@ -166,7 +166,7 @@ function SettingButton() {
                     animate={{x: 0}}
                     exit={{x: -42}}
                     transition={{duration: 0.5, ease: "easeOut"}}
-                    className="fixed w-[42px] h-[40px] left-0 top-[220px] rounded-r-[3px] rounded-b-[3px] p-[10px] cursor-pointer bg-black">
+                    className="fixed hidden lg:block w-[42px] h-[40px] left-0 top-[220px] rounded-r-[3px] rounded-b-[3px] p-[10px] cursor-pointer bg-black">
             <FaCog className={'text-white text-[20px] w-max h-max'}/>
         </motion.div>
     )
