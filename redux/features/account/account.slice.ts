@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const accountReducer = createSlice({
-    name: 'demo',
+    name: 'account',
     initialState: {
         isLogin: false,
         user: {}
