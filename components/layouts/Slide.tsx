@@ -44,15 +44,16 @@ const Slide: React.FC<slideProps> = ({ title, nextBtn, prevBtn }) => {
                     {Array.from({ length: 10 }).map((_, index) => (
                         <SwiperSlide key={index} className="grid grid-cols-3 gap-5 ">
                             {Array.from({ length: 3 }).map((_, subIndex) => (
-                                <SmallBoxProduct
-                                    key={subIndex}
-                                    id={`${subIndex}`}
-                                    name={`Product ${subIndex + 1}`}
-                                    rating={4.5}
-                                    price={20}
-                                    oldPrice={25}
-                                    image="/images/product-1.jpg"
-                                />
+                                <div className="mt-3" key={index}> <SmallBoxProduct
+                                key={subIndex}
+                                id={`${subIndex}`}
+                                name={`Product ${subIndex + 1}`}
+                                rating={4.5}
+                                price={20}
+                                oldPrice={25}
+                                image="/images/product-1.jpg"
+                            /></div>
+                               
                             ))}
                         </SwiperSlide>
                     ))}

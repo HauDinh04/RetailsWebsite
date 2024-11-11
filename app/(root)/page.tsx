@@ -176,6 +176,9 @@ export default function Home() {
         <div className="">
           <div className="py-3">
             <h3 className="text-heading2">Latest Blog</h3>
+            <hr className="border-dashed border border-[#f2f2f2]" />
+            <hr className="border-dashed border border-[#f2f2f2]" />
+            <hr className="border-dashed border border-[#f2f2f2]" />
           </div>
           <Swiper
             slidesPerView={3}
@@ -196,31 +199,43 @@ export default function Home() {
                 spaceBetween: 2,
               },
               1024: {
-                slidesPerView: 5,
-                spaceBetween: 5,
+                slidesPerView: 4,
+                spaceBetween: 4,
               },
             }}
           >
             {[...Array(10)].map((_, index) => (
               <SwiperSlide
                 key={index}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center "
               >
-                <div className="w-full h-auto relative">
+                <div className="w-full h-auto relative group p-1 border rounded-sm">
                   <Image
                     src="/images/blog-3.jpg"
                     alt="images blogs"
-                    layout="responsive"
-                    width={200}
-                    height={200}
-                    className=" object-cover"
+                    width={390}
+                    height={260}
+                    className="object-cover hover:cursor-pointer"
                   />
+                  <div className="absolute top-3 rounded-[3px] left-4 w-[56px] h-[65px] bg-white items-center flex flex-col pointer-events-none z-10">
+                    <p className="text-[24px] font-bold leading-4 mt-[15px] mb-[3px] text-[#0083C1]">
+                      24
+                    </p>
+                    <p className="text-[12px] mb-[10px] mt-1 text-[#0083C1] leading-4">
+                      Dec
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-600 ease-in-out">
+                    <p className="text-white text-sm px-4 py-2 absolute bottom-1 ">
+                      Lorem Ipsum is simply dummy text of the printing.
+                    </p>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <section className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5 ">
+        <section className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5 px-[-15px]">
           <div className="">
             <Slide title="New Arrivals" nextBtn="nex" prevBtn="pre" />
           </div>
@@ -238,6 +253,9 @@ export default function Home() {
         <div className="">
           <div className="py-3">
             <h3 className="text-heading2">Fetured brands</h3>
+            <hr className="border-dashed border border-[#f2f2f2]" />
+            <hr className="border-dashed border border-[#f2f2f2]" />
+            <hr className="border-dashed border border-[#f2f2f2]" />
           </div>
 
           <Swiper
@@ -256,15 +274,15 @@ export default function Home() {
               },
               640: {
                 slidesPerView: 2,
-                spaceBetween: 5,
+                spaceBetween: 2,
               },
               768: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 2,
               },
               1024: {
-                slidesPerView: 6,
-                spaceBetween: 10,
+                slidesPerView: 7,
+                spaceBetween: 5,
               },
             }}
           >
@@ -273,13 +291,13 @@ export default function Home() {
                 key={index}
                 className="flex items-center justify-center"
               >
-                <div className="w-full h-32 relative">
+                <div className="w-full relative">
                   <Image
-                    src="/images/blog-3.jpg"
+                    src="/images/170x200.jpg"
                     alt="images blogs"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    width={170}
+                    height={100}
+                    className=" transition-transform duration-500 hover:scale-x-110"
                   />
                 </div>
               </SwiperSlide>
