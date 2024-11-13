@@ -16,14 +16,14 @@ function SkinCssPopup() {
     if (isShow) {
         return (
             <div onClick={handleHideSkinCss}
-                 className="h-screen w-screen hidden lg:block fixed inset-0 bg-[rgba(0,0,0,0.4)]">
+                 className="h-screen w-screen hidden z-[30] lg:block fixed inset-0 bg-[rgba(0,0,0,0.4)]">
                 <AnimatePresence>
                     <motion.div onClick={(e) => e.stopPropagation()}
                                 initial={{opacity: 0, y: -50}}
                                 animate={{opacity: 1, y: 0}}
                                 exit={{opacity: 0, y: -50}}
                                 transition={{duration: 0.5, ease: "easeOut"}}
-                                className="rounded-[6px] shadow-2xl border border-solid border-[rgba(0,0,0,0.3)] my-[30px] mx-auto bg-white h-max xl:w-[900px]">
+                                className="rounded-[6px]  shadow-2xl border border-solid border-[rgba(0,0,0,0.3)] my-[30px] mx-auto bg-white h-max xl:w-[900px]">
                         <div className="p-[15px] flex justify-between items-center text-[#555555] ">
                             <div className="text-[15px]">Skin CSS</div>
                             <MdClose
