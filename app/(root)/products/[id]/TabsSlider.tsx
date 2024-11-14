@@ -331,7 +331,7 @@ export default function TabsSlider() {
 
                                 <button
                                     type="submit"
-                                    className="mt-[12px] mr-[10px] py-[7px] px-[13px] text-white text-[14px] font-normal bg-bg-main hover:bg-[#2e6da4]"
+                                    className="mt-[12px] mr-[10px] py-[7px] px-[13px] text-white text-[14px] font-normal bg-black-2 hover:bg-[#2e6da4]"
                                 >
                                     Continue
                                 </button>
