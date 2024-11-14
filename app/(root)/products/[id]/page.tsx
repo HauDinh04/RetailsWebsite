@@ -5,6 +5,7 @@ import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
 import TabsSlider from "./TabsSlider";
 import ProductDetails from "./ProductDetails";
 import Breadcrumb from "@/components/layouts/Breadcrumb";
+import { fetchProductDetail } from "@/lib/ProductsDetail.action";
 
 const products = [
     {
@@ -63,7 +64,14 @@ const productDetail = {
     sku: "SKU001",
 };
 
-export default function ProductDetail() {
+export default async function ProductDetail({
+    params,
+}: {
+    params: { id: string };
+}) {
+    
+    const data = await fetchProductDetail(Number(params.id));
+
     return (
         <>
             <Breadcrumb
@@ -132,6 +140,7 @@ export default function ProductDetail() {
             </div>
             <div className="pb-[20px]">
                 <FeatureProduct
+                    title="Related Products"
                     breakpoints={{
                         480: { slidesPerView: 4, spaceBetween: 30 },
                         1024: { slidesPerView: 5, spaceBetween: 30 },

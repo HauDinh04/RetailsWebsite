@@ -95,6 +95,7 @@ const products = [
 ];
 
 export default function FeatureProduct({
+    title = "Smartphone & Tablet",
     breakpoints = {
         480: { slidesPerView: 3, spaceBetween: 10 },
         1024: { slidesPerView: 5, spaceBetween: 10 },
@@ -104,9 +105,7 @@ export default function FeatureProduct({
     return (
         <div className="pt-[43px] relative">
             <div className="flex flex-row items-center justify-between mb-[5px]">
-                <h3 className="text-[#222222] text-heading1">
-                    Smartphone & Tablet
-                </h3>
+                <h3 className="text-[#222222] text-heading1">{title}</h3>
                 <div className="flex flex-row">
                     <div className="w-[30px] h-[30px] bg-[#f2f2f2] group hover:bg-bg-main flex items-center justify-center rounded button-prev-slide-p">
                         <GrFormPrevious className="text-[#333] group-hover:text-white-1 w-[16px] h-[16px]" />
