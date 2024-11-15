@@ -16,7 +16,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import Breadcrumb from "@/components/layouts/Breadcrumb";
-import {fetchCategories} from "@/lib/Categories.action";
+import {fetchCategories, fetchProductByPage} from "@/lib/Categories.action";
 
 interface DataProductAPI {
     products: {
@@ -175,6 +175,10 @@ function Page() {
             .then(data => {
                 setCategories(data);
             });
+        fetchProductByPage()
+            .then(data => {
+                console.log(data);
+            })
     }, [])
 
     return (
