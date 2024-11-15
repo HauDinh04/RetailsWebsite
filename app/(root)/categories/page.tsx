@@ -21,9 +21,12 @@ import {fetchCategories, fetchProductByPage} from "@/lib/Categories.action";
 
 function Page() {
     const [categories, setCategories] = useState([]);
+    const [page, setPage] = useState(1);
+    const [limit, setLimit] = useState(9);
     const [products, setProducts] = useState([] as ProductType[]);
     const [hovered, setHovered] = useState(false);
     const [isList, setIsList] = useState(true);
+
 
     // const data: DataProductAPI = {
     //     products: [
@@ -157,7 +160,7 @@ function Page() {
             .then(data => {
                 setCategories(data);
             });
-        fetchProductByPage()
+        fetchProductByPage(page, limit)
             .then(data => {
                 setProducts(data as ProductType[]);
                 console.log(data);
