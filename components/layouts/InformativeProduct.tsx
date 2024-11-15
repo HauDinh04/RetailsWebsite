@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {FaStar, FaStarHalfAlt, FaHeart, FaExchangeAlt, FaSearch} from "react-icons/fa";
 
-function InformativeProduct({id, name, rating, price, image, oldPrice, content, DiscountPercentage, className = ''}: {
+function InformativeProduct({id, name, rating, price, image, oldPrice, content, discount_price, className = ''}: {
     id: string,
     name: string,
     rating: number,
@@ -11,10 +11,10 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
     image: string,
     oldPrice: number,
     content: string,
-    DiscountPercentage: number,
+    discount_price: number,
     className?: string
 }) {
-
+    const discountPercentage = Math.round(((discount_price - price) / discount_price) * 100);
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
 
@@ -35,7 +35,7 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                     <div
                         className="absolute top-[10px] right-[10px] w-[45px] h-[45px] bg-[#ff5555] rounded-full flex items-center justify-center">
                         <p className="text-white text-[12px]">
-                            -{DiscountPercentage}%
+                            -{discountPercentage}%
                         </p>
 
                     </div>

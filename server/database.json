@@ -6,10 +6,11 @@
       "description": "A stunning display for creative professionals.",
       "rating": 5,
       "price": 100,
-      "image": "/images/product-2.jpg",
+      "image": "/images/sua_tuoi_horizon_organic.webp",
       "oldPrice": 0,
       "discount_price": 99,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU001",
       "images": [
         "/images/product-2.jpg",
@@ -30,6 +31,7 @@
       "oldPrice": 0,
       "discount_price": 80,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU002",
       "images": [
         "/images/product-2.jpg",
@@ -50,6 +52,7 @@
       "oldPrice": 0,
       "discount_price": 170,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU003",
       "images": [
         "/images/product-2.jpg",
@@ -70,6 +73,7 @@
       "oldPrice": 0,
       "discount_price": 30,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU004",
       "images": [
         "/images/product-2.jpg",
@@ -90,6 +94,7 @@
       "oldPrice": 0,
       "discount_price": 100,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU005",
       "images": [
         "/images/product-2.jpg",
@@ -110,6 +115,7 @@
       "oldPrice": 0,
       "discount_price": 120,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU006",
       "images": [
         "/images/product-2.jpg",
@@ -130,6 +136,7 @@
       "oldPrice": 0,
       "discount_price": 120,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU007",
       "images": [
         "/images/product-2.jpg",
@@ -150,6 +157,7 @@
       "oldPrice": 0,
       "discount_price": 320,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU008",
       "images": [
         "/images/product-2.jpg",
@@ -170,6 +178,7 @@
       "oldPrice": 0,
       "discount_price": 360,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU009",
       "images": [
         "/images/product-2.jpg",
@@ -190,6 +199,7 @@
       "oldPrice": 0,
       "discount_price": 150,
       "in_stock": true,
+      "isNew": true,
       "sku": "SKU0010",
       "images": [
         "/images/product-2.jpg",
@@ -217,6 +227,7 @@
           "oldPrice": 0,
           "discount_price": 99,
           "in_stock": true,
+          "isNew": true,
           "sku": "SKU001"
         }
       ]

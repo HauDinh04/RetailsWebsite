@@ -18,157 +18,139 @@ import {
 import Breadcrumb from "@/components/layouts/Breadcrumb";
 import {fetchCategories, fetchProductByPage} from "@/lib/Categories.action";
 
-interface DataProductAPI {
-    products: {
-        id: string
-        name: string
-        price: number
-        image: string
-        oldPrice: number
-        rating: number
-        isNew: boolean
-        sale: number
-        description: string
-    }[],
-    pagination: {
-        total: number,
-        totalPage: number,
-        currentPage: number
-    }
-}
 
 function Page() {
     const [categories, setCategories] = useState([]);
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([] as ProductType[]);
     const [hovered, setHovered] = useState(false);
     const [isList, setIsList] = useState(true);
 
-    const data: DataProductAPI = {
-        products: [
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            },
-            {
-                id: "1",
-                name: "Dummy product #01",
-                price: 74,
-                image: '/images/product-2.jpg',
-                oldPrice: 0,
-                rating: 4.5,
-                isNew: true,
-                sale: 10,
-                description: `
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-                `
-            }
-        ],
-        pagination: {
-            total: 47,
-            totalPage: 4,
-            currentPage: 1
-        }
-    }
+    // const data: DataProductAPI = {
+    //     products: [
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         },
+    //         {
+    //             id: "1",
+    //             name: "Dummy product #01",
+    //             price: 74,
+    //             image: '/images/product-2.jpg',
+    //             oldPrice: 0,
+    //             rating: 4.5,
+    //             isNew: true,
+    //             sale: 10,
+    //             description: `
+    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
+    //             `
+    //         }
+    //     ],
+    //     pagination: {
+    //         total: 47,
+    //         totalPage: 4,
+    //         currentPage: 1
+    //     }
+    // }
 
     useEffect(() => {
         fetchCategories()
@@ -177,6 +159,7 @@ function Page() {
             });
         fetchProductByPage()
             .then(data => {
+                setProducts(data as ProductType[]);
                 console.log(data);
             })
     }, [])
@@ -277,7 +260,7 @@ function Page() {
                             <div
                                 className="bg-[#f8f8f8] w-full md:w-max text-center text-[12px] text-[#555555]
                                  h-[55px] leading-[55px] align-middle md:bg-none">
-                                item 01-16 of {data.pagination.total} total
+                                {/*item 01-16 of {data.pagination.total} total*/}
                             </div>
                             <div className="block md:hidden text-[12px] text-[#555555] leading-[55px] h-[55px]">Sort
                                 By:
@@ -317,17 +300,17 @@ function Page() {
                         </div>
                         <div
                             className={`w-full grid-cols-1 grid mt-[30px] gap-[30px] ${isList ? "sm:grid-cols-3 " : "grid-cols-1"}`}>
-                            {isList && data && data.products.map((item, index) => (
+                            {isList && products && products.map((item, index) => (
                                 <BoxProduct name={item.name} price={item.price} image={item.image} id={item.id}
-                                            rating={item.rating} isNew={item.isNew} sale={item.sale}
+                                            rating={item.rating} isNew={item.isNew} discount_price={item.discount_price}
                                             oldPrice={item.oldPrice} key={index}/>
                             ))}
-                            {!isList && data && data.products.map((item, index) => (
+                            {!isList && products && products.map((item, index) => (
                                 <InformativeProduct key={index} oldPrice={item.oldPrice}
                                                     image={item.image}
                                                     price={item.price}
                                                     id={item.id} rating={item.rating} name={item.name}
-                                                    content={item.description} DiscountPercentage={item.sale}/>
+                                                    content={item.description} discount_price={item.discount_price}/>
                             ))}
                         </div>
                         <div
@@ -367,17 +350,17 @@ function Page() {
                             <div
                                 className="bg-[#f8f8f8] w-full md:w-max text-center text-[12px] text-[#555555]
                                  h-[55px] leading-[55px] align-middle md:bg-none">
-                                item 01-16 of {data.pagination.total} total
+                                {/*item 01-16 of {data.pagination.total} total*/}
                             </div>
                             <div className="flex gap-[5px] items-center">
-                                {Array.from({length: data.pagination.totalPage}, (_, index) => (
-                                    <Link href={'/'}
-                                          className={`text-[12px] rounded-[3px] border border-solid py-[6px] px-[12px]
-                                          ${data.pagination.currentPage === index + 1 ? ' bg-[#337ab7] border-[#337ab7] text-white' : 'bg-white border-[#dddd] text-[#777777]'}`}
-                                          key={index}>
-                                        {index + 1}
-                                    </Link>
-                                ))}
+                                {/*{Array.from({length: data.pagination.totalPage}, (_, index) => (*/}
+                                {/*    <Link href={'/'}*/}
+                                {/*          className={`text-[12px] rounded-[3px] border border-solid py-[6px] px-[12px]*/}
+                                {/*          ${data.pagination.currentPage === index + 1 ? ' bg-[#337ab7] border-[#337ab7] text-white' : 'bg-white border-[#dddd] text-[#777777]'}`}*/}
+                                {/*          key={index}>*/}
+                                {/*        {index + 1}*/}
+                                {/*    </Link>*/}
+                                {/*))}*/}
                                 <div
                                     className="text-[12px] bg-white rounded-[3px] border border-[#dddd] border-solid text-[#777777] py-[6px] px-[12px]">{'>'}</div>
                             </div>
