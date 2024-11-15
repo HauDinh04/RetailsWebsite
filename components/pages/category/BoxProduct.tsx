@@ -7,16 +7,17 @@ import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function BoxProduct({id, name, image, price, oldPrice, rating, sale, isNew = false}: {
+export default function BoxProduct({id, name, image, price, oldPrice, rating, discount_price, isNew = false}: {
     id: string,
     name: string,
     image: string,
     price: number,
     oldPrice: number,
     rating: number,
-    sale: number,
-    isNew: boolean
+    isNew: boolean,
+    discount_price: number
 }) {
+    const discountPercentage = Math.round(((discount_price - price) / discount_price) * 100);
     return (
         <div className="h-max w-full group">
             <div
@@ -36,10 +37,10 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, sa
                             New
                         </div>
                     )}
-                    {sale !== 0 && (
+                    {discountPercentage !== 0 && (
                         <div
                             className="absolute uppercase right-[6px] top-[6px] w-[45px] h-[45px] rounded-full bg-[#ff5555] text-white-1 text-info flex items-center justify-center">
-                            {`-${sale}%`}
+                            {`-${discountPercentage}%`}
                         </div>
                     )}
                     <div

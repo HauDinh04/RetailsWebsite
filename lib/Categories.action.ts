@@ -22,7 +22,7 @@ export const fetchCategories = async () => {
 
 export const fetchProductByPage = async (page: number = 1) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/product?page=${page}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_JSON}/products?page=${page}`, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
