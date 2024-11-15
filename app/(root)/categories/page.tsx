@@ -16,156 +16,42 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import Breadcrumb from "@/components/layouts/Breadcrumb";
-import {fetchCategories, fetchProductByPage} from "@/lib/Categories.action";
-
+import {fetchCategories, fetchProductByPage, fetchTotalProduct} from "@/lib/Categories.action";
 
 function Page() {
-    const [categories, setCategories] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [categories, setCategories] = useState([] as CategoryType[]);
     const [page, setPage] = useState(1);
-    const [limit, setLimit] = useState(9);
+    const limit = 9;
     const [products, setProducts] = useState([] as ProductType[]);
     const [hovered, setHovered] = useState(false);
     const [isList, setIsList] = useState(true);
 
-
-    // const data: DataProductAPI = {
-    //     products: [
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         },
-    //         {
-    //             id: "1",
-    //             name: "Dummy product #01",
-    //             price: 74,
-    //             image: '/images/product-2.jpg',
-    //             oldPrice: 0,
-    //             rating: 4.5,
-    //             isNew: true,
-    //             sale: 10,
-    //             description: `
-    //             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est .
-    //             `
-    //         }
-    //     ],
-    //     pagination: {
-    //         total: 47,
-    //         totalPage: 4,
-    //         currentPage: 1
-    //     }
-    // }
+    const handleNextPage = () => {
+        const totalPage = Math.ceil(total / limit);
+        if (page < totalPage) {
+            setPage(page + 1);
+        }
+    }
 
     useEffect(() => {
         fetchCategories()
             .then(data => {
-                setCategories(data);
+                setCategories(data as CategoryType[]);
             });
+        fetchTotalProduct()
+            .then(data => {
+                setTotal(data as number);
+            })
+    }, [categories, total])
+
+    useEffect(() => {
         fetchProductByPage(page, limit)
             .then(data => {
                 setProducts(data as ProductType[]);
                 console.log(data);
             })
-    }, [])
+    }, [page])
 
     return (
         <section className={'mb-[25px]'}>
@@ -177,7 +63,11 @@ function Page() {
             ]}/>
             <div className="flex w-full  flex-col md:flex-row">
                 <div className="pr-[15px] lg:flex lg:flex-col lg:gap-[30px]">
-                    <CategorySideBar data={categories}/>
+                    {categories.length > 0 ? (
+                        <CategorySideBar data={categories}/>
+                    ) : (
+                        <div className="text-heading2">Loading ...</div>
+                    )}
                     <LatestProduct/>
                     <Link href={'/'}
                           onMouseEnter={() => setHovered(true)}
@@ -190,7 +80,8 @@ function Page() {
                             transition={{duration: 0.3, ease: 'easeInOut'}}
                             className="absolute bg-[rgba(0,0,0,0.3)] w-full h-full inset-0 z-[2]"
                         />
-                        <Image fill src="/images/product-1.jpg" alt="Product" className="object-cover w-full h-full"/>
+                        <Image fill src="/images/65a10b505e3001c955109b7f1906a314.jpg" alt="Product"
+                               className="object-cover w-full h-full"/>
                     </Link>
                 </div>
                 <div className="lg:pl-[15px] w-full">
@@ -198,7 +89,8 @@ function Page() {
                     <div className="w-full flex gap-[30px] flex-col md:flex-row">
                         <div className="lg:max-w-[277px]">
                             <div className="relative w-[262px] h-[136px]">
-                                <Image alt={''} fill src={'/images/product-1.jpg'}/>
+                                <Image alt={''} sizes={'100'} fill
+                                       src={'/images/2fd8c9b3a502e65586d008fe1a2456ce.jpg'}/>
                             </div>
                         </div>
                         <div className="lg:max-w-[555px] text-[12px] text-[#555555]">
@@ -263,7 +155,7 @@ function Page() {
                             <div
                                 className="bg-[#f8f8f8] w-full md:w-max text-center text-[12px] text-[#555555]
                                  h-[55px] leading-[55px] align-middle md:bg-none">
-                                {/*item 01-16 of {data.pagination.total} total*/}
+                                item 01-09 of {total} total
                             </div>
                             <div className="block md:hidden text-[12px] text-[#555555] leading-[55px] h-[55px]">Sort
                                 By:
@@ -315,6 +207,9 @@ function Page() {
                                                     id={item.id} rating={item.rating} name={item.name}
                                                     content={item.description} discount_price={item.discount_price}/>
                             ))}
+                            {products.length === 0 && (
+                                <div className={'text-center col-span-3 text-heading2'}>Loading ...</div>
+                            )}
                         </div>
                         <div
                             className="bg-none mt-[20px] gap-[10px] md:gap-0 md:bg-[#f8f8f8] w-full h-max flex flex-col md:flex-row items-center px-[10px] justify-between
@@ -353,19 +248,29 @@ function Page() {
                             <div
                                 className="bg-[#f8f8f8] w-full md:w-max text-center text-[12px] text-[#555555]
                                  h-[55px] leading-[55px] align-middle md:bg-none">
-                                {/*item 01-16 of {data.pagination.total} total*/}
+                                item 01-09 of {total} total
                             </div>
                             <div className="flex gap-[5px] items-center">
-                                {/*{Array.from({length: data.pagination.totalPage}, (_, index) => (*/}
-                                {/*    <Link href={'/'}*/}
-                                {/*          className={`text-[12px] rounded-[3px] border border-solid py-[6px] px-[12px]*/}
-                                {/*          ${data.pagination.currentPage === index + 1 ? ' bg-[#337ab7] border-[#337ab7] text-white' : 'bg-white border-[#dddd] text-[#777777]'}`}*/}
-                                {/*          key={index}>*/}
-                                {/*        {index + 1}*/}
-                                {/*    </Link>*/}
-                                {/*))}*/}
-                                <div
-                                    className="text-[12px] bg-white rounded-[3px] border border-[#dddd] border-solid text-[#777777] py-[6px] px-[12px]">{'>'}</div>
+                                <div onClick={handleNextPage}
+                                     className={`text-[12px] bg-white cursor-pointer
+                                     rounded-[3px] border border-[#dddd] border-solid
+                                      text-[#777777] py-[6px] px-[12px] ${page < Math.ceil(total / limit) ? "hover:bg-[#eee]" : "cursor-not-allowed"}`}>{'<'}</div>
+                                {Array.from({length: Math.ceil(total / limit)}, (_, index) => (
+                                    <Link href={'/'}
+                                          className={`text-[12px] rounded-[3px] border border-solid py-[6px] px-[12px]
+                                          ${page === index + 1 ? ' bg-[#337ab7] border-[#337ab7] text-white' : `bg-white border-[#dddd]
+                                           hover:bg-[#eee] text-[#777777]`}`}
+                                          key={index} onClick={(e) => {
+                                        e.preventDefault();
+                                        setPage(index + 1);
+                                    }}>
+                                        {index + 1}
+                                    </Link>
+                                ))}
+                                <div onClick={handleNextPage}
+                                     className={`text-[12px] bg-white cursor-pointer
+                                     rounded-[3px] border border-[#dddd] border-solid
+                                      text-[#777777] py-[6px] px-[12px] ${page < Math.ceil(total / limit) ? "hover:bg-[#eee]" : "cursor-not-allowed"}`}>{'>'}</div>
                             </div>
                         </div>
                     </div>

@@ -14,14 +14,14 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
     discount_price: number,
     className?: string
 }) {
-    const discountPercentage = Math.round(((discount_price - price) / discount_price) * 100);
+    const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
 
     return (
-        <Link href={`/product/${id}`} className={'flex flex-col sm:flex-row group w-full h-max' + ` ${className}`}>
-            <div
-                className="p-[5px] w-auto h-auto group-hover:border-[#0083c1] border border-solid border-[#ccc] rounded">
+        <div className={'flex flex-col sm:flex-row group w-full h-max' + ` ${className}`}>
+            <Link href={`/products/${id}`}
+                  className="block p-[5px] w-auto h-auto group-hover:border-[#0083c1] border border-solid border-[#ccc] rounded">
                 <div className="relative aspect-[3/4] w-full h-[334px]">
                     <Image alt={name || ''} src={image} className={'object-cover'}
                            sizes="100vw" fill/>
@@ -55,11 +55,11 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
 
             <div className="flex flex-col pt-0 pl-0 lg:pt-[30px] sm:pl-[30px] w-max h-auto">
-                <div
-                    className="text-[rgba(0,0,0,0.7)] text-[18px] lg:mt-[10px] lg:mb-[10px] group-hover:text-[#0083c1] whitespace-nowrap overflow-hidden text-ellipsis"> {name} </div>
+                <Link href={`/products/${id}`}
+                      className="block text-[rgba(0,0,0,0.7)] text-[18px] lg:mt-[10px] lg:mb-[10px] group-hover:text-[#0083c1] whitespace-nowrap overflow-hidden text-ellipsis"> {name} </Link>
                 <div className={'flex gap-[5px] text-[rgba(0,0,0,0.7)] sm:my-[5px] lg:mt-[10px] lg:mb-[20px]'}>
                     {Array.from({length: fullStars}).map((_, index) => (
                         <FaStar className={'text-[12px]'} key={index}/>
@@ -90,7 +90,7 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                 </button>
             </div>
 
-        </Link>
+        </div>
     );
 }
 

@@ -8,7 +8,7 @@
       "price": 100,
       "image": "/images/sua_tuoi_horizon_organic.webp",
       "oldPrice": 0,
-      "discount_price": 99,
+      "discount_price": 90,
       "in_stock": true,
       "isNew": true,
       "sku": "SKU001",
@@ -27,7 +27,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 3,
       "price": 150,
-      "image": "/images/product-2.jpg",
+      "image": "/images/premium_photo-1669652639337-c513cc42ead6.jpg",
       "oldPrice": 0,
       "discount_price": 80,
       "in_stock": true,
@@ -48,7 +48,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 2.8,
       "price": 250,
-      "image": "/images/product-2.jpg",
+      "image": "/images/fa8e8d_795310e1890c45d89b2ac85172faad72~mv2.webp",
       "oldPrice": 0,
       "discount_price": 170,
       "in_stock": true,
@@ -69,7 +69,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 5,
       "price": 50,
-      "image": "/images/product-2.jpg",
+      "image": "/images/product4.jpg",
       "oldPrice": 0,
       "discount_price": 30,
       "in_stock": true,
@@ -90,7 +90,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 5,
       "price": 140,
-      "image": "/images/product-2.jpg",
+      "image": "/images/LibrariesandBooksinMedievalEngland3D.webp",
       "oldPrice": 0,
       "discount_price": 100,
       "in_stock": true,
@@ -111,7 +111,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 5,
       "price": 180,
-      "image": "/images/product-2.jpg",
+      "image": "/images/782c93e915e444b8e6929d407d40e93c.jpg",
       "oldPrice": 0,
       "discount_price": 120,
       "in_stock": true,
@@ -132,7 +132,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 3.4,
       "price": 160,
-      "image": "/images/product-2.jpg",
+      "image": "/images/2b054882609bbaf6728aca0368212c14.jpg",
       "oldPrice": 0,
       "discount_price": 120,
       "in_stock": true,
@@ -153,7 +153,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 3.9,
       "price": 360,
-      "image": "/images/product-2.jpg",
+      "image": "/images/792f11308ba03ae698ec8c42eedbff80.jpg",
       "oldPrice": 0,
       "discount_price": 320,
       "in_stock": true,
@@ -174,7 +174,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 4.5,
       "price": 450,
-      "image": "/images/product-2.jpg",
+      "image": "/images/e16e647db7a70739f44b227dbc51b027.jpg",
       "oldPrice": 0,
       "discount_price": 360,
       "in_stock": true,
@@ -195,7 +195,7 @@
       "description": "A stunning display for creative professionals.",
       "rating": 4,
       "price": 200,
-      "image": "/images/product-2.jpg",
+      "image": "/images/f6a55f4499aa962b7559983fdddbb0cf.jpg",
       "oldPrice": 0,
       "discount_price": 150,
       "in_stock": true,
@@ -254,75 +254,61 @@
   "categories": [
     {
       "id": "1",
-      "name": "Danh mục mẫu 1",
+      "name": "Test category 1",
       "subCategories": [
         {
           "id": "1",
-          "name": "Danh mục phụ mẫu 1"
+          "name": "test sub category 1"
         },
         {
           "id": "3",
-          "name": "Danh mục phụ mẫu 2"
+          "name": "test sub category 2"
         },
         {
           "id": "1",
-          "name": "Danh mục phụ mẫu 3"
+          "name": "test sub category 3"
         }
       ]
     },
     {
       "id": "2",
-      "name": "Danh mục mẫu 2",
+      "name": "Test category 2",
       "subCategories": [
         {
           "id": "1",
-          "name": "Danh mục phụ mẫu 1"
+          "name": "test sub category 1"
         },
         {
           "id": "3",
-          "name": "Danh mục phụ mẫu 2"
+          "name": "test sub category 2"
         },
         {
           "id": "1",
-          "name": "Danh mục phụ mẫu 3"
+          "name": "test sub category 3"
         }
       ]
     },
     {
       "id": "3",
-      "name": "Danh mục mẫu 3",
+      "name": "Test category 3",
       "subCategories": [
         {
           "id": "1",
-          "name": "Danh mục phụ mẫu 1"
+          "name": "test sub category 1"
         },
         {
           "id": "3",
-          "name": "Danh mục phụ mẫu 2"
+          "name": "test sub category 2"
         },
         {
           "id": "1",
-          "name": "Danh mục phụ mẫu 3"
+          "name": "test sub category 3"
         }
       ]
     },
     {
       "id": "3",
-      "name": "Danh mục mẫu 3",
-      "subCategories": [
-        {
-          "id": "1",
-          "name": "Danh mục phụ mẫu 1"
-        },
-        {
-          "id": "3",
-          "name": "Danh mục phụ mẫu 2"
-        },
-        {
-          "id": "1",
-          "name": "Danh mục phụ mẫu 3"
-        }
-      ]
+      "name": "Test category 3"
     }
   ],
   "users": [

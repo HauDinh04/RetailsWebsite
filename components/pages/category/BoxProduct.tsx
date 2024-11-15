@@ -17,13 +17,13 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
     isNew: boolean,
     discount_price: number
 }) {
-    const discountPercentage = Math.round(((discount_price - price) / discount_price) * 100);
+    const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
     return (
         <div className="h-max w-full group">
             <div
                 className="border border-[#e5e5e5] rounded-[5px] w-full h-max p-[5px] group-hover:bg-[#e5e5e5] group-hover:rounded-none transition-all ease-in-out duration-700">
                 <div className="relative aspect-square">
-                    <Link href={`/${id}`} className={'block relative w-full h-[133%] xl:min-h-[334px]'}>
+                    <Link href={`/products/${id}`} className={'block relative w-full h-[133%] xl:min-h-[334px]'}>
                         <Image
                             src={image}
                             alt={name}
@@ -67,9 +67,10 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
             </div>
             <div className="pt-[5px]">
                 <div>
-                    <h4 className="my-[10px] text-center text-black-1 text-sub-heading font-medium group-hover:text-bg-main transition-all ease-in-out duration-700">
-                        <Link href={`/${id}`}>{name}</Link>
-                    </h4>
+                    <Link href={`/products/${id}`}
+                          className="my-[10px] block text-center text-black-1 text-sub-heading font-medium group-hover:text-bg-main transition-all ease-in-out duration-700">
+                        {name}
+                    </Link>
                     <div className="h-[30px] flex flex-row items-center justify-center">
                         {[...Array(5)].map((_, i) => (
                             <IoIosStar

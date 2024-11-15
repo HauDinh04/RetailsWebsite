@@ -5,122 +5,18 @@ import {FaRegPlusSquare} from "react-icons/fa";
 import {motion} from "framer-motion";
 import {FaAngleRight, FaRegSquareMinus} from "react-icons/fa6";
 
-interface Category {
-    name: string;
-    subCategories?: {
-        name: string;
-    }[]
-}
-
-function CategorySideBar({data}: { data: any[] }) {
-    console.log(data)
+function CategorySideBar({data}: { data: CategoryType[] }) {
     const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
 
     const toggleExpand = (index: number) => {
         setExpandedCategory(expandedCategory === index ? null : index);
     };
-    const categories: Category[] = [
-        {
-            name: 'Smartphone & Tablets',
-            subCategories: [
-                {
-                    name: "Men's Watches"
-                },
-                {
-                    name: "Woman's Watches",
-                },
-                {
-                    name: "Kid's Watches",
-                },
-                {
-                    name: "Accessories",
-                }
-            ]
-        },
-        {
-            name: 'Electronics',
-            subCategories: [
-                {
-                    name: "Cycling"
-                },
-                {
-                    name: "Running"
-                },
-                {
-                    name: "Swimming"
-                },
-                {
-                    name: "Football"
-                },
-                {
-                    name: "Golf"
-                },
-                {
-                    name: "Windsurfing"
-                },
-            ]
-        },
-        {
-            name: 'Shoes',
-            subCategories: [
-                {
-                    name: "Sub Categories"
-                },
-                {
-                    name: "Sub Categories"
-                },
-                {
-                    name: "Sub Categories"
-                },
-                {
-                    name: "Sub Categories"
-                },
-                {
-                    name: "Sub Categories"
-                }
-            ]
-        },
-        {
-            name: 'Watches',
-            subCategories: [
-                {
-                    name: "Men's Watches",
-                },
-                {
-                    name: "Woman's Watches",
-                },
-                {
-                    name: "Kids' Watches",
-                },
-                {
-                    name: "Accessories",
-                }
-            ]
-        },
-        {
-            name: 'Jewellery'
-        },
-        {
-            name: "Health & Beauty"
-        },
-        {
-            name: "Kids & Babies"
-        },
-        {
-            name: "Sports"
-        },
-        {
-            name: "Home & Garden",
-        },
-        {
-            name: "Wines & Spirits",
-        }
-    ]
+
     return (
         <div className={'sm:w-full'}>
             <div className="text-[22px] text-[#222222] mb-[10px]">Categories</div>
             <div className="rounded-[3px] w-full mt-[10px] border border-solid border-[#dddddd]">
-                {categories.map((item, index) => (
+                {data.map((item, index) => (
                     <div key={index} className={'sm:w-full'}>
                         <div
                             className={'flex w-full hover:text-[#0083c1] hover:bg-[#fff] justify-between text-[14px] pr-[15px] items-center text-[#444444] border-b border-solid ' +
