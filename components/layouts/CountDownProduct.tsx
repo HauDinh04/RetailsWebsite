@@ -11,7 +11,8 @@ import { ProductModal } from './ProductModal';
 const formatCurrency = (amount: number): string => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD'
+    currency: 'USD',
+
   }).format(amount);
 };
 
@@ -63,7 +64,7 @@ export function CountDownProduct({
 }: CountDownProductType) {
   const [isClient, setIsClient] = useState(false);
 
-  const discountPercentage = Math.round(((discount_price - price) / discount_price) * 100);
+  const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(sale_end_time));
 
@@ -173,10 +174,10 @@ export function CountDownProduct({
 
           <div className='text-gray-700 text-[12px] mt-2'>{description}</div>
 
-          <div className='flex justify-between mt-5'>
-            <div className='flex gap-2 '>
-              <div className='text-red-500 font-medium text-[18px]'>{formatCurrency(price)}</div>
-              <div className='line-through text-[14px] text-gray-500'>{formatCurrency(discount_price)}</div>
+          <div className='flex justify-between items-center mt-5'>
+            <div className='flex gap-2 items-center'>
+              <div className='text-red-500 font-medium text-[18px]'>{formatCurrency(discount_price)}</div>
+              <div className='line-through text-[14px] text-gray-500'>{formatCurrency(price)}</div>
             </div>
             <div className='flex gap-1 text-[12px]'>{renderStars(star)}</div>
           </div>
