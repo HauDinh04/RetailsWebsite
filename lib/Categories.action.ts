@@ -20,9 +20,10 @@ export const fetchCategories = async () => {
     }
 }
 
-export const fetchProductByPage = async (page: number = 1) => {
+export const fetchProductByPage = async (page: number = 1, limit: number) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_JSON}/products?page=${page}`, {
+        const offset = (page - 1) * limit;
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_JSON}/products?_start=${offset}&_limit=${limit}`, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
