@@ -1,6 +1,6 @@
 export const fetchCategories = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/categories`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/category`, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
@@ -22,7 +22,7 @@ export const fetchCategories = async () => {
 
 export const fetchProductByPage = async (page: number = 1) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/products?page=${page}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/product?page=${page}`, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
