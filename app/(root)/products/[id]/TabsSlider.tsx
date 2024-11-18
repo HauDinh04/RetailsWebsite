@@ -32,7 +32,11 @@ const formSchema = z.object({
     }),
 });
 
-export default function TabsSlider() {
+export default function TabsSlider({
+    productDetail,
+}: {
+    productDetail: ProductType;
+}) {
     const [activeTab, setActiveTab] = useState("description");
 
     const handleTabClick = (tab: string) => {
@@ -105,65 +109,7 @@ export default function TabsSlider() {
             <div className="p-[20px] border rounded-[4px] text-[12px] text-black-2">
                 {activeTab === "description" && (
                     <div className="text-[12px] text-black-2">
-                        <p className="mb-[10px]">
-                            The 30-inch Apple Cinema HD Display delivers an
-                            amazing 2560 x 1600 pixel resolution. Designed
-                            specifically for the creative professional, this
-                            display provides more space for easier access to all
-                            the tools and palettes needed to edit, format and
-                            composite your work. Combine this display with a Mac
-                            Pro, MacBook Pro, or PowerMac G5 and no limit to
-                            what you can achieve.
-                            <br />
-                            <br />
-                            The Cinema HD features an active-matrix liquid
-                            crystal display that produces flicker-free images
-                            that deliver twice the brightness, twice the
-                            sharpness and twice the contrast ratio of a typical
-                            CRT display. Unlike other flat panels, designed with
-                            a pure digital interface to deliver distortion-free
-                            images that never need adjusting. With over 4
-                            million digital pixels, the display is uniquely
-                            suited for scientific and technical applications
-                            such as visualizing molecular structures or
-                            analyzing geological data.
-                            <br />
-                            <br />
-                            Offering accurate, brilliant color performance, the
-                            Cinema HD delivers up to 16.7 million colors across
-                            a wide gamut allowing you to see subtle nuances
-                            between colors from soft pastels to rich jewel
-                            tones. A wide viewing angle ensures uniform color
-                            from edge to edge. ColorSync technology allows you
-                            to create custom profiles to maintain consistent
-                            color onscreen and in print. The result: You can
-                            confidently use this display in all your
-                            color-critical applications.
-                            <br />
-                            <br />
-                            Housed in a new aluminum design, the display has a
-                            very thin bezel that enhances visual accuracy. Each
-                            display features two FireWire 400 ports and two USB
-                            2.0 ports, making attachment of desktop peripherals,
-                            such as iSight, iPod, digital and still cameras,
-                            hard drives, printers and scanners, even more
-                            accessible and convenient. Taking advantage of the
-                            much thinner and lighter footprint of an LCD, the
-                            new displays support the VESA (Video Electronics
-                            Standards Association) mounting interface standard.
-                            Customers with the optional Cinema Display VESA
-                            Mount Adapter kit gain the flexibility to mount
-                            their display in locations most appropriate for
-                            their work environment.
-                            <br />
-                            <br />
-                            The Cinema HD features a single cable design with
-                            elegant breakout for the USB 2.0, FireWire 400 and a
-                            pure digital connection using the industry standard
-                            Digital Video Interface (DVI) interface. The DVI
-                            connection allows for a direct pure-digital
-                            connection.
-                        </p>
+                        <p className="mb-[10px]">{productDetail.description}</p>
                     </div>
                 )}
 

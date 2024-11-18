@@ -13,20 +13,10 @@ import { Scrollbar, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-interface ProductDetail {
-    thumbnail_url: string;
-    images: string[];
-    star: number;
-    in_stock: boolean;
-    sku: string;
-    price_new: number;
-    price_old: number;
-}
-
 export default function ProductDetails({
     productDetail,
 }: {
-    productDetail: ProductDetail;
+    productDetail: ProductType;
 }) {
     const [quantity, setQuantity] = useState(1);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -60,12 +50,12 @@ export default function ProductDetails({
                     <Image
                         src={
                             activeIndex === null
-                                ? productDetail.thumbnail_url
+                                ? productDetail.image
                                 : images[activeIndex]
                         }
                         alt=""
                         fill
-                        className="object-contain cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+                        className="object-cover cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                         sizes="100vw"
                     />
                 </div>
@@ -95,7 +85,7 @@ export default function ProductDetails({
                             },
                         }}
                     >
-                        {images.map((image, index) => (
+                        {productDetail.images.map((image, index) => (
                             <SwiperSlide key={index}>
                                 <div
                                     className={`w-full aspect-[3/4] p-1 border rounded-[3px] cursor-pointer hover:border-bg-main ${
@@ -115,7 +105,7 @@ export default function ProductDetails({
                                             width: "100%",
                                             height: "auto",
                                         }}
-                                        className="w-full aspect-[3/4] object-contain"
+                                        className="w-full aspect-[3/4] object-cover"
                                     />
                                 </div>
                             </SwiperSlide>
@@ -135,20 +125,25 @@ export default function ProductDetails({
                     </button>
                 </div>
             </div>
-            <div className="basis-full lg:basis-1/2  text-left px-[15px]">
-                <h3 className="text-[24px] font-light">Bint Beef</h3>
+            <div className="basis-full lg:basis-1/2 text-left px-[15px]">
+                <h3 className="text-[24px] font-light mb-[10px]">
+                    {productDetail.name}
+                </h3>
                 <div className="my-[30px]">
                     <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                            <IoIosStar
-                                key={i}
-                                className={`text-[12px] ${
-                                    i < Math.round(productDetail.star)
-                                        ? "text-black"
-                                        : "text-footer-info"
-                                }`}
-                            />
-                        ))}
+                        {Array.from(
+                            { length: productDetail.rating },
+                            (_, i) => (
+                                <IoIosStar
+                                    key={i}
+                                    className={`text-[12px] ${
+                                        i < Math.round(productDetail.rating)
+                                            ? "text-black"
+                                            : "text-footer-info"
+                                    }`}
+                                />
+                            )
+                        )}
                     </div>
                 </div>
                 <div className="mb-[30px] pl-[15px]">
@@ -175,11 +170,15 @@ export default function ProductDetails({
                     </div>
                     <div>
                         <span className="text-price-1 text-[30px] font-bold">
-                            ${productDetail.price_new}
+                            ${productDetail.price.toFixed(2)}
                         </span>
-                        <span className="text-price-2 text-[18px] font-light line-through leading-[18px]">
-                            ${productDetail.price_old}
-                        </span>
+                        {productDetail.oldPrice === 0 ? (
+                            <></>
+                        ) : (
+                            <span className="text-price-2 text-[18px] font-light line-through leading-[18px]">
+                                ${productDetail.oldPrice.toFixed(2)}
+                            </span>
+                        )}
                     </div>
                 </div>
                 <div className="mt-[10px]">
