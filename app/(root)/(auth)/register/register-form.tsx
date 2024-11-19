@@ -1,5 +1,5 @@
 "use client";
-import { z } from "zod";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Label } from "@/components/ui/label";
@@ -22,58 +22,63 @@ import {
     SelectValue,
 } from "@/components/customui/selects";
 import FieldsetLegend from "./FieldsetLegend";
+import {
+    RegisterBody,
+    RegisterBodyType,
+} from "@/schemaValidations/auth.schema";
+import { Register } from "@/lib/Register.action";
 
-const formSchema = z.object({
-    firstName: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    lastName: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    email: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    telephone: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    fax: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
+// const formSchema = z.object({
+//     firstName: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     lastName: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     email: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     telephone: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     fax: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
 
-    company: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    address1: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    address2: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    city: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    postCode: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
+//     company: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     address1: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     address2: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     city: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     postCode: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
 
-    country: z.enum(["0", "1", "2", "3"]),
-    regionState: z.enum(["0", "1", "2", "3"]),
+//     country: z.enum(["0", "1", "2", "3"]),
+//     regionState: z.enum(["0", "1", "2", "3"]),
 
-    password: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
-    passwordConfirm: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
-    }),
+//     password: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
+//     confirmPassword: z.string().min(2, {
+//         message: "Username must be at least 2 characters.",
+//     }),
 
-    Subscribe: z.enum(["yes", "no"], {
-        required_error: "You need to select a notification type.",
-    }),
-    agree: z.boolean().default(false).optional(),
-});
+//     subscribe: z.enum(["yes", "no"], {
+//         required_error: "You need to select a notification type.",
+//     }),
+//     agree: z.boolean().default(false).optional(),
+// });
 export default function RegisterForm() {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<RegisterBodyType>({
+        resolver: zodResolver(RegisterBody),
         defaultValues: {
             firstName: "",
             lastName: "",
@@ -86,14 +91,27 @@ export default function RegisterForm() {
             city: "",
             postCode: "",
             password: "",
-            passwordConfirm: "",
+            confirmPassword: "",
             agree: false,
         },
     });
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values);
+    async function onSubmit(values: RegisterBodyType) {
+        // const result = await fetch(
+        //     `${process.env.NEXT_PUBLIC_API_URL_JSON}/users`,
+        //     {
+        //         body: JSON.stringify(values),
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         },
+        //         method: "POST",
+        //     }
+        // ).then((res) => res.json());
+        // console.log(result);
+        const result = await Register(values);
+        console.log(result);
     }
+
     return (
         <Form {...form}>
             <form
@@ -228,7 +246,7 @@ export default function RegisterForm() {
                                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                                         <Label
                                             htmlFor="fax"
-                                            className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
+                                            className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light"
                                         >
                                             Fax
                                         </Label>
@@ -260,7 +278,7 @@ export default function RegisterForm() {
                                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                                         <Label
                                             htmlFor="company"
-                                            className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
+                                            className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light"
                                         >
                                             Company
                                         </Label>
@@ -318,7 +336,7 @@ export default function RegisterForm() {
                                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                                         <Label
                                             htmlFor="address2"
-                                            className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
+                                            className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light"
                                         >
                                             Address 2
                                         </Label>
@@ -521,20 +539,20 @@ export default function RegisterForm() {
                     <div className="mb-[15px]">
                         <FormField
                             control={form.control}
-                            name="passwordConfirm"
+                            name="confirmPassword"
                             render={({ field }) => (
                                 <FormItem>
                                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                                         <Label
-                                            htmlFor="passwordConfirm"
+                                            htmlFor="confirmPassword"
                                             className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                                         >
                                             Password Confirm
                                         </Label>
                                         <div className="basis-full md:basis-5/6 md:pl-[15px]">
                                             <Input
-                                                id="passwordConfirm"
-                                                type="text"
+                                                id="confirmPassword"
+                                                type="password"
                                                 placeholder="Password Confirm"
                                                 required
                                                 {...field}
@@ -553,15 +571,15 @@ export default function RegisterForm() {
                     <div className="mb-[15px]">
                         <FormField
                             control={form.control}
-                            name="Subscribe"
+                            name="subscribe"
                             render={({ field }) => (
                                 <FormItem>
                                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                                         <Label
-                                            htmlFor="Subscribe"
+                                            htmlFor="subscribe"
                                             className="basis-full mb-[5px] md:pt-[7px] md:basis-1/6 md:text-right md:px-[15px] text-info font-light before:content-['*'] before:text-[#F00] before:mr-1"
                                         >
-                                            Subscribe
+                                            subscribe
                                         </Label>
                                         <div className="basis-full md:basis-5/6 md:pl-[15px] h-[25px]">
                                             <RadioGroup
