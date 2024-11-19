@@ -75,7 +75,7 @@ export default async function ProductDetail({
     const data = await fetchProductDetail(Number(params.id));
     const productDetail = data;
     const dataRelatedProducts = await fetchRelatedProducts();
-    console.log(dataRelatedProducts);
+    // console.log(dataRelatedProducts);
 
     return (
         <>
