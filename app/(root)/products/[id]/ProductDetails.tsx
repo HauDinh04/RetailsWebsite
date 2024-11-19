@@ -12,6 +12,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { FaFacebookF } from "react-icons/fa";
+import { IoLogoTwitter } from "react-icons/io";
+import { TiSocialGooglePlus } from "react-icons/ti";
+import { RiSkypeFill } from "react-icons/ri";
+import Link from "next/link";
 
 export default function ProductDetails({
     productDetail,
@@ -228,8 +233,44 @@ export default function ProductDetails({
                         </div>
                     </div>
                 </div>
-                <div className="pt-[35px] border-t border-[#dddddd]">
+                <div className="pt-[35px] border-t border-[#dddddd] flex justify-between">
                     <p className="text-[14px] text-black-2">Share This:</p>
+                    <div>
+                        <ul className="mb-[10px] pl-[40px]">
+                            <li className="bg-[#1d9ffa] inline-block rounded-[3px] ml-[5px] mr-[5px]">
+                                <Link
+                                    href=""
+                                    className="w-[27px] h-[27px] flex items-center justify-center"
+                                >
+                                    <FaFacebookF className="text-white" />
+                                </Link>
+                            </li>
+                            <li className="bg-[#456bbe] inline-block rounded-[3px] ml-[5px] mr-[5px]">
+                                <Link
+                                    href=""
+                                    className="w-[27px] h-[27px] flex items-center justify-center"
+                                >
+                                    <IoLogoTwitter className="text-white " />
+                                </Link>
+                            </li>
+                            <li className="bg-[#e04d3f] inline-block rounded-[3px] ml-[5px] mr-[5px]">
+                                <Link
+                                    href=""
+                                    className="w-[27px] h-[27px] flex items-center justify-center"
+                                >
+                                    <TiSocialGooglePlus className="text-white " />
+                                </Link>
+                            </li>
+                            <li className="bg-[#4899d2] inline-block rounded-[3px] ml-[5px]">
+                                <Link
+                                    href=""
+                                    className="w-[27px] h-[27px] flex items-center justify-center"
+                                >
+                                    <RiSkypeFill className=" text-white " />
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
