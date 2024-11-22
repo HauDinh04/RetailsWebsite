@@ -1,6 +1,6 @@
 export const CreateOrder = async (order: OrderType) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/order?page=1`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_JSON}/orders`, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",

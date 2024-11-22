@@ -141,7 +141,7 @@ function Page() {
                                         <TooltipProvider>
                                             <Tooltip>
                                                 <TooltipTrigger>
-                                                    <Link href={'#'}
+                                                    <Link href={`/orders/information/${item.id}`}
                                                           className={`flex justify-center py-[6px] px-[12px] items-center bg-[#5bc0de] w-[40px] h-[34px] select-none border 
                                                               border-solid border-[#46b8da] hover:bg-[#31b0d5] hover:border-[#269abc]`}>
                                                         <FaEye className={'text-white text-[14px]'}/>

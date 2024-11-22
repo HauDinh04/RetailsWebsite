@@ -18,8 +18,8 @@ import {Form, FormField, FormItem} from "@/components/ui/form";
 import {Input} from "@/components/customui/inputs";
 import CartItem from "./CartItem";
 import {useEffect, useState} from "react";
-import {useAppDispatch, useAppSelector} from "@/redux/hooks";
-import {getUserFromLocalStorage, initial, getIsLoginFromLocalStorage} from "@/redux/features/account/account.slice";
+import {useAppDispatch} from "@/redux/hooks";
+import {getUserFromLocalStorage, getIsLoginFromLocalStorage} from "@/redux/features/account/account.slice";
 
 const formSchema = z.object({
     search: z.string().min(2).max(50),
@@ -44,7 +44,7 @@ const cartItems = [
 
 export default function Header() {
     const dispatch = useAppDispatch();
-    const isLogin = useAppSelector(state => state.account.isLogin);
+    // const isLogin = useAppSelector(state => state.account.isLogin);
 
     const [isShowCart, setIsShowCart] = useState(false);
     const form = useForm<z.infer<typeof formSchema>>({
@@ -59,11 +59,8 @@ export default function Header() {
     }
 
     useEffect(() => {
-        dispatch(initial())
-        if (!isLogin) {
-            dispatch(getIsLoginFromLocalStorage())
-            dispatch(getUserFromLocalStorage())
-        }
+        dispatch(getIsLoginFromLocalStorage())
+        dispatch(getUserFromLocalStorage())
     }, [])
 
     return (

@@ -47,7 +47,16 @@ const CheckoutPage = () => {
 
     const onSubmit = (data: CheckoutInput) => {
         console.log(data);
-        // CreateOrder(data)
+        const order_code = `#order${Math.ceil(Math.random() * 10000)}${Math.ceil(Math.random() * 10000)}`;
+        const order = {
+            name: data.full_name,
+            order_code: order_code,
+
+        }
+
+        console.log(order);
+
+        // CreateOrder(order)
         //     .then(data => {
         //         console.log(data)
         //     })
