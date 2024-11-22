@@ -7,10 +7,6 @@ const accountReducer = createSlice({
         user: {}
     },
     reducers: {
-        initial() {
-            localStorage.setItem('isLogin', JSON.stringify(false));
-            localStorage.setItem('user', JSON.stringify({}));
-        },
         setIsLogin(state, action) {
             state.isLogin = action.payload;
             localStorage.setItem("isLogin", JSON.stringify(state.isLogin));
@@ -32,7 +28,6 @@ export const {
     setIsLogin,
     setUser,
     getUserFromLocalStorage,
-    initial,
     getIsLoginFromLocalStorage
 } = accountReducer.actions
 export default accountReducer.reducer
