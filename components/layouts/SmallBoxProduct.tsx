@@ -17,7 +17,7 @@ function SmallBoxProduct({id, name, rating, price, image, oldPrice, className = 
     const hasHalfStar = rating % 1 !== 0;
 
     return (
-        <Link href={`/product/${id}`} className={'flex gap-[10px] group w-[263px] h-[116px]' + ` ${className}`}>
+        <Link href={`/products/${id}`} className={'flex gap-[10px] group w-[263px] h-[116px]' + ` ${className}`}>
             <div className="p-[5px] group-hover:border-[#0083c1] border border-solid border-[#ccc] rounded">
                 <div className="relative w-[74px] h-[104px]">
                     <Image alt={name || ''} src={image} fill/>
