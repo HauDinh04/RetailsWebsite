@@ -27,10 +27,27 @@ function Page() {
     const [hovered, setHovered] = useState(false);
     const [isList, setIsList] = useState(true);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+
     const handleNextPage = () => {
         const totalPage = Math.ceil(total / limit);
         if (page < totalPage) {
             setPage(page + 1);
+            scrollToTop();
+        }
+    }
+
+    const handlePrevPage = () => {
+        const totalPage = Math.ceil(total / limit);
+        if (page >= totalPage) {
+            setPage(page - 1);
+            scrollToTop();
         }
     }
 
@@ -49,7 +66,6 @@ function Page() {
         fetchProductByPage(page, limit)
             .then(data => {
                 setProducts(data as ProductType[]);
-                console.log(data);
             })
     }, [page])
 
@@ -251,10 +267,10 @@ function Page() {
                                 item 01-09 of {total} total
                             </div>
                             <div className="flex gap-[5px] items-center">
-                                <div onClick={handleNextPage}
+                                <div onClick={handlePrevPage}
                                      className={`text-[12px] bg-white cursor-pointer
                                      rounded-[3px] border border-[#dddd] border-solid
-                                      text-[#777777] py-[6px] px-[12px] ${page < Math.ceil(total / limit) ? "hover:bg-[#eee]" : "cursor-not-allowed"}`}>{'<'}</div>
+                                      text-[#777777] py-[6px] px-[12px] ${page >= Math.ceil(total / limit) ? "hover:bg-[#eee]" : "cursor-not-allowed"}`}>{'<'}</div>
                                 {Array.from({length: Math.ceil(total / limit)}, (_, index) => (
                                     <Link href={'/'}
                                           className={`text-[12px] rounded-[3px] border border-solid py-[6px] px-[12px]
@@ -263,6 +279,7 @@ function Page() {
                                           key={index} onClick={(e) => {
                                         e.preventDefault();
                                         setPage(index + 1);
+                                        scrollToTop();
                                     }}>
                                         {index + 1}
                                     </Link>
