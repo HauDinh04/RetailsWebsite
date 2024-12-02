@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {FaStar, FaStarHalfAlt, FaHeart, FaExchangeAlt, FaSearch} from "react-icons/fa";
+import {useAppDispatch} from "@/redux/hooks";
+import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
+import StarRating from "@/components/layouts/StarRating";
 
 function InformativeProduct({id, name, rating, price, image, oldPrice, content, discount_price, className = ''}: {
     id: string,
@@ -14,6 +17,20 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
     discount_price: number,
     className?: string
 }) {
+    const dispatch = useAppDispatch();
+
+    const handleAddProduct = () => {
+        dispatch(setShowCartNotice());
+    }
+
+    const handleCompareProduct = () => {
+        dispatch(setShowCompareNotice())
+    }
+
+    const handleAddWishList = () => {
+        dispatch(setShowWishListNotice());
+    }
+
     const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -21,7 +38,7 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
     return (
         <div className={'flex flex-col sm:flex-row group w-full h-max' + ` ${className}`}>
             <Link href={`/products/${id}`}
-                  className="block p-[5px] w-auto h-auto group-hover:border-[#0083c1] border border-solid border-[#ccc] rounded">
+                  className="block p-[5px] w-auto h-auto border border-solid border-[#ccc] rounded-[3px] group-hover:bg-[#e5e5e5] group-hover:rounded-none transition-all ease-in-out duration-700">
                 <div className="relative aspect-[3/4] w-full h-[334px]">
                     <Image alt={name || ''} src={image} className={'object-cover'}
                            sizes="100vw" fill/>
@@ -40,19 +57,20 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
 
                     </div>
                     <div
-                        className="absolute bottom-[10px] right-[10px] flex flex-col gap-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div
-                            className="w-[40px] h-[40px] bg-white rounded-sm hover:bg-[#0083c1] flex items-center justify-center transition duration-300 group">
-                            <FaHeart className="text-black hover:text-white transition duration-300"/>
-                        </div>
-                        <div
-                            className="w-[40px] h-[40px] bg-white rounded-sm hover:bg-[#0083c1] flex items-center justify-center transition duration-300 group">
-                            <FaExchangeAlt className="text-black hover:text-white transition duration-300"/>
-                        </div>
-                        <div
-                            className="w-[40px] h-[40px] bg-white rounded-sm hover:bg-[#0083c1] flex items-center justify-center transition duration-300 group">
-                            <FaSearch className="text-black hover:text-white transition duration-300"/>
-                        </div>
+                        className="absolute bottom-[10px] right-[5px] opacity-0 transition-all ease-in-out duration-1000 group-hover:opacity-100">
+                        <ul className="mb-[10px] w-[50px] h-[130px] flex flex-col">
+                            <li onClick={handleAddWishList}
+                                className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                                <FaHeart className="w-[18px] h-[18px]"/>
+                            </li>
+                            <li onClick={handleCompareProduct}
+                                className="h-10 w-10 m-[5px] cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                                <FaExchangeAlt className="w-[18px] h-[18px]"/>
+                            </li>
+                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                                <FaSearch className="w-[18px] h-[18px]"/>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </Link>
@@ -61,18 +79,7 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                 <Link href={`/products/${id}`}
                       className="block text-[rgba(0,0,0,0.7)] text-[18px] lg:mt-[10px] lg:mb-[10px] group-hover:text-[#0083c1] whitespace-nowrap overflow-hidden text-ellipsis"> {name} </Link>
                 <div className={'flex gap-[5px] text-[rgba(0,0,0,0.7)] sm:my-[5px] lg:mt-[10px] lg:mb-[20px]'}>
-                    {Array.from({length: fullStars}).map((_, index) => (
-                        <FaStar className={'text-[12px]'} key={index}/>
-                    ))}
-                    {hasHalfStar && (
-                        <div className={'flex'}>
-                            <FaStarHalfAlt style={{
-                                width: '12px',
-                                height: '12px',
-                                clipPath: 'inset(0 50% 0 0)'
-                            }}/>
-                        </div>
-                    )}
+                    <StarRating rating={rating}/>
                 </div>
                 <div className="flex gap-[10px] lg:mb-[15px]">
                     <div className="text-[#ff5555] leading-[30px] text-[18px] font-medium">
@@ -84,8 +91,8 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                 <div className="max-w-[85vw] h-auto break-words text-[rgba(0,0,0,0.7)] text-[14px] pb-[10px]">
                     {content}
                 </div>
-                <button
-                    className=" w-[120px] h-[40px] text-[12px] border-[1px] border-[#555555] text-[#555555] rounded-md hover:border-[#0083c1] hover:bg-[#0083c1] hover:text-white transition duration-300">
+                <button onClick={handleAddProduct}
+                        className=" w-[120px] h-[40px] text-[12px] border-[1px] border-[#555555] text-[#555555] rounded-md hover:border-[#0083c1] hover:bg-[#0083c1] hover:text-white transition duration-300">
                     ADD TO CART
                 </button>
             </div>

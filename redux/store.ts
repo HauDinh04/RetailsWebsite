@@ -2,13 +2,15 @@ import {configureStore} from '@reduxjs/toolkit';
 import demoReducer from './features/todos/demoSlice'
 import accountReducer from './features/account/account.slice'
 import skinReducer from './features/skin/skin.slice'
+import noticeReducer from './features/notice/notice.slice'
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
             demo : demoReducer,
             account: accountReducer,
-            skin: skinReducer
+            skin: skinReducer,
+            notice: noticeReducer
         },
     })
 }

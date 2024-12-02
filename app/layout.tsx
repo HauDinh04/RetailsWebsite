@@ -9,6 +9,9 @@ import Header from "@/components/layouts/Header";
 import ButtonToTop from "@/components/layouts/ButtonToTop";
 import SettingButton from "@/components/layouts/SettingButton";
 import SkinCssPopup from "@/components/layouts/SkinCssPopup";
+import NoticeModalCart from "@/components/layouts/NoticeModalCart";
+import NoticeModalCompare from "@/components/layouts/NoticeModalCompare";
+import NoticeModalWishList from "@/components/layouts/NoticeModalWishList";
 
 export const metadata: Metadata = {
     title: "Retails Website",
@@ -37,6 +40,9 @@ export default function RootLayout({
                 <SettingButton/>
                 <ButtonToTop/>
                 <SkinCssPopup/>
+                <NoticeModalCart/>
+                <NoticeModalCompare/>
+                <NoticeModalWishList/>
             </main>
         </StoreProvider>
         </body>
