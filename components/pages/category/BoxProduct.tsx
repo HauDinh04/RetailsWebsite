@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import {FaHeart} from "react-icons/fa";
 import {FaExchangeAlt} from "react-icons/fa";
@@ -6,6 +7,9 @@ import {IoIosStar} from "react-icons/io";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
+import {useAppDispatch} from "@/redux/hooks";
+import StarRating from "@/components/layouts/StarRating";
 
 export default function BoxProduct({id, name, image, price, oldPrice, rating, discount_price, isNew = false}: {
     id: string,
@@ -17,7 +21,21 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
     isNew: boolean,
     discount_price: number
 }) {
+    const dispatch = useAppDispatch();
     const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
+
+    const handleAddProduct = () => {
+        dispatch(setShowCartNotice());
+    }
+
+    const handleCompareProduct = () => {
+        dispatch(setShowCompareNotice())
+    }
+
+    const handleAddWishList = () => {
+        dispatch(setShowWishListNotice());
+    }
+
     return (
         <div className="h-max w-full group">
             <div
@@ -46,20 +64,16 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                     <div
                         className="absolute bottom-0 right-[5px] opacity-0 transition-all ease-in-out duration-1000 group-hover:opacity-100">
                         <ul className="mb-[10px] w-[50px] h-[130px] flex flex-col">
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
-                                <Link href="">
-                                    <FaHeart className="w-[18px] h-[18px]"/>
-                                </Link>
+                            <li onClick={handleAddWishList}
+                                className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                                <FaHeart className="w-[18px] h-[18px]"/>
+                            </li>
+                            <li onClick={handleCompareProduct}
+                                className="h-10 w-10 m-[5px] cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                                <FaExchangeAlt className="w-[18px] h-[18px]"/>
                             </li>
                             <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
-                                <Link href="">
-                                    <FaExchangeAlt className="w-[18px] h-[18px]"/>
-                                </Link>
-                            </li>
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
-                                <Link href="">
-                                    <FaSearch className="w-[18px] h-[18px]"/>
-                                </Link>
+                                <FaSearch className="w-[18px] h-[18px]"/>
                             </li>
                         </ul>
                     </div>
@@ -72,16 +86,17 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                         {name}
                     </Link>
                     <div className="h-[30px] flex flex-row items-center justify-center">
-                        {[...Array(5)].map((_, i) => (
-                            <IoIosStar
-                                key={i}
-                                className={
-                                    rating > i
-                                        ? "text-black"
-                                        : "text-footer-info"
-                                }
-                            />
-                        ))}
+                        <StarRating rating={rating}/>
+                        {/*{[...Array(5)].map((_, i) => (*/}
+                        {/*    <IoIosStar*/}
+                        {/*        key={i}*/}
+                        {/*        className={*/}
+                        {/*            rating > i*/}
+                        {/*                ? "text-black"*/}
+                        {/*                : "text-footer-info"*/}
+                        {/*        }*/}
+                        {/*    />*/}
+                        {/*))}*/}
                     </div>
                     <div className="mt-[10px] mb-[15px] text-center">
                         <span className="text-[#ff5555] text-heading3-bold">
@@ -95,7 +110,7 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                     </div>
                 </div>
 
-                <div className="text-center">
+                <div onClick={handleAddProduct} className="text-center">
                     <Button
                         variant="outline"
                         className="uppercase w-[120px] h-[40px] text-info group-hover:bg-bg-main transition-all ease-in-out duration-300"

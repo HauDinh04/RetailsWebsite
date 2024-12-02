@@ -84,7 +84,9 @@ function Page() {
                     ) : (
                         <div className="text-heading2">Loading ...</div>
                     )}
-                    <LatestProduct/>
+                    <div className="mt-[30px] xl:mt-0">
+                        <LatestProduct/>
+                    </div>
                     <Link href={'/'}
                           onMouseEnter={() => setHovered(true)}
                           onMouseLeave={() => setHovered(false)}
