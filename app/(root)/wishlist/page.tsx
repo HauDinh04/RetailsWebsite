@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { IoCart } from "react-icons/io5";
 import { FaTimes } from "react-icons/fa";
 import Aside from "@/components/layouts/Aside";
@@ -56,7 +55,7 @@ export default function page() {
                             My Wish List
                         </h2>
                         <div className={"w-full overflow-x-auto"}>
-                            <table className="w-full min-w-[500px] table-auto border-collapse border border-solid border-[#ddd]">
+                            <table className="w-full min-w-[600px] table-auto border-collapse border border-solid border-[#ddd]">
                                 <thead
                                     className={
                                         "bg-[rgba(51,51,51,0.1)] border-b-[2px] border-solid border-[#ddd]"
@@ -86,8 +85,8 @@ export default function page() {
                                 <tbody>
                                     {products.map((product) => (
                                         <tr key={product.id}>
-                                            <td className="border border-[#ddd] p-2 text-center align-middle">
-                                                <div className="relative aspect-square w-[70px] h-[70px] inline-block">
+                                            <td className="border border-[#ddd] p-[3px] sm:p-2">
+                                                <div className="relative aspect-square w-[50px] sm:max-w-[70px] max-h-[70px] mx-auto">
                                                     <Link
                                                         href={""}
                                                         className="text-center"
@@ -102,7 +101,7 @@ export default function page() {
                                                     </Link>
                                                 </div>
                                             </td>
-                                            <td className="border border-[#ddd] p-2 text-left text-[#ff0000] align-top text-info">
+                                            <td className="border border-[#ddd] p-[3px] sm:p-2 text-left text-[#ff0000] align-top text-info">
                                                 <Link
                                                     href={""}
                                                     className="hover:text-bg-main"
@@ -110,13 +109,13 @@ export default function page() {
                                                     {product.name}
                                                 </Link>
                                             </td>
-                                            <td className="border border-[#ddd] p-2 text-left align-top text-info text-black-2">
+                                            <td className="border border-[#ddd] p-[3px] sm:p-2 text-left align-top text-info text-black-2">
                                                 {product.model}
                                             </td>
-                                            <td className="border border-[#ddd] p-2 text-right align-top text-info text-black-2">
+                                            <td className="border border-[#ddd] p-[3px] sm:p-2 text-right align-top text-info text-black-2">
                                                 {product.stock}
                                             </td>
-                                            <td className="border border-[#ddd] p-2 text-right align-top text-info text-black-2">
+                                            <td className="border border-[#ddd] p-[3px] sm:p-2 text-right align-top text-info text-black-2">
                                                 <span>
                                                     ${product.unitPrice}
                                                 </span>
@@ -125,13 +124,13 @@ export default function page() {
                                                     ${product.originalPrice}
                                                 </span>
                                             </td>
-                                            <td className="border border-[#ddd] p-2 text-right align-top">
+                                            <td className="whitespace-nowrap border border-[#ddd] p-[3px] sm:p-2 text-right align-top">
                                                 <TooltipProvider>
                                                     <Tooltip>
                                                         <TooltipTrigger asChild>
-                                                            <Button className="py-[6px] px-[12px] rounded-none bg-bg-main hover:bg-[#286090]">
-                                                                <IoCart />
-                                                            </Button>
+                                                            <button className="py-[9px] px-[11px] rounded-none bg-bg-main hover:bg-[#286090]">
+                                                                <IoCart className="text-white" />
+                                                            </button>
                                                         </TooltipTrigger>
                                                         <TooltipContent className="bg-black text-info py-[4px]">
                                                             <p className="text-white">
@@ -143,9 +142,9 @@ export default function page() {
                                                 <TooltipProvider>
                                                     <Tooltip>
                                                         <TooltipTrigger asChild>
-                                                            <Button className="py-[6px] px-[12px] rounded-none ml-2 bg-[#d9534f] hover:bg-[#c9302c]">
-                                                                <FaTimes />
-                                                            </Button>
+                                                            <button className="py-[9px] px-[11px] rounded-none ml-2 bg-[#d9534f] hover:bg-[#c9302c]">
+                                                                <FaTimes className="text-white" />
+                                                            </button>
                                                         </TooltipTrigger>
                                                         <TooltipContent className="bg-black text-info py-[4px]">
                                                             <p className="text-white">
