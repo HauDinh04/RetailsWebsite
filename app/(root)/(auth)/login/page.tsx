@@ -103,11 +103,9 @@ export default function LoginPage() {
                   <div className='p-[19px]'>
                     <div className='flex items-center gap-2 text-[30px] font-light text-zinc-700 mt-[10px] mb-[20px]'>
                       <FaRegFileAlt />
-                      <div className='uppercase'> Returning Customer </div>
+                      <span className='uppercase'> Returning Customer </span>
                     </div>
-
                     <div className='text-[12px] font-bold text-gray-600 mb-[10px]'>I am a returning customer</div>
-
                     <FormField
                       control={form.control}
                       name='email'
@@ -128,7 +126,6 @@ export default function LoginPage() {
                         </FormItem>
                       )}
                     />
-
                     <FormField
                       control={form.control}
                       name='password'
@@ -149,7 +146,6 @@ export default function LoginPage() {
                         </FormItem>
                       )}
                     />
-
                     {error && <div className='text-[12px] font-bold text-red-600 mb-[10px]'>{error}</div>}
                   </div>
                   <div className='bg-[#f5f5f5] border-t px-[20px] py-[10px] flex justify-between items-center'>

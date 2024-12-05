@@ -1,3 +1,4 @@
+'use client';
 import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 import { FaFacebookF } from 'react-icons/fa';
@@ -7,25 +8,31 @@ import { FaSkype } from 'react-icons/fa';
 import { MainComment } from '@/components/layouts/MainComment';
 import { ReplyComment } from '@/components/layouts/ReplyComment';
 import Breadcrumb from '@/components/layouts/Breadcrumb';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchBlogPostByID } from '@/lib/Blog.action';
 import { fetchCommentsByPostID } from '@/lib/Comment.action';
+import { CommentForm } from './Comment';
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
-  const post: Post | null = await fetchBlogPostByID(params.slug);
-  let comments: Comment[] = [];
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  const [post, setPost] = useState<Post | null>(null);
+  const [comments, setComments] = useState<any[]>([]);
 
   const fetchComments = async () => {
     const response = await fetchCommentsByPostID(params.slug);
 
-    if (response.data) {
-      comments = response.data as Comment[];
+    if (response.length > 0) {
+      setComments(response as Comment[]);
     }
   };
 
-  console.log(comments);
+  const newComment = (data: any) => {
+    setComments([...comments, data]);
+  };
 
-  await fetchComments();
+  useEffect(() => {
+    fetchBlogPostByID(params.slug).then(post => setPost(post));
+    fetchComments();
+  }, []);
 
   return (
     <div className=''>
@@ -88,29 +95,23 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
             {/* Comment */}
             <div className='mb-10 mt-20'>
-              <div className='text-[22px] mb-1'>12 comments</div>
+              <div className='text-[22px] mb-1'>{comments.length} comments</div>
               <hr className='border-dashed mb-[1px]' />
               <hr className='border-dashed mb-[1px]' />
               <hr className='border-dashed mb-[1px]' />
 
               <div className='mt-10'>
-                <MainComment
-                  name='Hi Designer'
-                  datetime='09/12/2016, 12:00:58 AM'
-                  content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation Duis aute irure dolor in reprehenderit in a voluptate velit esse cillum dolore eu fugiat nulla pariatur.'>
-                  <ReplyComment
-                    name='Hi Designer'
-                    content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.'
-                    datetime='09/12/2016, 12:00:58 AM'></ReplyComment>
-                  <ReplyComment
-                    name='Hi Designer'
-                    content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
-                    datetime='09/12/2016, 12:00:58 AM'></ReplyComment>
-                </MainComment>
-                <MainComment
-                  name='Hi Designer'
-                  datetime='09/12/2016, 12:00:58 AM'
-                  content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation Duis aute irure dolor in reprehenderit'></MainComment>
+                {comments.map(comment => (
+                  <MainComment
+                    key={comment.id}
+                    name={comment.name}
+                    datetime={comment.createdAt}
+                    content={comment.comment}></MainComment>
+                ))}
+
+                {comments.length === 0 && (
+                  <div className='text-center text-[14px] text-zinc-600'>No comments found</div>
+                )}
               </div>
             </div>
 
@@ -121,56 +122,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
               <hr className='border-dashed mb-[1px]' />
               <hr className='border-dashed mb-[1px]' />
 
-              <div className='mt-10'>
-                <div className='mb-3'>
-                  <label htmlFor='name' className='text-[14px] text-zinc-600'>
-                    Name <span className='text-red-500'>*</span>
-                  </label>
-                  <input
-                    type='text'
-                    name='name'
-                    className='w-full border outline-none h-[40px] px-[12px] py-[6px] rounded-sm focus:border-[#66afe9] shadow-sm focus:shadow-[inset_0_1px_1px_rgba(0,0,0,0.075),_0_0_8px_rgba(102,175,233,0.6)] transition duration-500 ease-in-out'
-                  />
-                </div>
-                <div className='mb-3'>
-                  <label htmlFor='email' className='text-[14px] text-zinc-600'>
-                    Email <span className='text-red-500'>*</span>
-                  </label>
-                  <input
-                    type='text'
-                    name='email'
-                    className='w-full border outline-none h-[40px] px-[12px] py-[6px] rounded-sm focus:border-[#66afe9] shadow-sm focus:shadow-[inset_0_1px_1px_rgba(0,0,0,0.075),_0_0_8px_rgba(102,175,233,0.6)] transition duration-500 ease-in-out'
-                  />
-                </div>
-                <div className='mb-3'>
-                  <label htmlFor='telephone' className='text-[14px] text-zinc-600'>
-                    Telephone <span className='text-red-500'>*</span>
-                  </label>
-                  <input
-                    type='text'
-                    name='telephone'
-                    className='w-full border outline-none h-[40px] px-[12px] py-[6px] rounded-sm focus:border-[#66afe9] shadow-sm focus:shadow-[inset_0_1px_1px_rgba(0,0,0,0.075),_0_0_8px_rgba(102,175,233,0.6)] transition duration-500 ease-in-out'
-                  />
-                </div>
-
-                <div className='mb-3'>
-                  <label htmlFor='comment' className='text-[14px] text-zinc-600'>
-                    Comment <span className='text-red-500'>*</span>
-                  </label>
-                  <input
-                    type='text'
-                    name='comment'
-                    className='w-full  border outline-none h-[200px] px-[12px] py-[6px] rounded-sm focus:border-[#66afe9] shadow-sm focus:shadow-[inset_0_1px_1px_rgba(0,0,0,0.075),_0_0_8px_rgba(102,175,233,0.6)] transition duration-500 ease-in-out'
-                  />
-                </div>
-              </div>
-
-              <div className='flex justify-between items-center text-[14px]'>
-                <div className='text-red-500 '>* Required Fields</div>
-                <div className='h-[40px] w-fit bg-[#333333] rounded-sm px-[12px] py-[6px] text-white flex items-center'>
-                  SEND COMMENT
-                </div>
-              </div>
+              <CommentForm postId={params.slug} newComment={newComment} />
             </div>
           </div>
 

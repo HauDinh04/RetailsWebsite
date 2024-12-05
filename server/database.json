@@ -466,5 +466,25 @@
       "comment_count": 0,
       "datetime": "2023-12-26T12:00:00Z"
     }
+  ],
+  "comments": [
+    {
+      "id": "c30b",
+      "name": "test",
+      "email": "test@gmail.com",
+      "telephone": "109371273",
+      "comment": "sdciufghisdiuoldh",
+      "postId": "5",
+      "createdAt": "2024-12-05T15:09:05.226Z"
+    },
+    {
+      "id": "29ed",
+      "name": "Nguyen Van Son",
+      "email": "son@gmail.com",
+      "telephone": "083071098231",
+      "comment": "Test comment",
+      "postId": "1",
+      "createdAt": "2024-12-05T15:13:17.796Z"
+    }
   ]
 }
