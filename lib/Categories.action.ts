@@ -1,6 +1,6 @@
 export const fetchCategories = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL_JSON}/categories`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/category`, {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',

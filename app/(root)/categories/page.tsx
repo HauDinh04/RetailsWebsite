@@ -55,12 +55,13 @@ function Page() {
         fetchCategories()
             .then(data => {
                 setCategories(data as CategoryType[]);
+                console.log(data);
             });
         fetchTotalProduct()
             .then(data => {
                 setTotal(data as number);
-            })
-    }, [categories, total])
+            });
+    }, [])
 
     useEffect(() => {
         fetchProductByPage(page, limit)
@@ -79,7 +80,7 @@ function Page() {
             ]}/>
             <div className="flex w-full  flex-col md:flex-row">
                 <div className="pr-[15px] lg:flex lg:flex-col lg:gap-[30px]">
-                    {categories.length > 0 ? (
+                    {categories && categories.length > 0 ? (
                         <CategorySideBar data={categories}/>
                     ) : (
                         <div className="text-heading2">Loading ...</div>
@@ -225,7 +226,7 @@ function Page() {
                                                     id={item.id} rating={item.rating} name={item.name}
                                                     content={item.description} discount_price={item.discount_price}/>
                             ))}
-                            {products.length === 0 && (
+                            {isList && products && products.length === 0 && (
                                 <div className={'text-center col-span-3 text-heading2'}>Loading ...</div>
                             )}
                         </div>

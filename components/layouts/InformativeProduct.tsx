@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {FaStar, FaStarHalfAlt, FaHeart, FaExchangeAlt, FaSearch} from "react-icons/fa";
+import {FaHeart, FaExchangeAlt, FaSearch} from "react-icons/fa";
 import {useAppDispatch} from "@/redux/hooks";
 import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
 import StarRating from "@/components/layouts/StarRating";
