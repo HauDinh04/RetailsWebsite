@@ -618,7 +618,7 @@ export default function RegisterForm() {
                         />
                     </div>
                 </fieldset>
-                <div className="flex items-center md:justify-end text-black-2 text-info">
+                <div className="flex items-center justify-end text-black-2 text-info">
                     <div className="flex">
                         I have read and agree to the&nbsp;
                         <Link

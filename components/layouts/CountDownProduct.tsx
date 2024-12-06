@@ -11,8 +11,7 @@ import { ProductModal } from './ProductModal';
 const formatCurrency = (amount: number): string => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
-
+    currency: 'USD'
   }).format(amount);
 };
 
@@ -120,14 +119,14 @@ export function CountDownProduct({
 
             {/* Hover Buttons */}
             <div className='z-20 flex flex-col gap-2 absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-              <div className='bg-white flex justify-center items-center rounded-sm w-[40px] h-[40px] transform opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300 cursor-pointer'>
+              <div className='bg-white hover:bg-[#0083c1] hover:text-white flex justify-center items-center rounded-sm w-[40px] h-[40px] transform opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300 cursor-pointer'>
                 <FaHeart />
               </div>
-              <div className='bg-white flex justify-center items-center rounded-sm w-[40px] h-[40px] transform opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 cursor-pointer'>
+              <div className='bg-white hover:bg-[#0083c1] hover:text-white flex justify-center items-center rounded-sm w-[40px] h-[40px] transform opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 cursor-pointer'>
                 <FaExchangeAlt />
               </div>
               <div
-                className='bg-white justify-center items-center rounded-sm w-[40px] h-[40px] transform opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 cursor-pointer hidden md:flex'
+                className='bg-white hover:bg-[#0083c1] hover:text-white justify-center items-center rounded-sm w-[40px] h-[40px] transform opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 cursor-pointer hidden md:flex'
                 onClick={() => setIsModalOpen(true)}>
                 <FaSearch />
               </div>

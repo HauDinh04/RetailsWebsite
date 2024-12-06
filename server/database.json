@@ -446,5 +446,45 @@
       "image": "/slideshow/slider-2.jpg",
       "text": "text"
     }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "slug": "post1",
+      "thumbnail_url": "/images/blog-1.jpg",
+      "title": "Kire Tuma Demonstraverunt Lector",
+      "description": "Morbi tempus, non ullamcorper euismod, erat odio suscipit purus, nec ornare lacus turpis ac purus. Mauris cursus in mi vel dignissim. Morbi mollis elit ipsum, a feugiat lectus gravida non. Aenean molestie justo sed aliquam euismod. Maecenas laoreet b",
+      "comment_count": 2,
+      "datetime": "2023-12-24T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "slug": "post2",
+      "thumbnail_url": "/images/blog-1.jpg",
+      "title": "Kire Tuma Demonstraverunt Lector 2",
+      "description": "Morbi tempus, non ullamcorper euismod, erat odio suscipit purus, nec ornare lacus turpis ac purus. Mauris cursus in mi vel dignissim. Morbi mollis elit ipsum, a feugiat lectus gravida non. Aenean molestie justo sed aliquam euismod. Maecenas laoreet b",
+      "comment_count": 0,
+      "datetime": "2023-12-26T12:00:00Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c30b",
+      "name": "test",
+      "email": "test@gmail.com",
+      "telephone": "109371273",
+      "comment": "sdciufghisdiuoldh",
+      "postId": "5",
+      "createdAt": "2024-12-05T15:09:05.226Z"
+    },
+    {
+      "id": "29ed",
+      "name": "Nguyen Van Son",
+      "email": "son@gmail.com",
+      "telephone": "083071098231",
+      "comment": "Test comment",
+      "postId": "1",
+      "createdAt": "2024-12-05T15:13:17.796Z"
+    }
   ]
 }
