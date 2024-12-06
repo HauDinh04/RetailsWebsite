@@ -10,6 +10,7 @@ import {FaMinus} from "react-icons/fa";
 import {VscPreview} from "react-icons/vsc";
 import {CiSquareMinus, CiSquarePlus} from "react-icons/ci";
 import SmallHorizontalBoxProductHeader from "@/components/layouts/SmallHorizontalBoxProductHeader";
+import {motion} from 'framer-motion';
 
 const home = [
     {
@@ -758,8 +759,17 @@ const NavBar = () => {
                 </div>
             </div>
             {isMenuOpen && (
-                <div
-                    className="xl:hidden bg-white text-black min-w-3/5 w-3/5 h-screen overflow-auto fixed top-0 left-0 p-[10px] z-50">
+                <motion.div
+                    initial={{ x: "-100%", opacity: 0 }} // Bắt đầu từ ngoài màn hình bên trái, ẩn đi
+                    animate={{ x: 0, opacity: 1 }} // Chạy vào vị trí ban đầu và hiển thị
+                    exit={{ x: "-100%", opacity: 0 }} // Khi thoát, trượt lại về trái
+                    transition={{
+                        type: "spring", // Hiệu ứng lò xo
+                        stiffness: 60,  // Độ cứng của lò xo (tùy chỉnh độ mượt)
+                        damping: 12,    // Lực cản
+                        duration: 0.7,  // Thời gian
+                    }}
+                    className="xl:hidden bg-white text-black w-[65%] md:w-3/5 h-screen overflow-auto fixed top-0 left-0 p-[10px] z-50">
                     <button
                         onClick={() => setIsMenuOpen(false)}
                         className="h-[40px] block w-full p-[10px] text-xl"
@@ -960,7 +970,7 @@ const NavBar = () => {
                             )}
                         </div>
                     ))}
-                </div>
+                </motion.div>
             )}
         </div>
     );
