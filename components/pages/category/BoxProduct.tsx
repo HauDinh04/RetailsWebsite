@@ -3,7 +3,6 @@ import React from "react";
 import {FaHeart} from "react-icons/fa";
 import {FaExchangeAlt} from "react-icons/fa";
 import {FaSearch} from "react-icons/fa";
-import {IoIosStar} from "react-icons/io";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";

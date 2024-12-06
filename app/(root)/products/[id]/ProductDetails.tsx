@@ -17,12 +17,15 @@ import { IoLogoTwitter } from "react-icons/io";
 import { TiSocialGooglePlus } from "react-icons/ti";
 import { RiSkypeFill } from "react-icons/ri";
 import Link from "next/link";
+import {useAppDispatch} from "@/redux/hooks";
+import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
 
 export default function ProductDetails({
     productDetail,
 }: {
     productDetail: ProductType;
 }) {
+    const dispatch = useAppDispatch();
     const [quantity, setQuantity] = useState(1);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -48,6 +51,18 @@ export default function ProductDetails({
         }
     };
     const images = productDetail.images;
+
+    const handleAddProduct = () => {
+        dispatch(setShowCartNotice());
+    }
+
+    const handleCompareProduct = () => {
+        dispatch(setShowCompareNotice())
+    }
+
+    const handleAddWishList = () => {
+        dispatch(setShowWishListNotice());
+    }
     return (
         <div className="flex flex-row flex-wrap justify-between">
             <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 px-[15px] overflow-hidden">
@@ -217,16 +232,16 @@ export default function ProductDetails({
                         </div>
 
                         <div className="w-full sm:w-auto flex flex-wrap md:flex-nowrap md:justify-between mt-[20px] sm:mt-0">
-                            <Button className="uppercase mr-[10px] py-[12px] px-[16px] h-[43px] text-info bg-bg-main hover:bg-[#444] transition-all ease-in-out duration-300">
+                            <Button onClick={handleAddProduct} className="uppercase mr-[10px] py-[12px] px-[16px] h-[43px] text-info bg-bg-main hover:bg-[#444] transition-all ease-in-out duration-300">
                                 <span className="text-white group-hover:text-white">
                                     Add to Cart
                                 </span>
                             </Button>
                             <ul className="flex gap-x-[10px] mb-[10px]">
-                                <li className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
+                                <li onClick={handleAddWishList} className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
                                     <FaHeart className="text-[14px] text-[#666] group-hover:text-[#0083c1] transition duration-900 ease-out" />
                                 </li>
-                                <li className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
+                                <li onClick={handleCompareProduct} className="bg-white py-[14px] px-[15px] flex justify-center items-center rounded-sm transform border cursor-pointer hover:border-[#0083c1] group">
                                     <FaExchangeAlt className="text-[14px] text-[#666] group-hover:text-[#0083c1] transition duration-900 ease-out" />
                                 </li>
                             </ul>
