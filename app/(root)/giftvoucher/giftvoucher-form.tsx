@@ -305,8 +305,8 @@ export default function GiftvoucherForm() {
             />
           </div>
         </fieldset>
-        <div className="flex items-center md:justify-end text-black-2 text-info">
-          <div className="flex">
+        <div className="flex flex-col gap-[5px] md:flex-row items-start md:items-center md:justify-end text-black-2 text-info">
+          <div className="flex items-center">
             I understand that gift certificates are non-refundable.
             <FormField
               control={form.control}

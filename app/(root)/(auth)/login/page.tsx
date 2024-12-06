@@ -101,7 +101,7 @@ export default function LoginPage() {
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className='w-full' noValidate>
                   <div className='p-[19px]'>
-                    <div className='flex items-center gap-2 text-[30px] font-light text-zinc-700 mt-[10px] mb-[20px]'>
+                    <div className='flex items-center gap-2 text-[27.5px] md:text-[30px] font-light text-zinc-700 mt-[10px] mb-[20px]'>
                       <FaRegFileAlt />
                       <span className='uppercase'> Returning Customer </span>
                     </div>
