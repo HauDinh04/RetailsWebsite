@@ -105,22 +105,22 @@ export default function Home() {
             />
           </div>
         </div>
-        <section className="hidden lg:block  mt-10 ">
-          <div className="flex gap-4 object-cover ">
+        <section className="hidden lg:block mt-10">
+          <div className="grid grid-cols-2 gap-4 ">
             <Link href={"/"}>
-              <div className="relative group overflow-hidden w-[578px] h-[200px]">
+              <div className="relative group overflow-hidden w-full h-[200px]">
                 <Image
                   src={"/banner/banner1.jpg"}
                   alt="banner"
                   layout="fill"
                   objectFit="cover"
-                  className="transition-transform duration-500 group-hover:scale-105"
+                  className="transition-transform duration-500 group-hover:scale-105 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent bg-[#45474B] to-transparent opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
               </div>
             </Link>
             <Link href={"/"}>
-              <div className="relative group overflow-hidden w-[578px] h-[200px]">
+              <div className="relative group overflow-hidden w-full h-[200px]">
                 <Image
                   src={"/banner/banner1.jpg"}
                   alt="banner"
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
           <div className="flex gap-4 mt-4">
             <Link href={"/"}>
-              <div className="relative group overflow-hidden w-[282px] h-[400px]">
+              <div className="relative group overflow-hidden w-[274px] h-[400px]">
                 <Image
                   src={"/banner/banner2.jpg"}
                   alt="banner"
@@ -146,7 +146,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href={"/"}>
-              <div className="relative group overflow-hidden w-[578px] h-[400px]">
+              <div className="relative group overflow-hidden w-[560px] h-[400px]">
                 <Image
                   src={"/banner/banner3.jpg"}
                   alt="banner"
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
             </Link>
             <Link href={"/"}>
-              <div className="relative group overflow-hidden w-[282px] h-[400px]">
+              <div className="relative group overflow-hidden w-[274px] h-[400px]">
                 <Image
                   src={"/banner/banner2.jpg"}
                   alt="banner"
