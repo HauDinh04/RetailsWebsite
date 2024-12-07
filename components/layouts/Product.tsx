@@ -143,32 +143,6 @@ export default function Product({ product, className }: productType) {
           </ul>
         </div>
       </div>
-      <div className='pt-[5px]'>
-        <div>
-          <h4 className='my-[10px] text-center text-black-1 text-sub-heading font-medium group-hover:text-bg-main transition-all ease-in-out duration-700'>
-            <Link href={`/products/${product.id}`}>{product.name}</Link>
-          </h4>
-          <div className='h-[30px] flex flex-row items-center justify-center'>
-            {[...Array(5)].map((_, i) => (
-              <IoIosStar key={i} className={product.rating > i ? 'text-black' : 'text-footer-info'} />
-            ))}
-          </div>
-          <div className='mt-[10px] mb-[15px] text-center'>
-            <span className='text-[#ff5555] text-heading3-bold'>${product.price.toFixed(2)}</span>
-            <span className='text-black-3 text-sub-heading font-medium line-through ml-1'>
-              ${product.oldPrice.toFixed(2)}
-            </span>
-          </div>
-        </div>
-
-        <div className='text-center'>
-          <Button
-            variant='outline'
-            className='uppercase w-[120px] h-[40px] text-info group-hover:bg-bg-main transition-all ease-in-out duration-300'>
-            <span className='text-black-3 group-hover:text-white'>Add to Cart</span>
-          </Button>
-        </div>
-      </div>
     </div>
   );
 }
