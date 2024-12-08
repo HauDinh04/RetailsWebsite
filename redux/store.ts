@@ -3,6 +3,8 @@ import demoReducer from './features/todos/demoSlice'
 import accountReducer from './features/account/account.slice'
 import skinReducer from './features/skin/skin.slice'
 import noticeReducer from './features/notice/notice.slice'
+import productModalReducer from './features/product/product_modal.slice'
+import zoomImageZoneReducer from './features/zoom/zoom_image_zone.slice'
 
 export const makeStore = () => {
     return configureStore({
@@ -10,7 +12,9 @@ export const makeStore = () => {
             demo : demoReducer,
             account: accountReducer,
             skin: skinReducer,
-            notice: noticeReducer
+            notice: noticeReducer,
+            productModal: productModalReducer,
+            zoomImageZone: zoomImageZoneReducer
         },
     })
 }

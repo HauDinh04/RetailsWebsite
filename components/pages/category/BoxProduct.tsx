@@ -9,6 +9,7 @@ import Link from "next/link";
 import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
 import {useAppDispatch} from "@/redux/hooks";
 import StarRating from "@/components/layouts/StarRating";
+import {showProductModal} from "@/redux/features/product/product_modal.slice";
 
 export default function BoxProduct({id, name, image, price, oldPrice, rating, discount_price, isNew = false}: {
     id: string,
@@ -71,7 +72,8 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                                 className="h-10 w-10 m-[5px] cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                                 <FaExchangeAlt className="w-[18px] h-[18px]"/>
                             </li>
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            <li onClick={() => dispatch(showProductModal(id))}
+                                className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                                 <FaSearch className="w-[18px] h-[18px]"/>
                             </li>
                         </ul>
@@ -86,16 +88,6 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                     </Link>
                     <div className="h-[30px] flex flex-row items-center justify-center">
                         <StarRating rating={rating}/>
-                        {/*{[...Array(5)].map((_, i) => (*/}
-                        {/*    <IoIosStar*/}
-                        {/*        key={i}*/}
-                        {/*        className={*/}
-                        {/*            rating > i*/}
-                        {/*                ? "text-black"*/}
-                        {/*                : "text-footer-info"*/}
-                        {/*        }*/}
-                        {/*    />*/}
-                        {/*))}*/}
                     </div>
                     <div className="mt-[10px] mb-[15px] text-center">
                         <span className="text-[#ff5555] text-heading3-bold">

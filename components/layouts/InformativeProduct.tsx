@@ -5,6 +5,7 @@ import {FaHeart, FaExchangeAlt, FaSearch} from "react-icons/fa";
 import {useAppDispatch} from "@/redux/hooks";
 import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
 import StarRating from "@/components/layouts/StarRating";
+import {showProductModal} from "@/redux/features/product/product_modal.slice";
 
 function InformativeProduct({id, name, rating, price, image, oldPrice, content, discount_price, className = ''}: {
     id: string,
@@ -32,8 +33,6 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
     }
 
     const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
 
     return (
         <div className={'flex flex-col sm:flex-row group w-full h-max' + ` ${className}`}>
@@ -67,7 +66,8 @@ function InformativeProduct({id, name, rating, price, image, oldPrice, content, 
                                 className="h-10 w-10 m-[5px] cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                                 <FaExchangeAlt className="w-[18px] h-[18px]"/>
                             </li>
-                            <li className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            <li onClick={() => dispatch(showProductModal(id))}
+                                className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                                 <FaSearch className="w-[18px] h-[18px]"/>
                             </li>
                         </ul>

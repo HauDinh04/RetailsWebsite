@@ -48,7 +48,7 @@ export default function ImageZoomIn({ image, scale }: ImageProps) {
       onMouseMove={handleMouseMove}
       style={{
         width: "100%",
-        height: "500px",
+        height: "600px",
         position: "relative",
         overflow: "hidden",
       }}
