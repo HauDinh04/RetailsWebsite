@@ -12,7 +12,7 @@ const StarRating: React.FC<StarRatingProps> = ({rating, className = ""}) => {
     const emptyStars = 5 - Math.ceil(rating);
 
     return (
-        <div className={`flex items-center h-full ${className}`}>
+        <div className={`flex items-center h-max ${className}`}>
             {Array(fullStars)
                 .fill(0)
                 .map((_, index) => (

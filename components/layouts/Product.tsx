@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {useAppDispatch} from "@/redux/hooks";
 import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
+import {showProductModal} from "@/redux/features/product/product_modal.slice";
 
 interface productType {
     product: {
@@ -75,14 +76,15 @@ export default function Product({product, className}: productType) {
                     className="absolute bottom-0 right-[5px] opacity-0 transition-all ease-in-out duration-1000 group-hover:opacity-100">
                     <ul className="mb-[10px] w-[50px] items-center flex flex-col gap-[5px]">
                         <li onClick={handleAddWishList}
-                            className="h-10 w-10 rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            className="h-10 w-10 cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                             <FaHeart className="w-[18px] h-[18px]"/>
                         </li>
                         <li onClick={handleCompareProduct}
-                            className="h-10 w-10 rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
+                            className="h-10 w-10 cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                             <FaExchangeAlt className="w-[18px] h-[18px]"/>
                         </li>
-                        <li className="h-10 w-10 rounded-[3px] hidden  bg-white md:flex items-center justify-center hover:bg-bg-main hover:text-white">
+                        <li onClick={() => dispatch(showProductModal(product.id))}
+                            className="h-10 w-10 cursor-pointer rounded-[3px] hidden  bg-white md:flex items-center justify-center hover:bg-bg-main hover:text-white">
                             <FaSearch className="w-[18px] h-[18px]"/>
                         </li>
                     </ul>

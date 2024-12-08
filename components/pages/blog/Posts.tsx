@@ -1,3 +1,4 @@
+'use client';
 import { FaComments } from 'react-icons/fa';
 import { FaAngleDoubleRight } from 'react-icons/fa';
 import { FaFacebookF } from 'react-icons/fa';
@@ -6,6 +7,8 @@ import { FaGooglePlusG } from 'react-icons/fa';
 import { FaSkype } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
+import {useAppDispatch} from "@/redux/hooks";
+import {setImageArray, setIsShowZoomImage} from "@/redux/features/zoom/zoom_image_zone.slice";
 
 type PostType = {
   slug: string;
@@ -21,9 +24,16 @@ export default function Post({ slug, thumbnail_url, title, description, comment_
   const day = date.getDate();
   const month = date.toLocaleString('default', { month: 'short' });
 
+  const dispatch = useAppDispatch();
+
+  const handleShowZoomImageZone = () => {
+    dispatch(setIsShowZoomImage(true));
+    dispatch(setImageArray([thumbnail_url]));
+  }
+
   return (
     <div className='flex flex-col md:flex-row gap-2 mb-5 group'>
-      <div className=' transition duration-500 ease-in-out w-full md:w-[46%] h-fit relative'>
+      <div onClick={handleShowZoomImageZone} className='cursor-pointer transition duration-500 ease-in-out w-full md:w-[46%] h-fit relative'>
         <div className='p-2 border group-hover:border-transparent transition duration-700 ease-in-out'>
           <Image
             width={0}
@@ -32,7 +42,7 @@ export default function Post({ slug, thumbnail_url, title, description, comment_
             style={{ width: '100%', height: 'auto' }}
             src={thumbnail_url}
             alt=''
-            className='w-full '
+            className='w-full object-cover'
           />
           <div className='bg-white absolute top-4 left-4 p-3 py-2 rounded-sm flex flex-col items-center z-10 text-[#0083c1]'>
             <div className='text-[22px] font-bold mb-[-3px]'>{day}</div>
