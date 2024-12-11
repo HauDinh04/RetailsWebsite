@@ -18,6 +18,8 @@ import StarRating from '@/components/layouts/StarRating';
 import {MdClose} from "react-icons/md";
 import Link from "next/link";
 import {motion} from "framer-motion";
+import {useAppDispatch, useAppSelector} from "@/redux/hooks";
+import {setIsLoading} from "@/redux/features/loading/loading.reducer";
 
 type ProductModalProps = {
     isOpen: boolean;
@@ -46,6 +48,8 @@ export const ProductModal = ({
                                  in_stock,
                                  sku
                              }: ProductModalProps) => {
+
+    const dispatch = useAppDispatch();
 
     const [isShowAddCart, setIsShowAddCart] = useState(false);
     const [isShowWishList, setIsShowWishList] = useState(false);
@@ -90,9 +94,17 @@ export const ProductModal = ({
     if (!isOpen) return null;
 
     return (
-        <div className='fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-75 flex justify-center z-50'>
-            <div className='bg-white p-[20px] mt-[40px] xl:h-[825px] max-w-[1000px] w-full relative'>
-                <button className='text-gray-600 hover:text-gray-900 absolute right-5' onClick={onClose}>
+        <div onClick={() => {
+            onClose();
+            dispatch(setIsLoading(false))
+        }}
+             className='fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-75 flex justify-center z-50'>
+            <div onClick={(e) => e.stopPropagation()}
+                 className='bg-white p-[20px] mt-[40px] xl:h-[825px] max-w-[1000px] w-full relative'>
+                <button className='text-gray-600 hover:text-gray-900 absolute right-5' onClick={() => {
+                    onClose();
+                    dispatch(setIsLoading(false))
+                }}>
                     <FaXmark/>
                 </button>
                 <div className='grid grid-cols-2 '>

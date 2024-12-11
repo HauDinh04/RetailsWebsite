@@ -10,6 +10,7 @@ import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/
 import {useAppDispatch} from "@/redux/hooks";
 import StarRating from "@/components/layouts/StarRating";
 import {showProductModal} from "@/redux/features/product/product_modal.slice";
+import {setIsLoading} from "@/redux/features/loading/loading.reducer";
 
 export default function BoxProduct({id, name, image, price, oldPrice, rating, discount_price, isNew = false}: {
     id: string,
@@ -36,18 +37,30 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
         dispatch(setShowWishListNotice());
     }
 
+    const handleShowProductModal = () => {
+        dispatch(showProductModal(id));
+        dispatch(setIsLoading(true));
+    }
+
     return (
         <div className="h-max w-full group">
             <div
                 className="border border-[#e5e5e5] rounded-[5px] w-full h-max p-[5px] group-hover:bg-[#e5e5e5] group-hover:rounded-none transition-all ease-in-out duration-700">
                 <div className="relative aspect-square">
                     <Link href={`/products/${id}`} className={'block relative w-full h-[133%] xl:min-h-[334px]'}>
-                        <Image
+                        {image ? (<Image
                             src={image}
                             alt={name}
                             fill
                             className="object-cover"
-                        />
+                            sizes={'100'}
+                        />) : (<Image
+                            src={'/images/product-1.jpg'}
+                            alt={name}
+                            fill
+                            sizes={'100'}
+                            className="object-cover"
+                        />)}
                     </Link>
                     {isNew && (
                         <div
@@ -72,7 +85,7 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                                 className="h-10 w-10 m-[5px] cursor-pointer rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                                 <FaExchangeAlt className="w-[18px] h-[18px]"/>
                             </li>
-                            <li onClick={() => dispatch(showProductModal(id))}
+                            <li onClick={handleShowProductModal}
                                 className="h-10 w-10 m-[5px] rounded-[3px] bg-white flex items-center justify-center hover:bg-bg-main hover:text-white">
                                 <FaSearch className="w-[18px] h-[18px]"/>
                             </li>
@@ -87,13 +100,13 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
                         {name}
                     </Link>
                     <div className="h-[30px] flex flex-row items-center justify-center">
-                        <StarRating rating={rating}/>
+                        {rating ? (<StarRating rating={rating}/>) : <StarRating rating={5}/>}
                     </div>
                     <div className="mt-[10px] mb-[15px] text-center">
                         <span className="text-[#ff5555] text-heading3-bold">
                             ${price.toFixed(2)}
                         </span>
-                        {oldPrice !== 0 && (
+                        {oldPrice && oldPrice !== 0 && (
                             <span className="text-black-3 text-sub-heading font-medium line-through ml-1">
                                 ${oldPrice.toFixed(2)}
                             </span>
