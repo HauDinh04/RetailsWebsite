@@ -12,9 +12,10 @@ import SkinCssPopup from "@/components/layouts/SkinCssPopup";
 import NoticeModalCart from "@/components/layouts/NoticeModalCart";
 import NoticeModalCompare from "@/components/layouts/NoticeModalCompare";
 import NoticeModalWishList from "@/components/layouts/NoticeModalWishList";
-import { SessionProvider } from 'next-auth/react';
-import { ProductModalRedux } from "@/components/layouts/ProductModalRedux";
+import {SessionProvider} from 'next-auth/react';
+import {ProductModalRedux} from "@/components/layouts/ProductModalRedux";
 import ZoomImageZone from "@/components/layouts/ZoomImageZone";
+import Loading from "@/components/layouts/Loading";
 
 export const metadata: Metadata = {
     title: 'Retails Website',
@@ -47,8 +48,9 @@ export default function RootLayout({
                     <NoticeModalCart/>
                     <NoticeModalCompare/>
                     <NoticeModalWishList/>
-                    <ProductModalRedux />
+                    <ProductModalRedux/>
                     <ZoomImageZone/>
+                    <Loading/>
                 </main>
             </StoreProvider>
         </SessionProvider>

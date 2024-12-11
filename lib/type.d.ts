@@ -74,7 +74,7 @@ type BannerType = {
 type CategoryType = {
   id: string;
   name: string;
-  subCategories: {
+  subCategories?: {
     id: string;
     name: string;
   }[];
