@@ -105,8 +105,8 @@ function LatestProduct() {
                     return res.data;
                 }
             })
-            .then((data: []) => {
-                const array = data.slice(0, 9);
+            .then((res: {data: []}) => {
+                const array = res.data.slice(0, 9);
                 setProducts(array as ProductType[]);
                 setIsLoading(false);
             });
