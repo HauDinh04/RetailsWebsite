@@ -422,17 +422,15 @@ function Page() {
                     return res.data;
                 }
             })
-            .then((data: []) => {
-                const array = data.slice(0, 9);
+            .then((res: {data: [], pagination: { total: number}}) => {
+                console.log(res);
+                const array = res.data.slice(0, 9);
                 setProducts(array as ProductType[]);
-                setTotal(data.length);
+                setTotal(res.pagination.total);
                 dispatch(setIsLoading(false));
             });
         fetchCategory()
             .then(res => res.data)
-            .then(data => {
-                console.log(data);
-            })
     }, [])
 
     return (
