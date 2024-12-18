@@ -5,6 +5,7 @@ import skinReducer from './features/skin/skin.slice'
 import noticeReducer from './features/notice/notice.slice'
 import productModalReducer from './features/product/product_modal.slice'
 import zoomImageZoneReducer from './features/zoom/zoom_image_zone.slice'
+import loadingReducer from "@/redux/features/loading/loading.reducer";
 
 export const makeStore = () => {
     return configureStore({
@@ -14,7 +15,8 @@ export const makeStore = () => {
             skin: skinReducer,
             notice: noticeReducer,
             productModal: productModalReducer,
-            zoomImageZone: zoomImageZoneReducer
+            zoomImageZone: zoomImageZoneReducer,
+            loading: loadingReducer,
         },
     })
 }

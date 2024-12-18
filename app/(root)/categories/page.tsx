@@ -16,9 +16,16 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import Breadcrumb from "@/components/layouts/Breadcrumb";
-import {fetchCategories, fetchProductByPage, fetchTotalProduct} from "@/lib/Categories.action";
+import {
+    fetchCategories,
+    fetchCategory,
+    fetchProduct,
+} from "@/lib/Categories.action";
+import {useAppDispatch} from "@/redux/hooks";
+import {setIsLoading} from "@/redux/features/loading/loading.reducer";
 
 function Page() {
+    const dispatch = useAppDispatch();
     const [total, setTotal] = useState(0);
     const [categories, setCategories] = useState([] as CategoryType[]);
     const [page, setPage] = useState(1);
@@ -52,23 +59,379 @@ function Page() {
     }
 
     useEffect(() => {
+        dispatch(setIsLoading(true));
+    }, []);
+
+    useEffect(() => {
         fetchCategories()
             .then(data => {
                 setCategories(data as CategoryType[]);
-                console.log(data);
+                if (!data) setCategories([
+                    {
+                        "id": "1",
+                        "name": "Smartphone & Tablets",
+                        "subCategories": [
+                            {
+                                "id": "1",
+                                "name": "Men's Watches"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Women's Watches"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Kids' Watches"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Accessories"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "2",
+                        "name": "Electronics",
+                        "subCategories": [
+                            {
+                                "id": "1",
+                                "name": "Cycling"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Running"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Swimming"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Football"
+                            },
+                            {
+                                "id": "5",
+                                "name": "Golf"
+                            },
+                            {
+                                "id": "6",
+                                "name": "Windsurfing"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3",
+                        "name": "Shoes",
+                        "subCategories": [
+                            {
+                                "id": "1",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "5",
+                                "name": "Sub Categories"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "3",
+                        "name": "Watches",
+                        "subCategories": [
+                            {
+                                "id": "1",
+                                "name": "Men's Watches"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Women's Watches"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Kids' Watches"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Accessories"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "4",
+                        "name": "Jewellery",
+                        "subCategories": [
+                            {
+                                "id": "1",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "2",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "3",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "4",
+                                "name": "Sub Categories"
+                            },
+                            {
+                                "id": "5",
+                                "name": "Sub Categories"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "5",
+                        "name": "Health & Beauty"
+                    },
+                    {
+                        "id": "6",
+                        "name": "Kids & Babies"
+                    },
+                    {
+                        "id": "7",
+                        "name": "Sports"
+                    },
+                    {
+                        "id": "8",
+                        "name": "Home & Garden"
+                    },
+                    {
+                        "id": "9",
+                        "name": "Wines & Spirits"
+                    }
+                ])
             });
-        fetchTotalProduct()
-            .then(data => {
-                setTotal(data as number);
-            });
-    }, [])
-
-    useEffect(() => {
-        fetchProductByPage(page, limit)
-            .then(data => {
-                setProducts(data as ProductType[]);
+        fetchProduct()
+            .then(res => {
+                if (res.message) {
+                    return [
+                        {
+                            "id": "1",
+                            "category_id": "1",
+                            "name": "Sunt Molup",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 3.5,
+                            "price": 100,
+                            "image": "/images/sua_tuoi_horizon_organic.webp",
+                            "oldPrice": 50,
+                            "discount_price": 90,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU001",
+                            "images": [
+                                "/images/792f11308ba03ae698ec8c42eedbff80.jpg",
+                                "/images/premium_photo-1669652639337-c513cc42ead6.jpg",
+                                "/images/fa8e8d_795310e1890c45d89b2ac85172faad72~mv2.webp",
+                                "/images/2b054882609bbaf6728aca0368212c14.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "2",
+                            "category_id": "1",
+                            "name": "Sunt Molup 2",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 3,
+                            "price": 150,
+                            "image": "/images/premium_photo-1669652639337-c513cc42ead6.jpg",
+                            "oldPrice": 0,
+                            "discount_price": 80,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU002",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "3",
+                            "category_id": "1",
+                            "name": "Sunt Molup 3",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 2.8,
+                            "price": 250,
+                            "image": "/images/fa8e8d_795310e1890c45d89b2ac85172faad72~mv2.webp",
+                            "oldPrice": 122,
+                            "discount_price": 170,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU003",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "4",
+                            "category_id": "2",
+                            "name": "Sunt Molup 4",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 5,
+                            "price": 500,
+                            "image": "/images/product4.jpg",
+                            "oldPrice": 400,
+                            "discount_price": 30,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU004",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "5",
+                            "category_id": "2",
+                            "name": "Sunt Molup 5",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 5,
+                            "price": 140,
+                            "image": "/images/LibrariesandBooksinMedievalEngland3D.webp",
+                            "oldPrice": 0,
+                            "discount_price": 100,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU005",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "6",
+                            "category_id": "2",
+                            "name": "Sunt Molup 6",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 5,
+                            "price": 180,
+                            "image": "/images/782c93e915e444b8e6929d407d40e93c.jpg",
+                            "oldPrice": 120,
+                            "discount_price": 120,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU006",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "7",
+                            "category_id": "3",
+                            "name": "Sunt Molup 7",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 3.4,
+                            "price": 160,
+                            "image": "/images/2b054882609bbaf6728aca0368212c14.jpg",
+                            "oldPrice": 0,
+                            "discount_price": 120,
+                            "in_stock": false,
+                            "isNew": true,
+                            "sku": "SKU007",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "8",
+                            "category_id": "3",
+                            "name": "Sunt Molup 8",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 3.9,
+                            "price": 360,
+                            "image": "/images/792f11308ba03ae698ec8c42eedbff80.jpg",
+                            "oldPrice": 0,
+                            "discount_price": 320,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU008",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                        {
+                            "id": "9",
+                            "category_id": "3",
+                            "name": "Sunt Molup 9",
+                            "description": "A stunning display for creative professionals.",
+                            "rating": 4.5,
+                            "price": 450,
+                            "image": "/images/e16e647db7a70739f44b227dbc51b027.jpg",
+                            "oldPrice": 0,
+                            "discount_price": 360,
+                            "in_stock": true,
+                            "isNew": true,
+                            "sku": "SKU009",
+                            "images": [
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg",
+                                "/images/product-2.jpg"
+                            ]
+                        },
+                    ]
+                } else {
+                    return res.data;
+                }
             })
-    }, [page])
+            .then((res: {data: [], pagination: { total: number}}) => {
+                console.log(res);
+                const array = res.data.slice(0, 9);
+                setProducts(array as ProductType[]);
+                setTotal(res.pagination.total);
+                dispatch(setIsLoading(false));
+            });
+        fetchCategory()
+            .then(res => res.data)
+    }, [])
 
     return (
         <section className={'mb-[25px]'}>
@@ -227,6 +590,9 @@ function Page() {
                                                     content={item.description} discount_price={item.discount_price}/>
                             ))}
                             {isList && products && products.length === 0 && (
+                                <div className={'text-center col-span-3 text-heading2'}>Loading ...</div>
+                            )}
+                            {!isList && products && products.length === 0 && (
                                 <div className={'text-center col-span-3 text-heading2'}>Loading ...</div>
                             )}
                         </div>

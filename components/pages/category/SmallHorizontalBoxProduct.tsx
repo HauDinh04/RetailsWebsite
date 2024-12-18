@@ -17,7 +17,19 @@ function SmallHorizontalBoxProduct({id, name, rating, price, image, oldPrice, cl
         <Link href={`/products/${id}`} className={'flex gap-[10px] group w-[262.5px] h-[94px]' + ` ${className}`}>
             <div className="p-[5px] group-hover:border-[#0083c1] border border-solid border-[#ccc] rounded">
                 <div className="relative w-[100px] h-[82px]">
-                    <Image alt={name || ''} src={image} fill/>
+                    {image ? (<Image
+                        src={image}
+                        alt={name}
+                        fill
+                        className="object-cover"
+                        sizes={'100'}
+                    />) : (<Image
+                        src={'/images/product-1.jpg'}
+                        alt={name}
+                        fill
+                        sizes={'100'}
+                        className="object-cover"
+                    />)}
                 </div>
             </div>
             <div className="w-full flex flex-col">
@@ -27,10 +39,10 @@ function SmallHorizontalBoxProduct({id, name, rating, price, image, oldPrice, cl
                     <div className="text-[#ff5555] leading-[30px] text-[18px] font-medium">
                         ${price.toFixed(2)}
                     </div>
-                    {oldPrice !== 0 && (
+                    {oldPrice && oldPrice !== 0 && (
                         <s className={'text-[14px] font-medium block text-[#777777] leading-[30px]'}>${oldPrice.toFixed(2)}</s>)}
                 </div>
-                <StarRating rating={rating}/>
+                {rating ? (<StarRating rating={rating}/>) : <StarRating rating={5}/>}
             </div>
         </Link>
     );
