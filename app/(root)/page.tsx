@@ -269,7 +269,7 @@ export default function Home() {
             className="mySwiper h-auto w-full"
             breakpoints={{
               375: {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 2,
               },
               640: {
@@ -277,7 +277,7 @@ export default function Home() {
                 spaceBetween: 2,
               },
               768: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 2,
               },
               1024: {
@@ -289,7 +289,7 @@ export default function Home() {
             {Array.from({ length: 10 }).map((_, index) => (
               <SwiperSlide
                 key={index}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center border"
               >
                 <div className="w-full relative">
                   <Image
