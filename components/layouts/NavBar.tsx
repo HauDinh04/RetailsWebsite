@@ -437,7 +437,7 @@ const NavBar = () => {
                 </div>
                 {isMenuROpen && (
                     <div
-                        className="xl:hidden bg-white text-black min-w-3/5 w-3/5 h-screen overflow-auto fixed top-0 left-0 p-[10px] z-50">
+                        className="xl:hidden bg-white text-black min-w-3/5 w-33/55 h-screen overflow-auto fixed top-0 left-0 p-[5px] z-50">
                         <button
                             onClick={() => setIsMenuROpen(false)}
                             className="h-[40px] block w-full p-[10px] text-xl"

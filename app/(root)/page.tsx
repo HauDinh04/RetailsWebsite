@@ -39,7 +39,7 @@ export default function Home() {
         <div className="mt-4">
           <div className="py-[10px] grid grid-cols-1 md:grid-cols-3  ">
             <div className="flex border justify-center items-center sm:justify-start p-5">
-              <IoRocketOutline className="text-[30px]" />
+              <IoRocketOutline className="text-[50px] opacity-60" />
               <div className="ml-4">
                 <h2 className="uppercase text-sub-heading-bold">
                   free shipping & return{" "}
@@ -50,7 +50,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center border items-center sm:justify-start p-5">
-              <TbPigMoney className="text-[30px]" />
+              <TbPigMoney className="text-[50px] opacity-60" />
               <div className="ml-4">
                 <h2 className="uppercase text-sub-heading-bold">
                   money guarantee
@@ -61,7 +61,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex border justify-center items-center sm:justify-start p-5">
-              <TfiHeadphoneAlt className="text-[30px]" />
+              <TfiHeadphoneAlt className="text-[50px] opacity-60" />
               <div className="ml-4">
                 <h2 className="uppercase text-sub-heading-bold">
                   online support
