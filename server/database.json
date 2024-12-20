@@ -1,0 +1,490 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "category_id": "1",
+      "name": "Sunt Molup",
+      "description": "A stunning display for creative professionals.",
+      "rating": 3.5,
+      "price": 100,
+      "image": "/images/sua_tuoi_horizon_organic.webp",
+      "oldPrice": 50,
+      "discount_price": 90,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU001",
+      "images": [
+        "/images/792f11308ba03ae698ec8c42eedbff80.jpg",
+        "/images/premium_photo-1669652639337-c513cc42ead6.jpg",
+        "/images/fa8e8d_795310e1890c45d89b2ac85172faad72~mv2.webp",
+        "/images/2b054882609bbaf6728aca0368212c14.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "2",
+      "category_id": "1",
+      "name": "Sunt Molup 2",
+      "description": "A stunning display for creative professionals.",
+      "rating": 3,
+      "price": 150,
+      "image": "/images/premium_photo-1669652639337-c513cc42ead6.jpg",
+      "oldPrice": 0,
+      "discount_price": 80,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU002",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "3",
+      "category_id": "1",
+      "name": "Sunt Molup 3",
+      "description": "A stunning display for creative professionals.",
+      "rating": 2.8,
+      "price": 250,
+      "image": "/images/fa8e8d_795310e1890c45d89b2ac85172faad72~mv2.webp",
+      "oldPrice": 122,
+      "discount_price": 170,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU003",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "4",
+      "category_id": "2",
+      "name": "Sunt Molup 4",
+      "description": "A stunning display for creative professionals.",
+      "rating": 5,
+      "price": 500,
+      "image": "/images/product4.jpg",
+      "oldPrice": 400,
+      "discount_price": 30,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU004",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "5",
+      "category_id": "2",
+      "name": "Sunt Molup 5",
+      "description": "A stunning display for creative professionals.",
+      "rating": 5,
+      "price": 140,
+      "image": "/images/LibrariesandBooksinMedievalEngland3D.webp",
+      "oldPrice": 0,
+      "discount_price": 100,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU005",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "6",
+      "category_id": "2",
+      "name": "Sunt Molup 6",
+      "description": "A stunning display for creative professionals.",
+      "rating": 5,
+      "price": 180,
+      "image": "/images/782c93e915e444b8e6929d407d40e93c.jpg",
+      "oldPrice": 120,
+      "discount_price": 120,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU006",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "7",
+      "category_id": "3",
+      "name": "Sunt Molup 7",
+      "description": "A stunning display for creative professionals.",
+      "rating": 3.4,
+      "price": 160,
+      "image": "/images/2b054882609bbaf6728aca0368212c14.jpg",
+      "oldPrice": 0,
+      "discount_price": 120,
+      "in_stock": false,
+      "isNew": true,
+      "sku": "SKU007",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "8",
+      "category_id": "3",
+      "name": "Sunt Molup 8",
+      "description": "A stunning display for creative professionals.",
+      "rating": 3.9,
+      "price": 360,
+      "image": "/images/792f11308ba03ae698ec8c42eedbff80.jpg",
+      "oldPrice": 0,
+      "discount_price": 320,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU008",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "9",
+      "category_id": "3",
+      "name": "Sunt Molup 9",
+      "description": "A stunning display for creative professionals.",
+      "rating": 4.5,
+      "price": 450,
+      "image": "/images/e16e647db7a70739f44b227dbc51b027.jpg",
+      "oldPrice": 0,
+      "discount_price": 360,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU009",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    },
+    {
+      "id": "10",
+      "category_id": "3",
+      "name": "Sunt Molup 10",
+      "description": "A stunning display for creative professionals.",
+      "rating": 4,
+      "price": 200,
+      "image": "/images/f6a55f4499aa962b7559983fdddbb0cf.jpg",
+      "oldPrice": 0,
+      "discount_price": 150,
+      "in_stock": true,
+      "isNew": true,
+      "sku": "SKU0010",
+      "images": [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg"
+      ]
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "user_id": "1",
+      "total": 99,
+      "items": [
+        {
+          "id": "1",
+          "name": "Sunt Molup",
+          "description": "A stunning display for creative professionals.",
+          "rating": 5,
+          "price": 100,
+          "image": "/images/product-2.jpg",
+          "oldPrice": 0,
+          "discount_price": 99,
+          "in_stock": true,
+          "isNew": true,
+          "sku": "SKU001"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "order_code": "#order1",
+      "cart_id": 1,
+      "user_id": 1,
+      "name": "user 1",
+      "phone_number": "0000000013",
+      "shipping_address": "address",
+      "payment_method": "Cash on Delivery",
+      "shipping_unit": 1,
+      "shipping_costs": 0,
+      "total_order": 100,
+      "total": 100,
+      "status": "pending",
+      "created_at": "12/10/2024"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Smartphone & Tablets",
+      "subCategories": [
+        {
+          "id": "1",
+          "name": "Men's Watches"
+        },
+        {
+          "id": "2",
+          "name": "Women's Watches"
+        },
+        {
+          "id": "3",
+          "name": "Kids' Watches"
+        },
+        {
+          "id": "4",
+          "name": "Accessories"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Electronics",
+      "subCategories": [
+        {
+          "id": "1",
+          "name": "Cycling"
+        },
+        {
+          "id": "2",
+          "name": "Running"
+        },
+        {
+          "id": "3",
+          "name": "Swimming"
+        },
+        {
+          "id": "4",
+          "name": "Football"
+        },
+        {
+          "id": "5",
+          "name": "Golf"
+        },
+        {
+          "id": "6",
+          "name": "Windsurfing"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Shoes",
+      "subCategories": [
+        {
+          "id": "1",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "2",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "3",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "4",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "5",
+          "name": "Sub Categories"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Watches",
+      "subCategories": [
+        {
+          "id": "1",
+          "name": "Men's Watches"
+        },
+        {
+          "id": "2",
+          "name": "Women's Watches"
+        },
+        {
+          "id": "3",
+          "name": "Kids' Watches"
+        },
+        {
+          "id": "4",
+          "name": "Accessories"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Jewellery",
+      "subCategories": [
+        {
+          "id": "1",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "2",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "3",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "4",
+          "name": "Sub Categories"
+        },
+        {
+          "id": "5",
+          "name": "Sub Categories"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Health & Beauty"
+    },
+    {
+      "id": "6",
+      "name": "Kids & Babies"
+    },
+    {
+      "id": "7",
+      "name": "Sports"
+    },
+    {
+      "id": "8",
+      "name": "Home & Garden"
+    },
+    {
+      "id": "9",
+      "name": "Wines & Spirits"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "code": "GUEST",
+      "name": "Người tiêu dùng",
+      "email": "guest@gmail.com",
+      "password": "guestpassword",
+      "phone": "000003123",
+      "company": "company",
+      "address": "address",
+      "city": "city",
+      "description": "Đây là người tiêu dùng",
+      "is_active": true,
+      "deleted": false
+    }
+  ],
+  "banners": [
+    {
+      "id": "1",
+      "image": "/slideshow/slider-2.jpg",
+      "text": "text"
+    },
+    {
+      "id": "2",
+      "image": "/slideshow/slider-2.jpg",
+      "text": "text"
+    },
+    {
+      "id": "3",
+      "image": "/slideshow/slider-2.jpg",
+      "text": "text"
+    },
+    {
+      "id": "4",
+      "image": "/slideshow/slider-2.jpg",
+      "text": "text"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "slug": "post1",
+      "thumbnail_url": "/images/blog-1.jpg",
+      "title": "Kire Tuma Demonstraverunt Lector",
+      "description": "Morbi tempus, non ullamcorper euismod, erat odio suscipit purus, nec ornare lacus turpis ac purus. Mauris cursus in mi vel dignissim. Morbi mollis elit ipsum, a feugiat lectus gravida non. Aenean molestie justo sed aliquam euismod. Maecenas laoreet b",
+      "comment_count": 2,
+      "datetime": "2023-12-24T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "slug": "post2",
+      "thumbnail_url": "/images/blog-1.jpg",
+      "title": "Kire Tuma Demonstraverunt Lector 2",
+      "description": "Morbi tempus, non ullamcorper euismod, erat odio suscipit purus, nec ornare lacus turpis ac purus. Mauris cursus in mi vel dignissim. Morbi mollis elit ipsum, a feugiat lectus gravida non. Aenean molestie justo sed aliquam euismod. Maecenas laoreet b",
+      "comment_count": 0,
+      "datetime": "2023-12-26T12:00:00Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c30b",
+      "name": "test",
+      "email": "test@gmail.com",
+      "telephone": "109371273",
+      "comment": "sdciufghisdiuoldh",
+      "postId": "5",
+      "createdAt": "2024-12-05T15:09:05.226Z"
+    },
+    {
+      "id": "29ed",
+      "name": "Nguyen Van Son",
+      "email": "son@gmail.com",
+      "telephone": "083071098231",
+      "comment": "Test comment",
+      "postId": "1",
+      "createdAt": "2024-12-05T15:13:17.796Z"
+    }
+  ]
+}
