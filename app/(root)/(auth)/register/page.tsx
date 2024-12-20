@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import RegisterForm from "./register-form";
+    
 import Breadcrumb from "@/components/layouts/Breadcrumb";
+import RegisterForms from "./registerForm";
 
 export default function Register() {
     return (
@@ -30,7 +31,7 @@ export default function Register() {
                             login page
                         </Link>
                     </p>
-                    <RegisterForm />
+                    <RegisterForms />
                 </div>
             </div>
         </div>
