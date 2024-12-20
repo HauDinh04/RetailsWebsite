@@ -45,35 +45,15 @@ const products = [
     },
 ];
 
-// const productDetail = {
-//     thumbnail_url: "/images/product-1.jpg",
-//     images: [
-//         "/images/product-2.jpg",
-//         "/images/product-2.jpg",
-//         "/images/product-2.jpg",
-//         "/images/product-2.jpg",
-//         "/images/product-2.jpg",
-//         "/images/product-2.jpg",
-//     ],
-//     name: "Apple Cinema HD Display 30-inch",
-//     description: "A stunning display for creative professionals.",
-//     content:
-//         "The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed for creative professionals, this display allows for easier access to tools and palettes needed for editing and formatting work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there's no limit to what you can achieve.",
-//     price_new: 129.99,
-//     price_old: 149.99,
-//     discount_price: 99.99,
-//     star: 4,
-//     in_stock: true,
-//     sku: "SKU001",
-// };
 
 export default async function ProductDetail({
-                                                params,
-                                            }: {
+    params,
+}: {
     params: { id: string };
 }) {
-    const data = await fetchProductDetail(Number(params.id));
-    const productDetail = data;
+    const res = await fetchProductDetail(Number(params.id));
+    const productDetail = res.data as Products;
+    // console.log(productDetail);
     const dataRelatedProducts = await fetchRelatedProducts();
     console.log(dataRelatedProducts);
 
@@ -94,8 +74,8 @@ export default async function ProductDetail({
             {productDetail && (
                 <div className="mx-[-15px] flex flex-row justify-between">
                     <div className="w-full xl:basis-3/4">
-                        <ProductDetails productDetail={productDetail}/>
-                        <TabsSlider productDetail={productDetail}/>
+                        <ProductDetails productDetail={productDetail} />
+                        <TabsSlider productDetail={productDetail} />
                     </div>
                     <div className="basis-1/4 shrink-0 grow hidden xl:block px-[15px]">
                         <div className="flex flex-row items-center justify-between mb-[5px]">
@@ -103,11 +83,11 @@ export default async function ProductDetail({
                                 Latest Product
                             </h3>
                         </div>
-                        <hr className="border-dashed border border-[#f2f2f2]"/>
-                        <hr className="border-dashed border border-[#f2f2f2]"/>
-                        <hr className="border-dashed border border-[#f2f2f2]"/>
+                        <hr className="border-dashed border border-[#f2f2f2]" />
+                        <hr className="border-dashed border border-[#f2f2f2]" />
+                        <hr className="border-dashed border border-[#f2f2f2]" />
                         <div className="my-[20px]">
-                            {products.map((product) => (
+                            {/* {products.map((product) => (
                                 <SmallBoxProduct
                                     key={product.id}
                                     id={product.id}
@@ -118,7 +98,7 @@ export default async function ProductDetail({
                                     oldPrice={product.oldPrice}
                                     className="mb-[20px] text-[14px]"
                                 />
-                            ))}
+                            ))} */}
                         </div>
                         <div>
                             <div className="relative group w-[270px] h-[322px]">
@@ -154,11 +134,11 @@ export default async function ProductDetail({
                 <FeatureProduct
                     title="Related Products"
                     breakpoints={{
-                        480: {slidesPerView: 4, spaceBetween: 30},
-                        1024: {slidesPerView: 5, spaceBetween: 30},
+                        480: { slidesPerView: 4, spaceBetween: 30 },
+                        1024: { slidesPerView: 5, spaceBetween: 30 },
                     }}
                     className=""
-                    dataRelatedProducts={dataRelatedProducts}
+
                 />
             </div>
         </>
