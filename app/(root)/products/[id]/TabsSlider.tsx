@@ -35,9 +35,10 @@ const formSchema = z.object({
 export default function TabsSlider({
     productDetail,
 }: {
-    productDetail: ProductType;
+    productDetail: Products;
 }) {
     const [activeTab, setActiveTab] = useState("description");
+    // console.log(productDetail);
 
     const handleTabClick = (tab: string) => {
         setActiveTab(tab);
@@ -60,11 +61,10 @@ export default function TabsSlider({
                 <li className="mr-[10px] mb-[10px]">
                     <Button
                         onClick={() => handleTabClick("description")}
-                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${
-                            activeTab === "description"
-                                ? "border-[#0083c1] text-white bg-[#0083c1] "
-                                : "text-black-1"
-                        }`}
+                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${activeTab === "description"
+                            ? "border-[#0083c1] text-white bg-[#0083c1] "
+                            : "text-black-1"
+                            }`}
                     >
                         DESCRIPTION
                     </Button>
@@ -72,11 +72,10 @@ export default function TabsSlider({
                 <li className="mr-[10px] mb-[10px]">
                     <Button
                         onClick={() => handleTabClick("reviews")}
-                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${
-                            activeTab === "reviews"
-                                ? "border-[#0083c1] text-white bg-[#0083c1]"
-                                : "text-black-1"
-                        }`}
+                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${activeTab === "reviews"
+                            ? "border-[#0083c1] text-white bg-[#0083c1]"
+                            : "text-black-1"
+                            }`}
                     >
                         REVIEWS (1)
                     </Button>
@@ -84,11 +83,10 @@ export default function TabsSlider({
                 <li className="mr-[10px] mb-[10px]">
                     <Button
                         onClick={() => handleTabClick("tags")}
-                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${
-                            activeTab === "tags"
-                                ? "border-[#0083c1] text-white bg-[#0083c1]"
-                                : "text-black-1"
-                        }`}
+                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${activeTab === "tags"
+                            ? "border-[#0083c1] text-white bg-[#0083c1]"
+                            : "text-black-1"
+                            }`}
                     >
                         TAGS
                     </Button>
@@ -96,11 +94,10 @@ export default function TabsSlider({
                 <li className="mr-[10px] mb-[10px]">
                     <Button
                         onClick={() => handleTabClick("customTab")}
-                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${
-                            activeTab === "customTab"
-                                ? "border-[#0083c1] text-white bg-[#0083c1] "
-                                : "text-black-1"
-                        }`}
+                        className={`text-[14px] py-[10px] px-[10px] border border-[#ddd] font-semibold bg-white hover:bg-[#0083c1] hover:text-white ${activeTab === "customTab"
+                            ? "border-[#0083c1] text-white bg-[#0083c1] "
+                            : "text-black-1"
+                            }`}
                     >
                         CUSTOM TAB
                     </Button>

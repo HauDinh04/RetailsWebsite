@@ -1,4 +1,4 @@
-type ProductType = {
+interface ProductType {
   id: string;
   name: string;
   description: string;
@@ -12,6 +12,17 @@ type ProductType = {
   sku: string;
   images: string[];
 };
+
+interface Products extends ProductType {
+  code: string,
+  slug: string,
+  type: string,
+  short_description: string,
+  thumbnail: null,
+  width: number,
+  length: number,
+  height: number,
+}
 
 type OrderType = {
   order_code: string;
