@@ -1,3 +1,0 @@
-interface Demo {
-    idDemo: boolean;
-}
