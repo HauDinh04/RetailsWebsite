@@ -70,6 +70,7 @@ export default function ProductDetails({
         "/images/product-2.jpg",
         "/images/product-2.jpg",
         "/images/product-2.jpg",
+        "/images/product-2.jpg",
     ];
 
     return (

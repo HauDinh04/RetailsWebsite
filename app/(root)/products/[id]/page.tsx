@@ -55,7 +55,7 @@ export default async function ProductDetail({
     const productDetail = res.data as Products;
     // console.log(productDetail);
     const dataRelatedProducts = await fetchRelatedProducts();
-    console.log(dataRelatedProducts);
+    // console.log(dataRelatedProducts);
 
     return (
         <>

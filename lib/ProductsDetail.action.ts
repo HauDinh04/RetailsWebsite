@@ -13,7 +13,7 @@ export const fetchProductDetail = async (id: number) => {
                 method: "GET",
             }
         );
-        // console.log(res);
+
         if (!res.ok) {
             console.log(`Error: ${res.status} ${res.statusText}`);
         }
