@@ -3,25 +3,16 @@ import React from "react";
 import {FaHeart} from "react-icons/fa";
 import {FaExchangeAlt} from "react-icons/fa";
 import {FaSearch} from "react-icons/fa";
-import {IoIosStar} from "react-icons/io";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import {useAppDispatch} from "@/redux/hooks";
 import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
 import {showProductModal} from "@/redux/features/product/product_modal.slice";
+import StarRating from "@/components/layouts/StarRating";
 
 interface productType {
-    product: {
-        id: number;
-        image: string;
-        isNew: boolean;
-        isSale?: number;
-        rating: number;
-        name: string;
-        price: number;
-        oldPrice: number;
-    };
+    product: ProductType;
     className: string;
 }
 
@@ -47,8 +38,8 @@ export default function Product({product, className}: productType) {
                 <div className={`relative ${className} w-full`}>
                     <Link href={`/products/${product.id}`}>
                         <Image
-                            src={product.image}
-                            alt={product.image}
+                            src={`${product?.thumbnail?.path.startsWith('/') ? `${process.env.NEXT_PUBLIC_API_URL}/${product.thumbnail.path}` : '/images/product-1.jpg'}`}
+                            alt={product.name}
                             width={0}
                             height={0}
                             sizes="100vw"
@@ -65,12 +56,12 @@ export default function Product({product, className}: productType) {
                             New
                         </div>
                     )}
-                    {product.isSale && (
-                        <div
-                            className="absolute uppercase right-[6px] top-[6px] w-[45px] h-[45px] rounded-full bg-[#ff5555] text-white-1 text-info flex items-center justify-center">
-                            {`-${product.isSale}%`}
-                        </div>
-                    )}
+                    {/*{product.isSale && (*/}
+                    {/*    <div*/}
+                    {/*        className="absolute uppercase right-[6px] top-[6px] w-[45px] h-[45px] rounded-full bg-[#ff5555] text-white-1 text-info flex items-center justify-center">*/}
+                    {/*        {`-${product.isSale}%`}*/}
+                    {/*    </div>*/}
+                    {/*)}*/}
                 </div>
                 <div
                     className="absolute bottom-0 right-[5px] opacity-0 transition-all ease-in-out duration-1000 group-hover:opacity-100">
@@ -97,25 +88,16 @@ export default function Product({product, className}: productType) {
                             {product.name}
                         </Link>
                     </h4>
-                    <div className="h-[30px] flex flex-row items-center justify-center">
-                        {[...Array(5)].map((_, i) => (
-                            <IoIosStar
-                                key={i}
-                                className={
-                                    product.rating > i
-                                        ? "text-black"
-                                        : "text-footer-info"
-                                }
-                            />
-                        ))}
-                    </div>
+                    <StarRating className={'justify-center'} rating={5}/>
                     <div className="mt-[10px] mb-[15px] text-center">
                         <span className="text-[#ff5555] text-heading3-bold">
                             ${product.price.toFixed(2)}
                         </span>
-                        <span className="text-black-3 text-sub-heading font-medium line-through ml-1">
-                            ${product.oldPrice.toFixed(2)}
-                        </span>
+                        {product.oldPrice && (
+                            <span className="text-black-3 text-sub-heading font-medium line-through ml-1">
+                                ${product.oldPrice.toFixed(2)}
+                            </span>
+                        )}
                     </div>
                 </div>
 

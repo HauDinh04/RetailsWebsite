@@ -220,7 +220,7 @@ export default function Footer() {
                 <Image
                   src="/images/ggplay.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -228,7 +228,7 @@ export default function Footer() {
                 <Image
                   src="/images/ggplay.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -238,7 +238,7 @@ export default function Footer() {
                 <Image
                   src="/images/visa.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -246,7 +246,7 @@ export default function Footer() {
                 <Image
                   src="/images/visa.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -254,7 +254,7 @@ export default function Footer() {
                 <Image
                   src="/images/visa.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -262,7 +262,7 @@ export default function Footer() {
                 <Image
                   src="/images/visa.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -270,7 +270,7 @@ export default function Footer() {
                 <Image
                   src="/images/visa.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>
@@ -278,7 +278,7 @@ export default function Footer() {
                 <Image
                   src="/images/visa.jpg"
                   alt=""
-                  fill
+                  fill sizes={'100'}
                   className="object-cover rounded-sm "
                 />
               </div>

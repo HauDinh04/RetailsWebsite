@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/tooltip"
 import Breadcrumb from "@/components/layouts/Breadcrumb";
 import {
-    fetchCategories,
     fetchCategory,
     fetchProduct,
 } from "@/lib/Categories.action";
@@ -29,6 +28,7 @@ function Page() {
     const [total, setTotal] = useState(0);
     const [categories, setCategories] = useState([] as CategoryType[]);
     const [page, setPage] = useState(1);
+    const [totalPage, setTotalPage] = useState(1);
     const limit = 9;
     const [products, setProducts] = useState([] as ProductType[]);
     const [hovered, setHovered] = useState(false);
@@ -43,7 +43,6 @@ function Page() {
     }
 
     const handleNextPage = () => {
-        const totalPage = Math.ceil(total / limit);
         if (page < totalPage) {
             setPage(page + 1);
             scrollToTop();
@@ -51,7 +50,6 @@ function Page() {
     }
 
     const handlePrevPage = () => {
-        const totalPage = Math.ceil(total / limit);
         if (page >= totalPage) {
             setPage(page - 1);
             scrollToTop();
@@ -63,10 +61,9 @@ function Page() {
     }, []);
 
     useEffect(() => {
-        fetchCategories()
-            .then(data => {
-                setCategories(data as CategoryType[]);
-                if (!data) setCategories([
+        fetchCategory()
+            .then(res => {
+                if(res.message) setCategories([
                     {
                         "id": "1",
                         "name": "Smartphone & Tablets",
@@ -213,9 +210,17 @@ function Page() {
                         "id": "9",
                         "name": "Wines & Spirits"
                     }
-                ])
-            });
-        fetchProduct()
+                ]);
+                else return res.data
+            })
+            .then(data => {
+                console.log(data);
+                setCategories(data as CategoryType[]);
+            })
+    }, [])
+
+    useEffect(() => {
+        fetchProduct(page)
             .then(res => {
                 if (res.message) {
                     return [
@@ -422,16 +427,14 @@ function Page() {
                     return res.data;
                 }
             })
-            .then((res: {data: [], pagination: { total: number}}) => {
-                console.log(res);
-                const array = res.data.slice(0, 9);
+            .then((res: { data: [], pagination: { total: number, last_page: number } }) => {
+                const array = res.data.slice(0, limit);
                 setProducts(array as ProductType[]);
                 setTotal(res.pagination.total);
                 dispatch(setIsLoading(false));
+                setTotalPage(res.pagination.last_page);
             });
-        fetchCategory()
-            .then(res => res.data)
-    }, [])
+    }, [page, setPage]);
 
     return (
         <section className={'mb-[25px]'}>
@@ -462,7 +465,7 @@ function Page() {
                             transition={{duration: 0.3, ease: 'easeInOut'}}
                             className="absolute bg-[rgba(0,0,0,0.3)] w-full h-full inset-0 z-[2]"
                         />
-                        <Image fill src="/images/65a10b505e3001c955109b7f1906a314.jpg" alt="Product"
+                        <Image fill sizes={'100'} src="/images/65a10b505e3001c955109b7f1906a314.jpg" alt="Product"
                                className="object-cover w-full h-full"/>
                     </Link>
                 </div>

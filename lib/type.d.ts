@@ -11,6 +11,10 @@ interface ProductType {
   isNew: boolean;
   sku: string;
   images: string[];
+  short_description: string
+  thumbnail: {
+    path: string
+  }
 };
 
 interface Products extends ProductType {
@@ -123,3 +127,14 @@ type Pagination = {
   current_page: number;
   per_page: number;
 };
+
+interface Banner {
+  background_color : string
+  code: string;
+  created_at: string;
+  description: string
+  id: number
+  is_active: boolean
+  title: string
+  updated_at: string
+}
