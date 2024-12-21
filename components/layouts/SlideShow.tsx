@@ -9,14 +9,14 @@ import Image from "next/image";
 import {MdOutlineNavigateNext} from "react-icons/md";
 import {GrFormPrevious} from "react-icons/gr";
 
-const images = [
-    "/slideshow/slider-2.jpg",
-    "/slideshow/slider-2.jpg",
-    "/slideshow/slider-2.jpg",
-    "/slideshow/slider-2.jpg",
-];
+// const images = [
+//     "/slideshow/slider-2.jpg",
+//     "/slideshow/slider-2.jpg",
+//     "/slideshow/slider-2.jpg",
+//     "/slideshow/slider-2.jpg",
+// ];
 
-export default function Slideshow() {
+export default function Slideshow({data = []}: { data: Banner[] }) {
     return (
         <div className="lg:w-3/4 w-full mx-[-15px]">
             <Swiper
@@ -27,7 +27,7 @@ export default function Slideshow() {
                 }}
                 pagination={{
                     clickable: true,
-                    el: ".custom-pagination", // Gán pagination vào element tùy chỉnh
+                    el: ".custom-pagination",
                 }}
                 mousewheel={true}
                 loop={true}
@@ -35,24 +35,38 @@ export default function Slideshow() {
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
                 className="mySwiper"
             >
-                {images.map((image, index) => (
+                {/*{images.map((image, index) => (*/}
+                {/*    <SwiperSlide key={`slideshow-${index}`}>*/}
+                {/*        <div className="w-full relative">*/}
+                {/*            <Image*/}
+                {/*                src={image}*/}
+                {/*                alt={`slide-${index}`}*/}
+                {/*                width={884}*/}
+                {/*                height={430}*/}
+                {/*                sizes="100vw"*/}
+                {/*                style={{*/}
+                {/*                    width: "100%",*/}
+                {/*                    height: "auto",*/}
+                {/*                }}*/}
+                {/*                className="w-full"*/}
+                {/*            />*/}
+                {/*        </div>*/}
+                {/*    </SwiperSlide>*/}
+                {/*))}*/}
+
+                {data.map((item, index) => (
                     <SwiperSlide key={`slideshow-${index}`}>
-                        <div className="w-full relative">
-                            <Image
-                                src={image}
-                                alt={`slide-${index}`}
-                                width={884}
-                                height={430}
-                                sizes="100vw"
-                                style={{
-                                    width: "100%",
-                                    height: "auto",
-                                }}
-                                className="w-full"
-                            />
+                        <div className="relative flex items-center justify-center xl:w-[884px] xl:h-[430px]">
+                            <div className={`absolute w-full h-full inset-0 `}
+                                 style={{backgroundColor: `${item.background_color}`}}/>
+                            <div className="text-[24px] z-20 text-black">{item.title}</div>
                         </div>
                     </SwiperSlide>
                 ))}
+
+                {data.length === 0 && (
+                    <div className={'text-center text-[24px] '}>Loading...</div>
+                )}
 
                 {/* Nút điều hướng tiếp theo */}
                 <div

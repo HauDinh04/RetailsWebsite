@@ -1,6 +1,5 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
-import database from '@/server/database.json';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -13,21 +12,20 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async credentials => {
         // Convert users from JSON to Array
-        const users = Array.isArray(database.users) ? database.users : [];
-        let user = users.find(user => user.email === credentials.email);
+        // const users = Array.isArray(database.users) ? database.users : [];
 
-        if (!user) {
+        // if (!user) {
           // No user found, so this is their first attempt to login
           // Optionally, this is also the place you could do a user registration
-          throw new Error('Tài khoản không tồn tại.');
-        }
+        //   throw new Error('Tài khoản không tồn tại.');
+        // }
 
-        if (user.password !== credentials.password) {
-          throw new Error('Mật khẩu không đúng.');
-        }
+        // if (user.password !== credentials.password) {
+        //   throw new Error('Mật khẩu không đúng.');
+        // }
 
         // return user object with their profile data
-        return user;
+        // return user;
       }
     })
   ],

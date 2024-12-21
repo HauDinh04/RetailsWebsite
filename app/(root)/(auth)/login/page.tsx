@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { Input } from '@/components/customui/inputs';
 import { Form, FormField, FormItem, FormMessage } from '@/components/customui/forms';
 import { Label } from '@/components/ui/label';
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,7 +16,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import { FaRegFile } from 'react-icons/fa';
 import { FaRegFileAlt } from 'react-icons/fa';
-import { Login } from '@/lib/Login.action';
+import { LoginAPI} from '@/lib/Login.action';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -45,14 +44,17 @@ export default function LoginPage() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const res = await Login(values.email, values.password);
+      const res = await LoginAPI(values.email, values.password);
       if (res?.error) {
         setError(res.error);
       } else {
         setError(null);
-        router.push('/');
+        console.log(res);
+        // router.push('/');
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
