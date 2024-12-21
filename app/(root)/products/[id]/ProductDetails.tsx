@@ -17,13 +17,13 @@ import { IoLogoTwitter } from "react-icons/io";
 import { TiSocialGooglePlus } from "react-icons/ti";
 import { RiSkypeFill } from "react-icons/ri";
 import Link from "next/link";
-import {useAppDispatch} from "@/redux/hooks";
-import {setShowCartNotice, setShowCompareNotice, setShowWishListNotice} from "@/redux/features/notice/notice.slice";
+import { useAppDispatch } from "@/redux/hooks";
+import { setShowCartNotice, setShowCompareNotice, setShowWishListNotice } from "@/redux/features/notice/notice.slice";
 
 export default function ProductDetails({
     productDetail,
 }: {
-    productDetail: ProductType;
+    productDetail: Products;
 }) {
     const dispatch = useAppDispatch();
     const [quantity, setQuantity] = useState(1);
@@ -63,6 +63,15 @@ export default function ProductDetails({
     const handleAddWishList = () => {
         dispatch(setShowWishListNotice());
     }
+
+    const defaultImages = [
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+        "/images/product-2.jpg",
+    ];
+
     return (
         <div className="flex flex-row flex-wrap justify-between">
             <div className="basis-full mb-[30px] md:mb-20px lg:mb-25px lg:basis-1/2 px-[15px] overflow-hidden">
@@ -70,8 +79,8 @@ export default function ProductDetails({
                     <Image
                         src={
                             activeIndex === null
-                                ? productDetail.image
-                                : images[activeIndex]
+                                ? productDetail.image || defaultImages[0]
+                                : (productDetail.images?.length ? productDetail.images : defaultImages)[activeIndex]
                         }
                         alt=""
                         fill
@@ -105,14 +114,13 @@ export default function ProductDetails({
                             },
                         }}
                     >
-                        {productDetail.images.map((image, index) => (
+                        {(productDetail.images?.length ? productDetail.images : defaultImages).map((image, index) => (
                             <SwiperSlide key={index}>
                                 <div
-                                    className={`w-full aspect-[3/4] p-1 border rounded-[3px] cursor-pointer hover:border-bg-main ${
-                                        activeIndex === index
-                                            ? "border-bg-main"
-                                            : "border-[#ddd]"
-                                    }`}
+                                    className={`w-full aspect-[3/4] p-1 border rounded-[3px] cursor-pointer hover:border-bg-main ${activeIndex === index
+                                        ? "border-bg-main"
+                                        : "border-[#ddd]"
+                                        }`}
                                     onClick={() => handleImageClick(index)}
                                 >
                                     <Image
@@ -146,21 +154,20 @@ export default function ProductDetails({
                 </div>
             </div>
             <div className="basis-full lg:basis-1/2 text-left px-[15px]">
-                <h3 className="text-[24px] font-light mb-[10px]">
+                <h3 className="text-[24px] font-light mb-[10px] text-black-2">
                     {productDetail.name}
                 </h3>
                 <div className="my-[30px]">
                     <div className="flex">
                         {Array.from(
-                            { length: productDetail.rating },
+                            { length: 5 },
                             (_, i) => (
                                 <IoIosStar
                                     key={i}
-                                    className={`text-[12px] ${
-                                        i < Math.round(productDetail.rating)
-                                            ? "text-black"
-                                            : "text-footer-info"
-                                    }`}
+                                    className={`text-[12px] ${i < Math.round(3)
+                                        ? "text-black"
+                                        : "text-footer-info"
+                                        }`}
                                 />
                             )
                         )}
@@ -185,16 +192,14 @@ export default function ProductDetails({
                                 : "Out of Stock"}
                         </span>
                         <p className="my-[25px] font-bold text-black-2">
-                            SKU: {productDetail.sku}
+                            SKU: SKU001
                         </p>
                     </div>
                     <div>
                         <span className="text-price-1 text-[30px] font-bold">
                             ${productDetail.price.toFixed(2)}
                         </span>
-                        {productDetail.oldPrice === 0 ? (
-                            <></>
-                        ) : (
+                        {productDetail.oldPrice && productDetail.oldPrice > 0 && (
                             <span className="text-price-2 text-[18px] font-light line-through leading-[18px]">
                                 ${productDetail.oldPrice.toFixed(2)}
                             </span>

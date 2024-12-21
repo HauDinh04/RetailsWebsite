@@ -106,7 +106,7 @@ function LatestProduct() {
                 }
             })
             .then((res: {data: []}) => {
-                const array = res.data.slice(0, 9);
+                const array = res.data.slice(0, 4);
                 setProducts(array as ProductType[]);
                 setIsLoading(false);
             });

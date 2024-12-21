@@ -1,4 +1,4 @@
-type ProductType = {
+interface ProductType {
   id: string;
   name: string;
   description: string;
@@ -11,7 +11,22 @@ type ProductType = {
   isNew: boolean;
   sku: string;
   images: string[];
+  short_description: string
+  thumbnail: {
+    path: string
+  }
 };
+
+interface Products extends ProductType {
+  code: string,
+  slug: string,
+  type: string,
+  short_description: string,
+  thumbnail: null,
+  width: number,
+  length: number,
+  height: number,
+}
 
 type OrderType = {
   order_code: string;
@@ -112,3 +127,14 @@ type Pagination = {
   current_page: number;
   per_page: number;
 };
+
+interface Banner {
+  background_color : string
+  code: string;
+  created_at: string;
+  description: string
+  id: number
+  is_active: boolean
+  title: string
+  updated_at: string
+}

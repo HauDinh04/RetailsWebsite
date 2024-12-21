@@ -1,7 +1,8 @@
+
 export const fetchProductDetail = async (id: number) => {
     try {
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL_JSON}/products/${id}`,
+            `${process.env.NEXT_PUBLIC_API_URL}/api/client/product/${id}`,
             {
                 headers: {
                     "Content-Type": "application/json",

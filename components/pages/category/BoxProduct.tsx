@@ -23,7 +23,7 @@ export default function BoxProduct({id, name, image, price, oldPrice, rating, di
     discount_price: number
 }) {
     const dispatch = useAppDispatch();
-    const discountPercentage = Math.ceil(((price - discount_price) / price) * 100);
+    const discountPercentage = Math.ceil(((price - discount_price) / price) * 100) || 10;
 
     const handleAddProduct = () => {
         dispatch(setShowCartNotice());

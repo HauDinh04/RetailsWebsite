@@ -108,7 +108,7 @@ export default function Header() {
                                     <Image
                                         src="/images/gb.png"
                                         alt=""
-                                        fill
+                                        fill sizes={'100'}
                                         className="object-cover"
                                     />
                                 </div>
@@ -129,7 +129,7 @@ export default function Header() {
                                                 <Image
                                                     src="/images/gb.png"
                                                     alt=""
-                                                    fill
+                                                    fill sizes={'100'}
                                                     className="object-cover"
                                                 />
                                             </div>
@@ -145,7 +145,7 @@ export default function Header() {
                                                 <Image
                                                     src="/images/gb.png"
                                                     alt=""
-                                                    fill
+                                                    fill sizes={'100'}
                                                     className="object-cover"
                                                 />
                                             </div>
@@ -192,17 +192,16 @@ export default function Header() {
                         <div className="flex flex-row flex-wrap lg:flex-nowrap justify-between">
                             <div
                                 className="md:order-1 flex items-center justify-center order-1 basis-7/12 md:basis-full lg:basis-3/12 xl:basis-3/12  text-center pt-[13px] pb-[35px] px-[15px] md:pb-5 lg:pb-0 md:flex md:items-center md:justify-center lg:justify-start">
-                                <div className="relative aspect-square w-full max-w-[194px] h-[38px] cursor-pointer">
-                                    <Link href={"/"}>
-                                        <Image
-                                            src="/images/logo.png"
-                                            alt="logo"
-                                            fill
-                                            sizes="100vw"
-                                            className="w-full aspect-[3/4] object-contain"
-                                        />
-                                    </Link>
-                                </div>
+                                <Link href={"/"}
+                                      className="block relative aspect-square w-full max-w-[194px] h-[38px] cursor-pointer">
+                                    <Image
+                                        src="/images/logo.png"
+                                        alt="logo"
+                                        fill
+                                        sizes="100"
+                                        className="w-full aspect-[3/4] object-contain"
+                                    />
+                                </Link>
                             </div>
                             <div
                                 className="md:order-2 order-3 lg:basis-5/12 md:basis-8/12 basis-full py-[7px] px-[15px]">
@@ -258,7 +257,7 @@ export default function Header() {
                                                 <Image
                                                     src="/images/cart.png"
                                                     alt="cart"
-                                                    fill
+                                                    fill sizes={'100'}
                                                     className="object-cover"
                                                 />
                                                 <div

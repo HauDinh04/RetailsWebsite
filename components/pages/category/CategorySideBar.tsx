@@ -21,7 +21,7 @@ function CategorySideBar({data}: { data: CategoryType[] }) {
                         <div
                             className={'flex w-full hover:text-[#0083c1] hover:bg-[#fff] justify-between text-[14px] pr-[15px] items-center text-[#444444] border-b border-solid ' +
                                 'border-[#dddddd] py-[10px] pl-[20px] w-[260px] bg-[#f8f8f8] h-[39px]'}>
-                            <Link href={'/category'} className="">
+                            <Link href={'/categories'} className="">
                                 {item.name}
                             </Link>
                             {expandedCategory !== index && item.subCategories && (

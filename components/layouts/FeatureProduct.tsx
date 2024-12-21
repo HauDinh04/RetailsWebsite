@@ -96,12 +96,14 @@ const products = [
 
 export default function FeatureProduct({
     title = "Smartphone & Tablet",
-    breakpoints = {
+    className = "",
+    data
+} : { data : ProductType[],title?: string, className?: string }) {
+    const breakpoints = {
         480: { slidesPerView: 3, spaceBetween: 10 },
         1024: { slidesPerView: 5, spaceBetween: 10 },
-    },
-    className = "",
-}) {
+    };
+
     return (
         <div className="pt-[43px] relative">
             <div className="flex flex-row items-center justify-between mb-[5px]">
@@ -134,11 +136,19 @@ export default function FeatureProduct({
                     breakpoints={breakpoints}
                     className=""
                 >
-                    {products.map((product) => (
-                        <SwiperSlide className="shrink" key={product.id}>
-                            <Product product={product} className={className} />
-                        </SwiperSlide>
-                    ))}
+                    {data.length > 0 ? (
+                        <div>
+                            {data.map((product, index) => (
+                                <SwiperSlide className="shrink" key={index}>
+                                    <Product product={product} className={className}/>
+                                </SwiperSlide>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className={'text-heading1-bold text-center'}>
+                            loading...
+                        </div>
+                    )}
                 </Swiper>
             </div>
         </div>
