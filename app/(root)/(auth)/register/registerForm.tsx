@@ -13,6 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { loginIn } from "@/lib/Login.action";
 
 
 const formSchema = z
@@ -50,20 +51,8 @@ const RegisterForms = () => {
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const res = await fetch("/api/auth/user/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values), // Gửi dữ liệu từ form
-      });
-
-      if (!res.ok) {
-        throw new Error(`API Route Error: ${res.status}`);
-      }
-
-      const data = await res.json();
-      console.log("Registration success:", data);
+      loginIn()
+        .then(data => console.log(data));
     } catch (err) {
       console.error("POST_ERR:", err);
     }
