@@ -12,17 +12,19 @@ export function MainComment({
   children?: React.ReactNode;
 }) {
   function formatDateTime(dateString: string): string {
-    const date = new Date(dateString);
-
-    return new Intl.DateTimeFormat('en-GB', {
-      day: '2-digit',
-      month: '2-digit',
+    const dateObj = new Date(dateString);
+    if (isNaN(dateObj.getTime())) {
+      return '';
+    }
+    return new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
+      month: 'short',
+      day: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
       hour12: true
-    }).format(date);
+    }).format(dateObj);
   }
 
   return (
@@ -38,7 +40,7 @@ export function MainComment({
         <div className='w-full'>
           <div className='flex items-center justify-between mb-3'>
             <div className='flex items-center'>
-              <div className='text-[16px]'>{name}</div>
+              <div className='text-[16px]'>{name || 'Unknown'}</div>
               <div className='ms-[15px] text-gray-600'>{formatDateTime(datetime)}</div>
             </div>
             <FaReply className='cursor-pointer text-[18px]' />
