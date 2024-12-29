@@ -1,11 +1,13 @@
 'use server';
+
 export const fetchBlogPosts = async (page: number = 1) => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/post?page=${page}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      cache: 'no-store'
     });
 
     return await response.json();

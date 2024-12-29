@@ -20,8 +20,10 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   const fetchComments = async () => {
     const response = await fetchCommentsByPostID(params.slug);
 
-    if (response.length > 0) {
-      setComments(response as Comment[]);
+    console.log(response);
+
+    if (response.data.length > 0) {
+      setComments(response.data as Comment[]);
     }
   };
 
@@ -32,7 +34,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   useEffect(() => {
     fetchBlogPostByID(params.slug).then(post => setPost(post));
     fetchComments();
-  }, []);
+  }, [params.slug]);
 
   return (
     <div className=''>
@@ -105,7 +107,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                   <MainComment
                     key={comment.id}
                     name={comment.name}
-                    datetime={comment.createdAt}
+                    datetime={comment.created_at}
                     content={comment.comment}></MainComment>
                 ))}
 
