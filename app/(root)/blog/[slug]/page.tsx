@@ -6,7 +6,7 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaSkype } from 'react-icons/fa';
 import { MainComment } from '@/components/layouts/MainComment';
-import { ReplyComment } from '@/components/layouts/ReplyComment';
+
 import Breadcrumb from '@/components/layouts/Breadcrumb';
 import React, { useEffect, useState } from 'react';
 import { fetchBlogPostByID } from '@/lib/Blog.action';

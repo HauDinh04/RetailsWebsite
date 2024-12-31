@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import FeatureProduct from "@/components/layouts/FeatureProduct";
-import SmallBoxProduct from "@/components/layouts/SmallBoxProduct";
 import TabsSlider from "./TabsSlider";
 import ProductDetails from "./ProductDetails";
 import Breadcrumb from "@/components/layouts/Breadcrumb";
@@ -10,40 +9,40 @@ import {
     fetchRelatedProducts,
 } from "@/lib/ProductsDetail.action";
 
-const products = [
-    {
-        id: "1",
-        name: "Sunt Molup",
-        rating: 5,
-        price: 100,
-        image: "/images/product-2.jpg",
-        oldPrice: 0,
-    },
-    {
-        id: "2",
-        name: "Lorem Ipsum",
-        rating: 4,
-        price: 120,
-        image: "/images/product-2.jpg",
-        oldPrice: 0,
-    },
-    {
-        id: "3",
-        name: "Dolor Sit",
-        rating: 3,
-        price: 90,
-        image: "/images/product-2.jpg",
-        oldPrice: 0,
-    },
-    {
-        id: "4",
-        name: "Dolor Sit",
-        rating: 4,
-        price: 90,
-        image: "/images/product-2.jpg",
-        oldPrice: 0,
-    },
-];
+// const products = [
+//     {
+//         id: "1",
+//         name: "Sunt Molup",
+//         rating: 5,
+//         price: 100,
+//         image: "/images/product-2.jpg",
+//         oldPrice: 0,
+//     },
+//     {
+//         id: "2",
+//         name: "Lorem Ipsum",
+//         rating: 4,
+//         price: 120,
+//         image: "/images/product-2.jpg",
+//         oldPrice: 0,
+//     },
+//     {
+//         id: "3",
+//         name: "Dolor Sit",
+//         rating: 3,
+//         price: 90,
+//         image: "/images/product-2.jpg",
+//         oldPrice: 0,
+//     },
+//     {
+//         id: "4",
+//         name: "Dolor Sit",
+//         rating: 4,
+//         price: 90,
+//         image: "/images/product-2.jpg",
+//         oldPrice: 0,
+//     },
+// ];
 
 
 export default async function ProductDetail({

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaReply } from "react-icons/fa";
 
 export function ReplyComment({
@@ -13,7 +14,7 @@ export function ReplyComment({
     <div className="mt-5">
       <div className="flex gap-4 text-[12px]">
         <div className="p-[4px] border h-fit">
-          <img
+          <Image
             src="https://template-intern.l5elb4sxvvqkvl.flashvps.xyz/market/Destino_HTML_main_file/Code_v1.0/destino_html_pl_v1.0/img/demo/blog/avata1.jpg"
             alt=""
             className="w-[50px] h-[50px] max-w-none"

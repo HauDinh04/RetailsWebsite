@@ -18,7 +18,7 @@ import StarRating from '@/components/layouts/StarRating';
 import {MdClose} from "react-icons/md";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import {useAppDispatch, useAppSelector} from "@/redux/hooks";
+import {useAppDispatch} from "@/redux/hooks";
 import {setIsLoading} from "@/redux/features/loading/loading.reducer";
 
 type ProductModalProps = {

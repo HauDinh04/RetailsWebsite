@@ -58,7 +58,7 @@ function Page() {
 
     useEffect(() => {
         dispatch(setIsLoading(true));
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         fetchCategory()
@@ -434,7 +434,7 @@ function Page() {
                 dispatch(setIsLoading(false));
                 setTotalPage(res.pagination.last_page);
             });
-    }, [page, setPage]);
+    }, [dispatch,page]);
 
     return (
         <section className={'mb-[25px]'}>

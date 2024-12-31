@@ -17,13 +17,9 @@ import {
 import { FaRegFile } from 'react-icons/fa';
 import { FaRegFileAlt } from 'react-icons/fa';
 import { LoginAPI} from '@/lib/Login.action';
-import { useSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-
 export default function LoginPage() {
-  const { data: session } = useSession();
-  const router = useRouter();
+
 
   const [error, setError] = useState<string | null>(null);
 

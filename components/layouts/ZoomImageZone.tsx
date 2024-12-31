@@ -36,7 +36,7 @@ function ZoomImageZone() {
         img.onload = () => {
             setSize({width: img.width, height: img.height});
         };
-    }, [index]);
+    }, [imageArray ,index]);
 
     const handleHidden = () => {
         dispatch(setIsShowZoomImage(false));

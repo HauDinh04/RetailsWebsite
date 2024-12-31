@@ -61,7 +61,7 @@ export default function Header() {
     useEffect(() => {
         dispatch(getIsLoginFromLocalStorage())
         dispatch(getUserFromLocalStorage())
-    }, [])
+    }, [dispatch])
 
     return (
         <header>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FaReply } from 'react-icons/fa';
 
 export function MainComment({
@@ -31,10 +32,11 @@ export function MainComment({
     <>
       <div className='flex gap-4 text-[12px] mb-8 last:mb-0'>
         <div className='p-[4px] border h-fit'>
-          <img
+          <Image
             src='https://template-intern.l5elb4sxvvqkvl.flashvps.xyz/market/Destino_HTML_main_file/Code_v1.0/destino_html_pl_v1.0/img/demo/blog/avata1.jpg'
             alt=''
             className='w-[70px] h-[70px] max-w-none'
+            
           />
         </div>
         <div className='w-full'>
