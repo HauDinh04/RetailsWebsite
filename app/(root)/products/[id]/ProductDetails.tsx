@@ -50,7 +50,7 @@ export default function ProductDetails({
             setQuantity((prev) => prev - 1);
         }
     };
-    const images = productDetail.images;
+    // const images = productDetail.images;
 
     const handleAddProduct = () => {
         dispatch(setShowCartNotice());
@@ -65,6 +65,7 @@ export default function ProductDetails({
     }
 
     const defaultImages = [
+        "/images/product-2.jpg",
         "/images/product-2.jpg",
         "/images/product-2.jpg",
         "/images/product-2.jpg",

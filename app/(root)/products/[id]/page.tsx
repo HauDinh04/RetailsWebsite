@@ -55,7 +55,7 @@ export default async function ProductDetail({
     const productDetail = res.data as Products;
     // console.log(productDetail);
     const dataRelatedProducts = await fetchRelatedProducts();
-    console.log(dataRelatedProducts);
+    // console.log(dataRelatedProducts);
 
     return (
         <>
@@ -87,7 +87,7 @@ export default async function ProductDetail({
                         <hr className="border-dashed border border-[#f2f2f2]" />
                         <hr className="border-dashed border border-[#f2f2f2]" />
                         <div className="my-[20px]">
-                            {/* {products.map((product) => (
+                            {products.map((product) => (
                                 <SmallBoxProduct
                                     key={product.id}
                                     id={product.id}
@@ -98,7 +98,7 @@ export default async function ProductDetail({
                                     oldPrice={product.oldPrice}
                                     className="mb-[20px] text-[14px]"
                                 />
-                            ))} */}
+                            ))}
                         </div>
                         <div>
                             <div className="relative group w-[270px] h-[322px]">
