@@ -16,13 +16,11 @@ import {
 } from '@/components/ui/breadcrumb';
 import { FaRegFile } from 'react-icons/fa';
 import { FaRegFileAlt } from 'react-icons/fa';
-import { LoginAPI} from '@/lib/Login.action';
-import { useSession } from 'next-auth/react';
+import { Login } from '@/lib/Login.action';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const { data: session } = useSession();
   const router = useRouter();
 
   const [error, setError] = useState<string | null>(null);
@@ -44,13 +42,12 @@ export default function LoginPage() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const res = await LoginAPI(values.email, values.password);
+      const res = await Login(values.email, values.password);
+
       if (res?.error) {
         setError(res.error);
       } else {
-        setError(null);
-        console.log(res);
-        // router.push('/');
+        router.push('/');
       }
     } catch (error) {
       console.log(error);
@@ -138,7 +135,7 @@ export default function LoginPage() {
                           </Label>
                           <Input
                             id='password'
-                            type='text'
+                            type='password'
                             placeholder=''
                             required
                             {...field}

@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
+import { LoginAPI } from './lib/Login.action';
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -10,25 +11,32 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         email: {},
         password: {}
       },
-      authorize: async credentials => {
+      authorize: async (credentials: any) => {
         // Convert users from JSON to Array
         // const users = Array.isArray(database.users) ? database.users : [];
 
-        // if (!user) {
-          // No user found, so this is their first attempt to login
-          // Optionally, this is also the place you could do a user registration
-        //   throw new Error('Tài khoản không tồn tại.');
-        // }
+        const res = await LoginAPI(credentials.email, credentials.password);
 
-        // if (user.password !== credentials.password) {
-        //   throw new Error('Mật khẩu không đúng.');
-        // }
+        if (res.error && res.message) {
+          throw new Error(res.message);
+        }
 
-        // return user object with their profile data
-        // return user;
+        return res;
       }
     })
   ],
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      if (user) {
+        token.user = user;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      session.user = token.user as any;
+      return session;
+    }
+  },
   pages: {
     signIn: '/login'
   }
